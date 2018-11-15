@@ -8,7 +8,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
@@ -18,7 +17,6 @@ import injectReducer from 'utils/injectReducer';
 // import components
 
 import Grid from 'components/MuiGrid';
-import Header from 'components/Header';
 import EventList from 'components/EventList/Loadable';
 import Hero from 'components/Hero';
 import Welcome from 'components/Welcome';
@@ -28,7 +26,6 @@ import makeSelectMainPage, { makeEventsSelector } from './selectors';
 import { loadEvents } from './actions';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
 
 /* eslint-disable react/prefer-stateless-function */
 export class MainPage extends React.Component {
@@ -56,14 +53,13 @@ export class MainPage extends React.Component {
           <meta name="description" content="Description of MainPage" />
         </Helmet>
         {/* <FormattedMessage {...messages.header} /> */}
-        <Header />
         <Hero height="60vh" heightBig="100vh">
-          <Logo />
+          <Grid item xs={12}>
+            <Logo />
+          </Grid>
         </Hero>
         <Welcome />
-        <Grid item xs={12}>
-          {content}
-        </Grid>
+        {content}
       </Grid>
     );
   }
