@@ -43,7 +43,7 @@ export class MainPage extends React.Component {
     let content;
 
     if (events.length > 0) {
-      content = <EventList events={events} />;
+      content = <EventList events={events} dispatch={this.props.dispatch} />;
     }
     // else {
     //   content = <div>NO EVENTS FUCK ME</div>;
@@ -73,6 +73,7 @@ MainPage.propTypes = {
   // mainpage: PropTypes.object,
   getEvents: PropTypes.func,
   events: PropTypes.any,
+  dispatch: PropTypes.func,
   // error: PropTypes.func,
   // loading: PropTypes.func,
   // mainpage: PropTypes.func,
@@ -88,6 +89,7 @@ const mapStateToProps = createStructuredSelector({
 export function mapDispatchToProps(dispatch) {
   return {
     getEvents: () => dispatch(loadEvents()),
+    dispatch,
   };
 }
 

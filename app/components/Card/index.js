@@ -3,7 +3,7 @@
  * Card
  *
  */
-
+import { push } from 'connected-react-router';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -16,16 +16,19 @@ import CardWrapper from './CardWrapper';
 import ContentWrapper from './ContentWrapper';
 import artistBG from '../../images/BG/artist.jpg';
 
-const Card = ({ message, date }) => (
-  <CardWrapper>
-    <IMG src={artistBG} alt="Card BG Alt Text Here" />
-    <Date {...date} />
-    <ContentWrapper>
-      <H2>{message.cardArtist}</H2>
-      <P>{message.cardGenre} </P>
-    </ContentWrapper>
-  </CardWrapper>
-);
+const Card = ({ message, date, dispatch }) => {
+  const HandleEventClick = e => dispatch(push('/fake'));
+  return (
+    <CardWrapper onClick={HandleEventClick}>
+      <IMG src={artistBG} alt="Card BG Alt Text Here" />
+      <Date {...date} />
+      <ContentWrapper>
+        <H2>{message.cardArtist}</H2>
+        <P>{message.cardGenre} </P>
+      </ContentWrapper>
+    </CardWrapper>
+  );
+};
 
 Card.propTypes = {
   message: PropTypes.object,
