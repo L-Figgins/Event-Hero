@@ -16,6 +16,7 @@ import injectReducer from 'utils/injectReducer';
 import makeSelectEventShowcase from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+import { loadEventById } from './actions';
 
 /* eslint-disable react/prefer-stateless-function */
 export class EventShowcase extends React.Component {
@@ -31,9 +32,7 @@ export class EventShowcase extends React.Component {
   }
 }
 
-EventShowcase.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-};
+EventShowcase.propTypes = {};
 
 const mapStateToProps = createStructuredSelector({
   eventShowcase: makeSelectEventShowcase(),
@@ -41,7 +40,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch,
+    loadEventById: dispatch(loadEventById('1')),
   };
 }
 

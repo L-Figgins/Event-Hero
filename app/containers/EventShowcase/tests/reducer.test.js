@@ -1,8 +1,10 @@
 import { fromJS } from 'immutable';
 import eventShowcaseReducer from '../reducer';
-import { loadEventsById, loadEventsByIdSuccess, loadEventsByIdFailure, loadEventById, loadEventByIdSuccess, loadEventByIdFailure } from '../actions';
-
-
+import {
+  loadEventByIdSuccess,
+  loadEventByIdFailure,
+  loadEventById,
+} from '../actions';
 
 describe('eventShowcaseReducer', () => {
   let state;
@@ -45,11 +47,11 @@ describe('eventShowcaseReducer', () => {
     const error = {
       id: 'some error id',
       msg: 'some error msg',
-    }
-    const expected = state
-      .set('loading', false)
-      .set('error', error);
+    };
+    const expected = state.set('loading', false).set('error', error);
 
-    expected(eventShowcaseReducer(state, loadEventByIdFailure(error))).toEqual(expected);
-  }
+    expected(eventShowcaseReducer(state, loadEventByIdFailure(error))).toEqual(
+      expected,
+    );
+  });
 });
