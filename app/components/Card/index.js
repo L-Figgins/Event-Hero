@@ -17,7 +17,7 @@ import ContentWrapper from './ContentWrapper';
 import artistBG from '../../images/BG/artist.jpg';
 
 const Card = ({ message, date, dispatch }) => {
-  const HandleEventClick = e => dispatch(push('/fake'));
+  const HandleEventClick = () => dispatch(push('/fake'));
   return (
     <CardWrapper onClick={HandleEventClick}>
       <IMG src={artistBG} alt="Card BG Alt Text Here" />
