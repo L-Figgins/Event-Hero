@@ -10,7 +10,8 @@ import WelcomeTitle from './WelcomeTitle';
 import WelcomeDescription from './WelcomeDescription';
 import WelcomeLocation from './WelcomeLocation';
 import Wrapper from './Wrapper';
-import Grid from '../../components/MuiGrid';
+import Grid from '../MuiGrid';
+import Spacer from '../Spacer';
 
 const TempItemStyle = styled.div`
   border: 1px solid red;
@@ -18,33 +19,44 @@ const TempItemStyle = styled.div`
 
 function Welcome() {
   return (
-    <div>
-      <Wrapper>
+    <Wrapper>
+      <Grid item xs={12}>
         <WelcomeTitle>
-          <FormattedMessage {...messages.title} />
+          <Spacer xs={1}>
+            <TempItemStyle> </TempItemStyle>
+          </Spacer>
+          <Grid item xs={10}>
+            <TempItemStyle>
+              <FormattedMessage {...messages.title} />
+            </TempItemStyle>
+          </Grid>
+          <Spacer xs={1}>
+            <TempItemStyle> </TempItemStyle>
+          </Spacer>
         </WelcomeTitle>
         <WelcomeLocation>
-          <Grid item xs={2}>
-            <TempItemStyle>col 3</TempItemStyle>
+          <Grid item xs={1}>
+            <TempItemStyle>col 1</TempItemStyle>
           </Grid>
-          <Grid item xs={4}>
-            <TempItemStyle>col 3</TempItemStyle>
-            <Logo />
+          <Grid item xs={5}>
+            <TempItemStyle>
+              <Logo />
+              <H1>The Honey Hive</H1>
+              <P>San Francisco, CA</P>
+              <WelcomeDescription>
+                <FormattedMessage {...messages.description} />
+              </WelcomeDescription>
+            </TempItemStyle>
           </Grid>
-          <Grid item xs={4}>
-            <TempItemStyle>col 3</TempItemStyle>
-            <H1>The Honey Hive</H1>
-            <P>San Francisco, CA</P>
-            <WelcomeDescription>
-              <FormattedMessage {...messages.description} />
-            </WelcomeDescription>
+          <Grid item xs={5}>
+            <TempItemStyle>col 5</TempItemStyle>
           </Grid>
-          <Grid item xs={2}>
-            <TempItemStyle>col 3</TempItemStyle>
+          <Grid item xs={1}>
+            <TempItemStyle>col 1</TempItemStyle>
           </Grid>
         </WelcomeLocation>
-      </Wrapper>
-    </div>
+      </Grid>
+    </Wrapper>
   );
 }
 

@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 const FullWidthStyledGrid = styled(Grid)`
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 const StyledGrid = props => <FullWidthStyledGrid {...props} />;
