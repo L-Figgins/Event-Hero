@@ -12,6 +12,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import MainPage from 'containers/MainPage/Loadable';
+import EventShowcase from 'containers/EventShowcase/Loadable';
 
 import GlobalStyle from '../../global-styles';
 
@@ -22,7 +23,8 @@ export default function App() {
         <Route exact path="/" component={MainPage} />
         {/* <Route exact path="/featured" component={FeaturedPage} />
         <Route exact path="/details" component={EventDetailsPage} /> */}
-        <Route component={NotFoundPage} />
+        <Route exact path="/test" component={EventShowcase} />
+        <Route path="" component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
     </div>

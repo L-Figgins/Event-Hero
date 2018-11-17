@@ -38,7 +38,7 @@ describe('eventShowcaseReducer', () => {
       .set('loading', false)
       .set('error', false)
       .set('event', event);
-    expected(eventShowcaseReducer(state, loadEventByIdSuccess(event))).toEqual(
+    expect(eventShowcaseReducer(state, loadEventByIdSuccess(event))).toEqual(
       expected,
     );
   });
@@ -50,7 +50,7 @@ describe('eventShowcaseReducer', () => {
     };
     const expected = state.set('loading', false).set('error', error);
 
-    expected(eventShowcaseReducer(state, loadEventByIdFailure(error))).toEqual(
+    expect(eventShowcaseReducer(state, loadEventByIdFailure(error))).toEqual(
       expected,
     );
   });

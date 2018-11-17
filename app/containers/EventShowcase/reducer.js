@@ -25,7 +25,7 @@ function eventShowcaseReducer(state = initialState, action) {
       return state
         .set('loading', false)
         .set('error', false)
-        .set('events', action.event);
+        .set('event', action.event);
     case LOAD_EVENT_BY_ID_FAILURE:
       return state.set('loading', false).set('error', action.error);
     default:

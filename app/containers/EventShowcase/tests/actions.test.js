@@ -40,7 +40,7 @@ describe('EventShowcase actions', () => {
         },
       };
 
-      expected(loadEventByIdSuccess(expectedEvent)).toEqual(expected);
+      expect(loadEventByIdSuccess(expectedEvent)).toEqual(expected);
     });
   });
 
@@ -56,7 +56,7 @@ describe('EventShowcase actions', () => {
         error: expectedError,
       };
 
-      expected(loadEventByIdFailure(expectedError)).toEqual(expected);
+      expect(loadEventByIdFailure(expectedError)).toEqual(expected);
     });
   });
 });

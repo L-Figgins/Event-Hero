@@ -13,34 +13,62 @@ import { compose } from 'redux';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
-import makeSelectEventShowcase from './selectors';
+import makeSelectEventShowcase, {
+  makeSelectEvent,
+  makeSelectEventShowcaseError,
+  makeSelectEventShowcaseLoading,
+} from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import { loadEventById } from './actions';
 
 /* eslint-disable react/prefer-stateless-function */
 export class EventShowcase extends React.Component {
+  componentDidMount() {
+    this.props.dispatch(loadEventById(1));
+  }
+
   render() {
+    let content;
+    const error = <div>Oh no Error</div>;
+    if (this.props.error) {
+      content = error;
+    } else {
+      content = <div>{this.props.event.title}</div>;
+    }
+
     return (
       <div>
         <Helmet>
           <title>EventShowcase</title>
           <meta name="description" content="Description of EventShowcase" />
         </Helmet>
+        {content}
+        <div> hello </div>
       </div>
     );
   }
 }
 
-EventShowcase.propTypes = {};
+// TODO make real prop type tests
+EventShowcase.propTypes = {
+  event: PropTypes.any,
+  // loading: PropTypes.any,
+  error: PropTypes.any,
+  // eventShowcase: PropTypes.any,
+  dispatch: PropTypes.any,
+};
 
 const mapStateToProps = createStructuredSelector({
   eventShowcase: makeSelectEventShowcase(),
+  loading: makeSelectEventShowcaseLoading(),
+  error: makeSelectEventShowcaseError(),
+  event: makeSelectEvent(),
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    loadEventById: dispatch(loadEventById('1')),
+    dispatch,
   };
 }
 
