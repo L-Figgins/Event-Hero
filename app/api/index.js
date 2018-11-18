@@ -4,5 +4,5 @@ import { events } from './data';
 
 export const Api = {
   loadEvents: () => events,
-  loadEventById: id => events[id],
+  loadEventById: id => events.find(event => event.id === id),
 };
