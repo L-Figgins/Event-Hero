@@ -21,9 +21,7 @@ export default function App() {
     <div>
       <Switch>
         <Route exact path="/" component={MainPage} />
-        {/* <Route exact path="/featured" component={FeaturedPage} />
-        <Route exact path="/details" component={EventDetailsPage} /> */}
-        <Route exact path="/test" component={EventShowcase} />
+        <Route path="/EventShowcase" component={EventShowcase} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <GlobalStyle />

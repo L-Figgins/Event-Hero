@@ -6,6 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+// import queryString from 'query-string';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
@@ -18,6 +19,7 @@ import makeSelectEventShowcase, {
   makeSelectEventShowcaseError,
   makeSelectEventShowcaseLoading,
 } from './selectors';
+import { makeSelectLocation } from '../App/selectors';
 import reducer from './reducer';
 import saga from './saga';
 import { loadEventById } from './actions';
@@ -34,7 +36,14 @@ export class EventShowcase extends React.Component {
     if (this.props.error) {
       content = error;
     } else {
-      content = <div>{this.props.event.title}</div>;
+      content = (
+        <div>
+          <div>{this.props.event.title}</div>
+          <div>Location Pathname: {this.props.location.pathname}</div>
+          <div>Location Search: {this.props.location.search}</div>
+          <div>Location Hash: {this.props.location.hashs}</div>
+        </div>
+      );
     }
 
     return (
@@ -56,6 +65,7 @@ EventShowcase.propTypes = {
   // loading: PropTypes.any,
   error: PropTypes.any,
   // eventShowcase: PropTypes.any,
+  location: PropTypes.any,
   dispatch: PropTypes.any,
 };
 
@@ -64,6 +74,7 @@ const mapStateToProps = createStructuredSelector({
   loading: makeSelectEventShowcaseLoading(),
   error: makeSelectEventShowcaseError(),
   event: makeSelectEvent(),
+  location: makeSelectLocation(),
 });
 
 function mapDispatchToProps(dispatch) {

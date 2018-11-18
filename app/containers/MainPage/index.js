@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import { push } from 'connected-react-router';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
@@ -29,8 +30,20 @@ import saga from './saga';
 
 /* eslint-disable react/prefer-stateless-function */
 export class MainPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onEventCardClick = this.onEventCardClick.bind(this);
+  }
+
   componentDidMount() {
     this.props.getEvents();
+  }
+
+  onEventCardClick(event) {
+    console.log('Clicked');
+    const eventId = event.currentTarget.id;
+    console.log(`Attempting to Redirect to EventShowcase?id=${eventId}`);
+    this.props.showcase(eventId);
   }
 
   render() {
@@ -40,7 +53,9 @@ export class MainPage extends React.Component {
     let content;
 
     if (events.length > 0) {
-      content = <EventList events={events} dispatch={this.props.dispatch} />;
+      content = (
+        <EventList events={events} handleClick={this.onEventCardClick} />
+      );
     }
     // else {
     //   content = <div>NO EVENTS FUCK ME</div>;
@@ -69,7 +84,7 @@ MainPage.propTypes = {
   // mainpage: PropTypes.object,
   getEvents: PropTypes.func,
   events: PropTypes.any,
-  dispatch: PropTypes.func,
+  showcase: PropTypes.func,
   // error: PropTypes.func,
   // loading: PropTypes.func,
   // mainpage: PropTypes.func,
@@ -85,7 +100,10 @@ const mapStateToProps = createStructuredSelector({
 export function mapDispatchToProps(dispatch) {
   return {
     getEvents: () => dispatch(loadEvents()),
-    dispatch,
+    showcase: id => {
+      const url = `/EventShowcase?id=${id}`;
+      dispatch(push(url));
+    },
   };
 }
 

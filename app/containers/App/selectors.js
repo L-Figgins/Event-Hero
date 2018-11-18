@@ -7,4 +7,4 @@ const makeSelectLocation = () =>
     routerState.get('location').toJS(),
   );
 
-export { makeSelectLocation };
+export { selectRouter, makeSelectLocation };
