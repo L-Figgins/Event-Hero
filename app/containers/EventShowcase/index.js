@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-// import queryString from 'query-string';
+import queryString from 'query-string';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
@@ -27,23 +27,51 @@ import { loadEventById } from './actions';
 /* eslint-disable react/prefer-stateless-function */
 export class EventShowcase extends React.Component {
   componentDidMount() {
-    this.props.dispatch(loadEventById(1));
+    // parses query string
+    const query = queryString.parse(this.props.location.search);
+    console.log('Query ID:', query.id);
+
+    this.props.dispatch(loadEventById(query.id));
   }
 
   render() {
+    const { event } = this.props;
+    const test = ['1', '2', '3'];
+    const testResult = test.find(element => element === '1');
+
+    console.log(testResult);
+    console.log(event);
     let content;
     const error = <div>Oh no Error</div>;
     if (this.props.error) {
+      console.log(this.props.error);
       content = error;
-    } else {
+    } else if (event) {
+      console.log('In Event = tru block');
+      const date = `Weekday: ${this.props.event.date.weekday} Month: ${
+        this.props.event.date.month
+      } Day: ${this.props.event.date.day}`;
       content = (
         <div>
-          <div>{this.props.event.title}</div>
+          <div>Event Id: {this.props.event.id}</div>
+          <div>Event Title: {this.props.event.title}</div>
+          <div>
+            Event Message.cardArtist: {this.props.event.message.cardArtist}{' '}
+          </div>
+          <div>
+            Event Message.cardGenre: {this.props.event.message.cardGenre}{' '}
+          </div>
+          <div>
+            Event Message.cardArtist: {this.props.event.message.cardArtist}{' '}
+          </div>
+          <div>Event Date: {date}</div>
           <div>Location Pathname: {this.props.location.pathname}</div>
           <div>Location Search: {this.props.location.search}</div>
-          <div>Location Hash: {this.props.location.hashs}</div>
         </div>
       );
+    } else {
+      console.log('HMMMMMMMM DA FUQ');
+      console.log('Event:', event);
     }
 
     return (
@@ -62,10 +90,9 @@ export class EventShowcase extends React.Component {
 // TODO make real prop type tests
 EventShowcase.propTypes = {
   event: PropTypes.any,
-  // loading: PropTypes.any,
   error: PropTypes.any,
-  // eventShowcase: PropTypes.any,
   location: PropTypes.any,
+  loadEvent: PropTypes.func,
   dispatch: PropTypes.any,
 };
 
@@ -79,6 +106,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
+    loadEvent: id => dispatch(loadEventById(id)),
     dispatch,
   };
 }

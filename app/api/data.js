@@ -1,3 +1,4 @@
+// Event Data Structure needs to be improved
 const events = [
   {
     id: 1,

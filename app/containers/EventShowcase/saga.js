@@ -9,7 +9,7 @@ function* fetchEventById(action) {
   try {
     yield call(delay, 500);
     const event = yield Api.loadEventById(action.eventId);
-    console.log('hello', event.title);
+    yield console.log('Hello from Saga: ', event);
     yield put(loadEventByIdSuccess(event));
   } catch (error) {
     yield put(loadEventByIdFailure(error));

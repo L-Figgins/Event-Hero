@@ -4,5 +4,6 @@ import { events } from './data';
 
 export const Api = {
   loadEvents: () => events,
-  loadEventById: id => events.find(event => event.id === id),
+  loadEventById: id => events.find(event => event.id === parseInt(id, 10)),
+  // loadEventById: () => events[0],
 };
