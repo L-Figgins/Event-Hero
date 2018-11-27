@@ -7,6 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
@@ -24,6 +25,20 @@ import reducer from './reducer';
 import saga from './saga';
 import { loadEventById } from './actions';
 
+// import container specific styles
+import Gradient from './gradient';
+import artistBG from '../../images/BG/artist.jpg';
+import Img from '../../components/Img';
+
+const Wrapper = styled.div`
+  height: 100%;
+`;
+
+const StyledImg = styled(Img)`
+  height: 50vh;
+  width: 100%;
+`;
+
 /* eslint-disable react/prefer-stateless-function */
 export class EventShowcase extends React.Component {
   componentDidMount() {
@@ -36,11 +51,6 @@ export class EventShowcase extends React.Component {
 
   render() {
     const { event } = this.props;
-    const test = ['1', '2', '3'];
-    const testResult = test.find(element => element === '1');
-
-    console.log(testResult);
-    console.log(event);
     let content;
     const error = <div>Oh no Error</div>;
     if (this.props.error) {
@@ -75,14 +85,16 @@ export class EventShowcase extends React.Component {
     }
 
     return (
-      <div>
+      <Wrapper>
         <Helmet>
           <title>EventShowcase</title>
           <meta name="description" content="Description of EventShowcase" />
         </Helmet>
+        <Gradient />
+        <StyledImg src={artistBG} />
         {content}
         <div> hello </div>
-      </div>
+      </Wrapper>
     );
   }
 }
