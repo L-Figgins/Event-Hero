@@ -12,6 +12,7 @@ const events = [
       month: 'Oct',
       weekday: 'wed',
     },
+    imageURL: '/images/artist.jpg',
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ const events = [
       month: 'Oct',
       weekday: 'thurs',
     },
+    imageURL: '/images/artist.jpg',
   },
   {
     id: 3,
@@ -38,6 +40,7 @@ const events = [
       month: 'Oct',
       weekday: 'Friday',
     },
+    imageURL: '/images/artist.jpg',
   },
   {
     id: 4,
@@ -51,6 +54,7 @@ const events = [
       month: 'Oct',
       weekday: 'wed',
     },
+    imageURL: '/images/artist.jpg',
   },
   {
     id: 5,
@@ -64,6 +68,7 @@ const events = [
       month: 'Oct',
       weekday: 'wed',
     },
+    imageURL: '/images/artist.jpg',
   },
   {
     id: 6,
@@ -77,6 +82,7 @@ const events = [
       month: 'Oct',
       weekday: 'wed',
     },
+    imageURL: '/images/artist.jpg',
   },
   {
     id: 7,
@@ -90,6 +96,7 @@ const events = [
       month: 'Oct',
       weekday: 'wed',
     },
+    imageURL: '/images/artist.jpg',
   },
   {
     id: 8,
@@ -103,6 +110,7 @@ const events = [
       month: 'Oct',
       weekday: 'wed',
     },
+    imageURL: '/images/artist.jpg',
   },
   {
     id: 9,
@@ -116,6 +124,7 @@ const events = [
       month: 'Oct',
       weekday: 'wed',
     },
+    imageURL: '/images/artist.jpg',
   },
   {
     id: 10,
@@ -129,6 +138,7 @@ const events = [
       month: 'Oct',
       weekday: 'wed',
     },
+    imageURL: '/images/artist.jpg',
   },
 ];
 

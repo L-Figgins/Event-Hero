@@ -27,7 +27,7 @@ import { loadEventById } from './actions';
 
 // import container specific styles
 import Gradient from './gradient';
-import artistBG from '../../images/BG/artist.jpg';
+// import artistBG from '../../images/BG/artist.jpg';
 // import Img from '../../components/Img';
 import {
   ArtistGenre,
@@ -96,15 +96,15 @@ export class EventShowcase extends React.Component {
       content = error;
     } else if (event) {
       console.log('In Event = tru block');
-      const date = `${this.props.event.date.weekday} ${
-        this.props.event.date.month
-      } ${this.props.event.date.day}`;
+      const date = `${event.date.weekday} ${event.date.month} ${
+        event.date.day
+      }`;
       content = (
         <ContentWrapper>
           <Tag>Artist Profile</Tag>
-          <ArtistName>{this.props.event.message.cardArtist}</ArtistName>
+          <ArtistName>{event.message.cardArtist}</ArtistName>
           <SubTitle>
-            <ArtistGenre>{this.props.event.message.cardGenre}</ArtistGenre>
+            <ArtistGenre>{event.message.cardGenre}</ArtistGenre>
             <EventDate>{date}</EventDate>
           </SubTitle>
           <ArtistBio>
@@ -135,7 +135,7 @@ export class EventShowcase extends React.Component {
           <meta name="description" content="Description of EventShowcase" />
         </Helmet>
         <Gradient />
-        <Background img={artistBG}>
+        <Background img={event.imageURL}>
           <Logo />
           {content}
         </Background>
