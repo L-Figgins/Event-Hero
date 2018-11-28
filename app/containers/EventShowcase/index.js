@@ -102,9 +102,9 @@ export class EventShowcase extends React.Component {
       content = (
         <ContentWrapper>
           <Tag>Artist Profile</Tag>
-          <ArtistName>{event.message.cardArtist}</ArtistName>
+          <ArtistName>{event.message.artistName}</ArtistName>
           <SubTitle>
-            <ArtistGenre>{event.message.cardGenre}</ArtistGenre>
+            <ArtistGenre>{event.message.artistGenre}</ArtistGenre>
             <EventDate>{date}</EventDate>
           </SubTitle>
           <ArtistBio>

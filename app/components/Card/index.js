@@ -19,8 +19,8 @@ const Card = ({ message, date, handleClick, id, imageURL }) => (
     <IMG src={imageURL} alt="Card BG Alt Text Here" />
     <Date {...date} />
     <ContentWrapper>
-      <H2>{message.cardArtist}</H2>
-      <P>{message.cardGenre} </P>
+      <H2>{message.artistName}</H2>
+      <P>{message.artistGenre} </P>
     </ContentWrapper>
   </CardWrapper>
 );

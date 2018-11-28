@@ -42,7 +42,8 @@
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "prettify": "prettier --write"
+    "prettify": "prettier --write",
+    "popDB": "node ./app/api/dbPop.js"
   },
   "lint-staged": {
     "*.js": [
@@ -76,6 +77,8 @@
     "loadable-components": "2.2.3",
     "lodash": "4.17.11",
     "minimist": "1.2.0",
+    "mongodb": "^3.1.10",
+    "mongoose": "^5.3.14",
     "prop-types": "15.6.2",
     "query-string": "^6.2.0",
     "react": "16.6.0",
@@ -163,6 +166,6 @@
     "webpack-dev-middleware": "3.4.0",
     "webpack-hot-middleware": "2.24.3 ",
     "webpack-pwa-manifest": "3.7.1",
-    "whatwg-fetch": "3.0.0"
+    "whatwg-fetch": "^3.0.0"
   }
 }
