@@ -28,16 +28,54 @@ import { loadEventById } from './actions';
 // import container specific styles
 import Gradient from './gradient';
 import artistBG from '../../images/BG/artist.jpg';
-import Img from '../../components/Img';
+// import Img from '../../components/Img';
+import {
+  ArtistGenre,
+  ArtistName,
+  Tag,
+  ArtistBio,
+  EventDate,
+  SubTitle,
+} from './local-styles';
+
+import Logo from '../../components/Logo';
 
 const Wrapper = styled.div`
   height: 100%;
-`;
-
-const StyledImg = styled(Img)`
-  height: 50vh;
   width: 100%;
 `;
+
+const Background = styled.div`
+  height: 100vh;
+  width: 100%;
+  background-image: url(${props => props.img});
+  background-size: cover;
+  background-position: center center;
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  top: 50%;
+
+  @media (max-width: 500px) {
+    top: 25%;
+  }
+`;
+
+// const StyledImg = styled(Img)`
+//   height: 100vh;
+//   width: 100%;
+//   z-index: 1;
+//   position: absolute;
+//   /* width: 80%;
+//   margin-left: 10%;
+//   margin-right: 10%; */
+// `;
 
 /* eslint-disable react/prefer-stateless-function */
 export class EventShowcase extends React.Component {
@@ -58,26 +96,32 @@ export class EventShowcase extends React.Component {
       content = error;
     } else if (event) {
       console.log('In Event = tru block');
-      const date = `Weekday: ${this.props.event.date.weekday} Month: ${
+      const date = `${this.props.event.date.weekday} ${
         this.props.event.date.month
-      } Day: ${this.props.event.date.day}`;
+      } ${this.props.event.date.day}`;
       content = (
-        <div>
-          <div>Event Id: {this.props.event.id}</div>
-          <div>Event Title: {this.props.event.title}</div>
-          <div>
-            Event Message.cardArtist: {this.props.event.message.cardArtist}{' '}
-          </div>
-          <div>
-            Event Message.cardGenre: {this.props.event.message.cardGenre}{' '}
-          </div>
-          <div>
-            Event Message.cardArtist: {this.props.event.message.cardArtist}{' '}
-          </div>
-          <div>Event Date: {date}</div>
-          <div>Location Pathname: {this.props.location.pathname}</div>
-          <div>Location Search: {this.props.location.search}</div>
-        </div>
+        <ContentWrapper>
+          <Tag>Artist Profile</Tag>
+          <ArtistName>{this.props.event.message.cardArtist}</ArtistName>
+          <SubTitle>
+            <ArtistGenre>{this.props.event.message.cardGenre}</ArtistGenre>
+            <EventDate>{date}</EventDate>
+          </SubTitle>
+          <ArtistBio>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+            enim lobortis scelerisque fermentum dui faucibus in ornare. Odio ut
+            enim blandit volutpat maecenas volutpat. Habitant morbi tristique
+            senectus et netus. Donec enim diam vulputate ut pharetra sit.
+            Scelerisque eleifend donec pretium vulputate. Odio aenean sed
+            adipiscing diam donec adipiscing. Libero volutpat sed cras ornare
+            arcu dui. Dui vivamus arcu felis bibendum ut tristique et egestas
+            quis. Luctus accumsan tortor posuere ac ut consequat semper viverra
+            nam. Ac odio tempor orci dapibus ultrices. Scelerisque mauris
+            pellentesque pulvinar pellentesque habitant morbi tristique. Nibh
+            cras pulvinar mattis nunc. Vel orci porta non pulvinar neque.
+          </ArtistBio>
+        </ContentWrapper>
       );
     } else {
       console.log('HMMMMMMMM DA FUQ');
@@ -91,9 +135,10 @@ export class EventShowcase extends React.Component {
           <meta name="description" content="Description of EventShowcase" />
         </Helmet>
         <Gradient />
-        <StyledImg src={artistBG} />
-        {content}
-        <div> hello </div>
+        <Background img={artistBG}>
+          <Logo />
+          {content}
+        </Background>
       </Wrapper>
     );
   }
@@ -104,7 +149,6 @@ EventShowcase.propTypes = {
   event: PropTypes.any,
   error: PropTypes.any,
   location: PropTypes.any,
-  loadEvent: PropTypes.func,
   dispatch: PropTypes.any,
 };
 

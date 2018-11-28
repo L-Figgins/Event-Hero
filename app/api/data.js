@@ -4,8 +4,8 @@ const events = [
     id: 1,
     title: 'Event 1',
     message: {
-      cardArtist: 'Person',
-      cardGenre: 'Rock',
+      cardArtist: 'Kid Cudi',
+      cardGenre: 'Rap',
     },
     date: {
       day: '14',
@@ -17,26 +17,26 @@ const events = [
     id: 2,
     title: 'Event 2',
     message: {
-      cardArtist: 'Person',
-      cardGenre: 'Rock',
+      cardArtist: 'The Dead Kennedys',
+      cardGenre: 'Punk',
     },
     date: {
-      day: '14',
+      day: '15',
       month: 'Oct',
-      weekday: 'wed',
+      weekday: 'thurs',
     },
   },
   {
     id: 3,
     title: 'Event 3',
     message: {
-      cardArtist: 'Person',
-      cardGenre: 'Rock',
+      cardArtist: 'Explosions in the Sky',
+      cardGenre: 'Instrumental',
     },
     date: {
-      day: '14',
+      day: '16',
       month: 'Oct',
-      weekday: 'wed',
+      weekday: 'Friday',
     },
   },
   {
