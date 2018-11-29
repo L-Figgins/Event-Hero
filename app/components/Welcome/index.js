@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import H1 from 'components/H1';
 import P from 'components/P';
-import Logo from 'components/Logo';
 import messages from './messages';
 import WelcomeTitle from './WelcomeTitle';
 import WelcomeDescription from './WelcomeDescription';
@@ -12,9 +11,19 @@ import WelcomeLocation from './WelcomeLocation';
 import Wrapper from './Wrapper';
 import Grid from '../MuiGrid';
 import Spacer from '../Spacer';
+import Vr from './vr';
 
 const TempItemStyle = styled.div`
   border: 1px solid red;
+`;
+
+const VenueBioWrapper = styled.div`
+  margin-left: 7.5%;
+`;
+
+const Temp = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 function Welcome() {
@@ -40,12 +49,16 @@ function Welcome() {
           </Grid>
           <Grid item xs={5}>
             <TempItemStyle>
-              <Logo />
-              <H1>The Honey Hive</H1>
-              <P>San Francisco, CA</P>
-              <WelcomeDescription>
-                <FormattedMessage {...messages.description} />
-              </WelcomeDescription>
+              <Temp>
+                <Vr />
+                <VenueBioWrapper>
+                  <H1>The Honey Hive</H1>
+                  <P>San Francisco, CA</P>
+                  <WelcomeDescription>
+                    <FormattedMessage {...messages.description} />
+                  </WelcomeDescription>
+                </VenueBioWrapper>
+              </Temp>
             </TempItemStyle>
           </Grid>
           <Grid item xs={5}>
