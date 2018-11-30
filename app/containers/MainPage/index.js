@@ -21,7 +21,6 @@ import Grid from 'components/MuiGrid';
 import EventList from 'components/EventList/Loadable';
 import Hero from 'components/Hero';
 import Welcome from 'components/Welcome';
-import Logo from 'components/Logo';
 
 import makeSelectMainPage, { makeEventsSelector } from './selectors';
 import { loadEvents } from './actions';
@@ -62,18 +61,15 @@ export class MainPage extends React.Component {
     // }
 
     return (
-      <Grid container spacing={16}>
+      <Grid container spacing={8}>
         <Helmet>
           <title>MainPage</title>
           <meta name="description" content="Description of MainPage" />
         </Helmet>
         {/* <FormattedMessage {...messages.header} /> */}
-        <Hero height="60vh" heightBig="100vh">
-          <Grid item xs={12}>
-            <Logo />
-          </Grid>
+        <Hero>
+          <Welcome />
         </Hero>
-        <Welcome />
         {content}
       </Grid>
     );

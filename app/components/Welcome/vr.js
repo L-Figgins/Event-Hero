@@ -6,20 +6,23 @@ import Logo from '../Logo';
 const VrWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-left: 5%;
+  height: 100%;
 `;
 
 const Vrline = styled.div`
   width: 2px;
   height: 50%;
   margin-top: 10px;
-  background-color: white;
-  margin-left: 35%;
+  background-color: grey;
+  border: 1px;
 `;
 
 const Vr = () => (
   <VrWrapper>
-    <Logo height="30%" width="70%" />
+    <Logo height="50px" width="50px" marginLeft="px" />
     <Vrline />
   </VrWrapper>
 );
