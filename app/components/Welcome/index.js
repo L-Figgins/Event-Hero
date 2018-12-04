@@ -36,6 +36,14 @@ function Welcome() {
           </Grid>
           <Spacer xs={1} />
         </WelcomeTitle>
+        <WelcomeTitle>
+          <Spacer xs={1} />
+          <Grid item xs={10}>
+            <H1>Welcome</H1>
+            {/* <FormattedMessage {...messages.title} /> */}
+          </Grid>
+          <Spacer xs={1} />
+        </WelcomeTitle>
         <WelcomeLocation>
           <Spacer xs={1} />
           <Grid item xs={1}>
