@@ -12,7 +12,9 @@ const CardWrapper = styled.div`
   width: 15rem;
   height: 15rem;
 
-  h1 {
+  h1,
+  h2,
+  h3 {
     color: #fff;
   }
   p {

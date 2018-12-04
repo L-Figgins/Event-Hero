@@ -23,6 +23,7 @@ import EventList from 'components/EventList/Loadable';
 import Hero from 'components/Hero';
 import Welcome from 'components/Welcome';
 import Logo from 'components/Logo';
+import Footer from 'components/Footer';
 
 import makeSelectMainPage, { makeEventsSelector } from './selectors';
 import { loadEvents } from './actions';
@@ -88,6 +89,7 @@ export class MainPage extends React.Component {
         </Hero>
         <Welcome />
         {content}
+        <Footer />
       </Grid>
     );
   }

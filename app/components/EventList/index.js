@@ -20,7 +20,6 @@ const EventList = ({ events, handleClick }) => {
         </Grid>
         <Spacer xs={1} />
       </ListHeaderWrapper>
-
       <Wrapper>{cards}</Wrapper>
     </Grid>
   );
