@@ -6,7 +6,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
@@ -29,11 +28,6 @@ import { loadEvents } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 
-const Box = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
-`;
 /* eslint-disable react/prefer-stateless-function */
 export class MainPage extends React.Component {
   constructor(props) {
@@ -76,9 +70,7 @@ export class MainPage extends React.Component {
         {/* <FormattedMessage {...messages.header} /> */}
         <Hero>
           <Grid item xs={2} lg={1}>
-            <Box>
-              <Logo height="5rem" width="5rem" />
-            </Box>
+            <Logo height="5rem" width="5rem" />
           </Grid>
 
           <Grid item xs={10} lg={11}>
