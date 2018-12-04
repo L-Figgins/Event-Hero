@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { FormattedMessage } from 'react-intl';
-import H1 from 'components/H1';
+import H2 from 'components/H2';
+import H3 from 'components/H3';
 import P from 'components/P';
+import H1 from '../H1';
 import messages from './messages';
 import WelcomeTitle from './WelcomeTitle';
 import WelcomeDescription from './WelcomeDescription';
@@ -29,7 +31,7 @@ function Welcome() {
         <WelcomeTitle>
           <Spacer xs={1} />
           <Grid item xs={10}>
-            <div>Welcome</div>
+            <H1>Welcome</H1>
             {/* <FormattedMessage {...messages.title} /> */}
           </Grid>
           <Spacer xs={1} />
@@ -42,10 +44,12 @@ function Welcome() {
           <Grid item xs={5}>
             <Temp>
               <VenueBioWrapper>
-                <H1>The Honey Hive</H1>
-                <P>San Francisco, CA</P>
+                <H2>The Honey Hive</H2>
+                <H3>San Francisco, CA</H3>
                 <WelcomeDescription>
-                  <FormattedMessage {...messages.description} />
+                  <P>
+                    <FormattedMessage {...messages.description} />
+                  </P>
                 </WelcomeDescription>
               </VenueBioWrapper>
             </Temp>

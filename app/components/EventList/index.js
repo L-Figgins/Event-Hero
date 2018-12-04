@@ -1,10 +1,10 @@
 import React from 'react';
 import Card from '../Card';
-import Wrapper from './Wrapper';
+import CardHeader from './CardHeader';
 import Grid from '../MuiGrid';
-import H1 from '../H1';
 import Spacer from '../Spacer';
 import ListHeaderWrapper from './ListHeaderWrapper';
+import H1 from '../H1';
 
 const EventList = ({ events, handleClick }) => {
   const cards = events.map(event => (
@@ -12,15 +12,22 @@ const EventList = ({ events, handleClick }) => {
   ));
 
   const content = (
-    <Grid item xs={12}>
+    <div>
       <ListHeaderWrapper>
         <Spacer xs={1} />
-        <Grid item xs={11}>
-          <H1 fontSize="5em">Upcoming Events</H1>
+        <Grid item xs={10}>
+          <H1>Upcoming Events</H1>
         </Grid>
+        <Spacer xs={1} />
       </ListHeaderWrapper>
-      <Wrapper>{cards}</Wrapper>
-    </Grid>
+      <CardHeader>
+        <Grid item xs={1} />
+        <Grid item xs={10}>
+          {cards}
+        </Grid>
+        <Grid item xs={1} />
+      </CardHeader>
+    </div>
   );
 
   return content;

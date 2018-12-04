@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ListHeaderWrapper = styled.div`
+const CardHeader = styled.div`
   background-color: #161616;
   display: flex;
   h1 {
@@ -34,4 +34,4 @@ const ListHeaderWrapper = styled.div`
   }
 `;
 
-export default ListHeaderWrapper;
+export default CardHeader;
