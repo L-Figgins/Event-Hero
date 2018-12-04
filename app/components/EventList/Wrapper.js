@@ -8,7 +8,7 @@ const EventsWrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #0c0c0c;
+  background-color: #161616;
   color: #fff;
   box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
 `;

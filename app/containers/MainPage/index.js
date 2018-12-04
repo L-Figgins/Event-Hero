@@ -31,8 +31,9 @@ import saga from './saga';
 
 const Box = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding-top: 2rem;
+  padding-bottom: 2rem;
 `;
 /* eslint-disable react/prefer-stateless-function */
 export class MainPage extends React.Component {
@@ -75,15 +76,15 @@ export class MainPage extends React.Component {
         </Helmet>
         {/* <FormattedMessage {...messages.header} /> */}
         <Hero>
-          <Grid item xs={2} lg={1}>
+          <Grid item xs={1} />
+
+          <Grid item xs={10}>
             <Box>
               <Logo height="5rem" width="5rem" />
             </Box>
           </Grid>
 
-          <Grid item xs={10} lg={11}>
-            <div>text</div>
-          </Grid>
+          <Grid item xs={1} />
         </Hero>
         <Welcome />
         {content}

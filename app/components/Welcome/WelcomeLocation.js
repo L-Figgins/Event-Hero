@@ -4,13 +4,13 @@ const WelcomeLocation = styled.div`
   font-size: 1em;
   display: flex;
   color: #928f8a;
-  padding-top: 3.5%;
-  /* padding-left: 2%; */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   h1 {
     color: #ffe7ae;
   }
   p {
-    color: white;
+    color: #928f8a;
   }
 `;
 
