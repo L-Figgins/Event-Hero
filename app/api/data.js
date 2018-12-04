@@ -1,4 +1,8 @@
 // Event Data Structure needs to be improved
+
+const lorem =
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis enim lobortis scelerisque fermentum dui faucibus in ornare. Odio utenim blandit volutpat maecenas volutpat. Habitant morbi tristiquesenectus et netus. Donec enim diam vulputate ut pharetra sit. Scelerisque eleifend donec pretium vulputate. Odio aenean sed adipiscing diam donec adipiscing. Libero volutpat sed cras ornare arcu dui. Dui vivamus arcu felis bibendum ut tristique et egestas quis. Luctus accumsan tortor posuere ac ut consequat semper viverra nam. Ac odio tempor orci dapibus ultrices. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Nibh cras pulvinar mattis nunc. Vel orci porta non pulvinar neque.';
+
 const events = [
   {
     id: 1,
@@ -6,6 +10,7 @@ const events = [
     message: {
       artistName: 'Kid Cudi',
       artistGenre: 'Rap',
+      artistBio: lorem,
     },
     date: {
       day: '14',
@@ -20,6 +25,7 @@ const events = [
     message: {
       artistName: 'The Dead Kennedys',
       artistGenre: 'Punk',
+      artistBio: lorem,
     },
     date: {
       day: '15',
@@ -34,6 +40,7 @@ const events = [
     message: {
       artistName: 'Explosions in the Sky',
       artistGenre: 'Instrumental',
+      artistBio: lorem,
     },
     date: {
       day: '16',
@@ -48,6 +55,7 @@ const events = [
     message: {
       artistName: 'Person',
       artistGenre: 'Rock',
+      artistBio: lorem,
     },
     date: {
       day: '14',
@@ -62,6 +70,7 @@ const events = [
     message: {
       artistName: 'Person',
       artistGenre: 'Rock',
+      artistBio: lorem,
     },
     date: {
       day: '14',
@@ -76,6 +85,7 @@ const events = [
     message: {
       artistName: 'Person',
       artistGenre: 'Rock',
+      artistBio: lorem,
     },
     date: {
       day: '14',
@@ -90,6 +100,7 @@ const events = [
     message: {
       artistName: 'Person',
       artistGenre: 'Rock',
+      artistBio: lorem,
     },
     date: {
       day: '14',
@@ -104,6 +115,7 @@ const events = [
     message: {
       artistName: 'Person',
       artistGenre: 'Rock',
+      artistBio: lorem,
     },
     date: {
       day: '14',
@@ -118,6 +130,7 @@ const events = [
     message: {
       artistName: 'Person',
       artistGenre: 'Rock',
+      artistBio: lorem,
     },
     date: {
       day: '14',
@@ -132,6 +145,7 @@ const events = [
     message: {
       artistName: 'Person',
       artistGenre: 'Rock',
+      artistBio: lorem,
     },
     date: {
       day: '14',
