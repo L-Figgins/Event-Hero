@@ -6,6 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
@@ -21,12 +22,18 @@ import Grid from 'components/MuiGrid';
 import EventList from 'components/EventList/Loadable';
 import Hero from 'components/Hero';
 import Welcome from 'components/Welcome';
+import Logo from 'components/Logo';
 
 import makeSelectMainPage, { makeEventsSelector } from './selectors';
 import { loadEvents } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 
+const Box = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+`;
 /* eslint-disable react/prefer-stateless-function */
 export class MainPage extends React.Component {
   constructor(props) {
@@ -61,15 +68,24 @@ export class MainPage extends React.Component {
     // }
 
     return (
-      <Grid container spacing={8}>
+      <Grid container spacing={0}>
         <Helmet>
           <title>MainPage</title>
           <meta name="description" content="Description of MainPage" />
         </Helmet>
         {/* <FormattedMessage {...messages.header} /> */}
         <Hero>
-          <Welcome />
+          <Grid item xs={2} lg={1}>
+            <Box>
+              <Logo height="5rem" width="5rem" />
+            </Box>
+          </Grid>
+
+          <Grid item xs={10} lg={11}>
+            <div>text</div>
+          </Grid>
         </Hero>
+        <Welcome />
         {content}
       </Grid>
     );

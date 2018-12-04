@@ -11,6 +11,7 @@ import WelcomeLocation from './WelcomeLocation';
 import Grid from '../MuiGrid';
 import Spacer from '../Spacer';
 import Vr from './vr';
+import Wrapper from './Wrapper';
 
 const VenueBioWrapper = styled.div`
   margin-left: 5%;
@@ -23,37 +24,37 @@ const Temp = styled.div`
 
 function Welcome() {
   return (
-    // <Wrapper>
-    <Grid item xs={12}>
-      <WelcomeTitle>
-        <Spacer xs={1} />
-        <Grid item xs={10}>
-          Welcome
-          {/* <FormattedMessage {...messages.title} /> */}
-        </Grid>
-        <Spacer xs={1} />
-      </WelcomeTitle>
-      <WelcomeLocation>
-        <Spacer xs={1} />
-        <Grid item xs={1}>
-          <Vr />
-        </Grid>
-        <Grid item xs={5}>
-          <Temp>
-            <VenueBioWrapper>
-              <H1>The Honey Hive</H1>
-              <P>San Francisco, CA</P>
-              <WelcomeDescription>
-                <FormattedMessage {...messages.description} />
-              </WelcomeDescription>
-            </VenueBioWrapper>
-          </Temp>
-        </Grid>
-        <Grid item xs={4} />
-        <Grid item xs={1} />
-      </WelcomeLocation>
-    </Grid>
-    // </Wrapper>
+    <Wrapper>
+      <Grid item xs={12}>
+        <WelcomeTitle>
+          <Spacer xs={1} />
+          <Grid item xs={10}>
+            <div>Welcome</div>
+            {/* <FormattedMessage {...messages.title} /> */}
+          </Grid>
+          <Spacer xs={1} />
+        </WelcomeTitle>
+        <WelcomeLocation>
+          <Spacer xs={1} />
+          <Grid item xs={1}>
+            <Vr />
+          </Grid>
+          <Grid item xs={5}>
+            <Temp>
+              <VenueBioWrapper>
+                <H1>The Honey Hive</H1>
+                <P>San Francisco, CA</P>
+                <WelcomeDescription>
+                  <FormattedMessage {...messages.description} />
+                </WelcomeDescription>
+              </VenueBioWrapper>
+            </Temp>
+          </Grid>
+          <Grid item xs={4} />
+          <Grid item xs={1} />
+        </WelcomeLocation>
+      </Grid>
+    </Wrapper>
   );
 }
 

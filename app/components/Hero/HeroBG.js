@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import BG from '../../images/BG/HH_BG.jpg';
 
 const HeroBG = styled.div`
-  width: 100%;
   height: 75vh;
+  display: flex;
   background-image: url(${BG});
   background-position: center center;
   background-repeat: no-repeat;

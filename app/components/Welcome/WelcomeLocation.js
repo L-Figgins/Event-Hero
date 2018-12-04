@@ -5,7 +5,7 @@ const WelcomeLocation = styled.div`
   display: flex;
   color: #928f8a;
   padding-top: 3.5%;
-  padding-left: 2%;
+  /* padding-left: 2%; */
   h1 {
     color: #ffe7ae;
   }
