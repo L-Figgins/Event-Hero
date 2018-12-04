@@ -48,23 +48,30 @@ import Logo from '../../components/Logo';
 
 const Background = styled.div`
   height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-image: url(${props => props.img});
   background-size: cover;
   background-position: center center;
+
+  @media (max-width: 650px) {
+    /* height: 100%; */
+    min-height: 105vh;
+  }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  top: 45%;
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  top: 50%;
+  /* margin-top: 25%; */
 
   @media (max-width: 500px) {
-    top: 25%;
+    top: 5%;
   }
 `;
 
@@ -103,25 +110,12 @@ export class EventShowcase extends React.Component {
       content = (
         <ContentWrapper>
           <Tag>Artist Profile</Tag>
-          <ArtistName>{event.message.cardArtist}</ArtistName>
+          <ArtistName>{event.message.artistName}</ArtistName>
           <SubTitle>
-            <ArtistGenre>{event.message.cardGenre}</ArtistGenre>
+            <ArtistGenre>{event.message.artistGenre}</ArtistGenre>
             <EventDate>{date}</EventDate>
           </SubTitle>
-          <ArtistBio>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-            enim lobortis scelerisque fermentum dui faucibus in ornare. Odio ut
-            enim blandit volutpat maecenas volutpat. Habitant morbi tristique
-            senectus et netus. Donec enim diam vulputate ut pharetra sit.
-            Scelerisque eleifend donec pretium vulputate. Odio aenean sed
-            adipiscing diam donec adipiscing. Libero volutpat sed cras ornare
-            arcu dui. Dui vivamus arcu felis bibendum ut tristique et egestas
-            quis. Luctus accumsan tortor posuere ac ut consequat semper viverra
-            nam. Ac odio tempor orci dapibus ultrices. Scelerisque mauris
-            pellentesque pulvinar pellentesque habitant morbi tristique. Nibh
-            cras pulvinar mattis nunc. Vel orci porta non pulvinar neque.
-          </ArtistBio>
+          <ArtistBio>{event.message.artistBio}</ArtistBio>
         </ContentWrapper>
       );
     } else {
