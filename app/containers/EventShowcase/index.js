@@ -15,6 +15,7 @@ import { compose } from 'redux';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+import Grid from 'components/MuiGrid';
 import makeSelectEventShowcase, {
   makeSelectEvent,
   makeSelectEventShowcaseError,
@@ -40,10 +41,10 @@ import {
 
 import Logo from '../../components/Logo';
 
-const Wrapper = styled.div`
-  height: 100%;
-  width: 100%;
-`;
+// const Wrapper = styled.div`
+//   height: 100%;
+//   width: 100%;
+// `;
 
 const Background = styled.div`
   height: 100vh;
@@ -129,17 +130,19 @@ export class EventShowcase extends React.Component {
     }
 
     return (
-      <Wrapper>
+      <Grid container spacing={0}>
         <Helmet>
           <title>EventShowcase</title>
           <meta name="description" content="Description of EventShowcase" />
         </Helmet>
         <Gradient />
         <Background img={event.imageURL}>
-          <Logo />
+          <Grid item xs={3} lg={1}>
+            <Logo height="5rem" width="5rem" />
+          </Grid>
           {content}
         </Background>
-      </Wrapper>
+      </Grid>
     );
   }
 }
