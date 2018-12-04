@@ -47,7 +47,7 @@ import Logo from '../../components/Logo';
 // `;
 
 const Background = styled.div`
-  height: 100%;
+  height: 100vh;
   min-height: 100vh;
   width: 100%;
   background-image: url(${props => props.img});
@@ -55,21 +55,23 @@ const Background = styled.div`
   background-position: center center;
 
   @media (max-width: 650px) {
-    height: 100%;
-    min-height: 100vh;
+    /* height: 100%; */
+    min-height: 105vh;
   }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
+  top: 45%;
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 25%;
+  /* margin-top: 25%; */
 
   @media (max-width: 500px) {
-    /* padding-top: 55%; */
+    top: 5%;
   }
 `;
 

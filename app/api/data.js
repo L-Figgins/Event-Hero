@@ -32,7 +32,7 @@ const events = [
       month: 'Oct',
       weekday: 'thurs',
     },
-    imageURL: '/images/artist.jpg',
+    imageURL: '/images/Rapper1-lg.jpeg',
   },
   {
     id: 3,
@@ -53,8 +53,8 @@ const events = [
     id: 4,
     title: 'Event 4',
     message: {
-      artistName: 'Person',
-      artistGenre: 'Rock',
+      artistName: 'GENERIC METAL BAND',
+      artistGenre: 'Metal / Hard Rock',
       artistBio: lorem,
     },
     date: {
@@ -62,14 +62,14 @@ const events = [
       month: 'Oct',
       weekday: 'wed',
     },
-    imageURL: '/images/artist.jpg',
+    imageURL: '/images/metal-show-lg.jpeg',
   },
   {
     id: 5,
     title: 'Event 5',
     message: {
-      artistName: 'Person',
-      artistGenre: 'Rock',
+      artistName: 'Creey DJ Guy',
+      artistGenre: 'Electronic',
       artistBio: lorem,
     },
     date: {
@@ -77,14 +77,14 @@ const events = [
       month: 'Oct',
       weekday: 'wed',
     },
-    imageURL: '/images/artist.jpg',
+    imageURL: '/images/black-background-creepy-DJ.jpg',
   },
   {
     id: 6,
     title: 'Event 6',
     message: {
-      artistName: 'Person',
-      artistGenre: 'Rock',
+      artistName: 'Hip Hop DJ',
+      artistGenre: 'Hip Hop/DJ',
       artistBio: lorem,
     },
     date: {
@@ -92,7 +92,7 @@ const events = [
       month: 'Oct',
       weekday: 'wed',
     },
-    imageURL: '/images/artist.jpg',
+    imageURL: '/images/dj1-lg.jpeg',
   },
   {
     id: 7,
@@ -113,8 +113,8 @@ const events = [
     id: 8,
     title: 'Event 8',
     message: {
-      artistName: 'Person',
-      artistGenre: 'Rock',
+      artistName: 'Rapper # 2',
+      artistGenre: 'Rap',
       artistBio: lorem,
     },
     date: {
@@ -122,14 +122,14 @@ const events = [
       month: 'Oct',
       weekday: 'wed',
     },
-    imageURL: '/images/artist.jpg',
+    imageURL: '/images/rapper2-lg.jpeg',
   },
   {
     id: 9,
     title: 'Event 9',
     message: {
-      artistName: 'Person',
-      artistGenre: 'Rock',
+      artistName: 'Rapper # 3',
+      artistGenre: 'Rap',
       artistBio: lorem,
     },
     date: {
@@ -137,7 +137,7 @@ const events = [
       month: 'Oct',
       weekday: 'wed',
     },
-    imageURL: '/images/artist.jpg',
+    imageURL: '/images/rapper3-lg.jpeg',
   },
   {
     id: 10,
