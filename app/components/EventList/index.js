@@ -15,10 +15,12 @@ const EventList = ({ events, handleClick }) => {
     <Grid item xs={12}>
       <ListHeaderWrapper>
         <Spacer xs={1} />
-        <Grid item xs={11}>
+        <Grid item xs={10}>
           <H1 fontSize="5em">Upcoming Events</H1>
         </Grid>
+        <Spacer xs={1} />
       </ListHeaderWrapper>
+
       <Wrapper>{cards}</Wrapper>
     </Grid>
   );

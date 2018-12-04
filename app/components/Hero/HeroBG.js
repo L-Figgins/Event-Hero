@@ -5,6 +5,13 @@ const HeroBG = styled.div`
   height: 75vh;
   display: flex;
   background-image: url(${BG});
+  background: linear-gradient(
+      0deg,
+      #0c0c0c,
+      rgba(22, 22, 22, 1) 15%,
+      transparent
+    ),
+    url(${BG});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

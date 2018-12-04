@@ -36,20 +36,12 @@ function Welcome() {
           </Grid>
           <Spacer xs={1} />
         </WelcomeTitle>
-        <WelcomeTitle>
-          <Spacer xs={1} />
-          <Grid item xs={10}>
-            <H1>Welcome</H1>
-            {/* <FormattedMessage {...messages.title} /> */}
-          </Grid>
-          <Spacer xs={1} />
-        </WelcomeTitle>
         <WelcomeLocation>
           <Spacer xs={1} />
           <Grid item xs={1}>
             <Vr />
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={8} md={5}>
             <Temp>
               <VenueBioWrapper>
                 <H2>The Honey Hive</H2>
@@ -62,7 +54,7 @@ function Welcome() {
               </VenueBioWrapper>
             </Temp>
           </Grid>
-          <Grid item xs={4} />
+          <Grid item xs={1} md={4} />
           <Grid item xs={1} />
         </WelcomeLocation>
       </Grid>

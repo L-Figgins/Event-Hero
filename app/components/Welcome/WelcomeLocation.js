@@ -7,10 +7,14 @@ const WelcomeLocation = styled.div`
   padding-bottom: 2rem;
 
   h2 {
+    font-size: 1.25rem;
     color: #ffe7ae;
   }
+  h3 {
+    font-size: 0.85rem;
+  }
   p {
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: #fff;
   }
 `;
