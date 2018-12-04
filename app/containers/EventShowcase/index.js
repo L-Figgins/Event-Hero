@@ -52,6 +52,10 @@ const Background = styled.div`
   background-image: url(${props => props.img});
   background-size: cover;
   background-position: center center;
+
+  @media (max-width: 500px) {
+    min-height: 100vh;
+  }
 `;
 
 const ContentWrapper = styled.div`
