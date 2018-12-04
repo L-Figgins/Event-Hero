@@ -27,7 +27,7 @@ import saga from './saga';
 import { loadEventById } from './actions';
 
 // import container specific styles
-import Gradient from './gradient';
+// import Gradient from './gradient';
 // import artistBG from '../../images/BG/artist.jpg';
 // import Img from '../../components/Img';
 import {
@@ -47,17 +47,16 @@ import Logo from '../../components/Logo';
 // `;
 
 const Background = styled.div`
-  height: 100vh;
-  min-height: 100vh;
-  width: 100%;
-  background-image: url(${props => props.img});
+  background-image: linear-gradient(
+      0deg,
+      rgb(22, 22, 22),
+      rgb(22, 22, 22, 0.75)
+    ),
+    url(${props => props.img});
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-
-  @media (max-width: 650px) {
-    /* height: 100%; */
-    min-height: 105vh;
-  }
+  height: 100%;
 `;
 
 const ContentWrapper = styled.div`
@@ -66,8 +65,10 @@ const ContentWrapper = styled.div`
   position: relative;
   top: 45%;
   width: 80%;
+  height: 100vh;
   margin-left: 10%;
   margin-right: 10%;
+  overflow-y: hidden;
   /* margin-top: 25%; */
 
   @media (max-width: 500px) {
@@ -129,12 +130,17 @@ export class EventShowcase extends React.Component {
           <title>EventShowcase</title>
           <meta name="description" content="Description of EventShowcase" />
         </Helmet>
-        <Gradient />
+
         <Background img={event.imageURL}>
-          <Grid item xs={3} lg={1}>
+          <Grid item xs={12}>
             <Logo height="5rem" width="5rem" />
           </Grid>
-          {content}
+
+          <Grid item xs={1} />
+          <Grid item xs={10}>
+            {content}
+          </Grid>
+          <Grid item xs={1} />
         </Background>
       </Grid>
     );

@@ -15,13 +15,10 @@ import Spacer from '../Spacer';
 import Vr from './vr';
 import Wrapper from './Wrapper';
 
-const VenueBioWrapper = styled.div`
-  margin-left: 5%;
-`;
-
-const Temp = styled.div`
+const BiographyWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin: 5%;
 `;
 
 function Welcome() {
@@ -42,17 +39,15 @@ function Welcome() {
             <Vr />
           </Grid>
           <Grid item xs={8} md={5}>
-            <Temp>
-              <VenueBioWrapper>
-                <H2>The Honey Hive</H2>
-                <H3>San Francisco, CA</H3>
-                <WelcomeDescription>
-                  <P>
-                    <FormattedMessage {...messages.description} />
-                  </P>
-                </WelcomeDescription>
-              </VenueBioWrapper>
-            </Temp>
+            <BiographyWrapper>
+              <H2>The Honey Hive</H2>
+              <H3>San Francisco, CA</H3>
+              <WelcomeDescription>
+                <P>
+                  <FormattedMessage {...messages.description} />
+                </P>
+              </WelcomeDescription>
+            </BiographyWrapper>
           </Grid>
           <Grid item xs={1} md={4} />
           <Grid item xs={1} />
