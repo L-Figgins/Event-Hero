@@ -36,6 +36,7 @@ const Box = styled.div`
   padding-top: 2rem;
   padding-bottom: 2rem;
 `;
+
 /* eslint-disable react/prefer-stateless-function */
 export class MainPage extends React.Component {
   constructor(props) {
