@@ -47,13 +47,15 @@ import Logo from '../../components/Logo';
 // `;
 
 const Background = styled.div`
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   width: 100%;
   background-image: url(${props => props.img});
   background-size: cover;
   background-position: center center;
 
-  @media (max-width: 500px) {
+  @media (max-width: 650px) {
+    height: 100%;
     min-height: 100vh;
   }
 `;
@@ -61,14 +63,13 @@ const Background = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  top: 50%;
+  margin-top: 25%;
 
   @media (max-width: 500px) {
-    top: 25%;
+    /* padding-top: 55%; */
   }
 `;
 
