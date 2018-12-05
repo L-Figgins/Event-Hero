@@ -72,9 +72,6 @@ export class MainPage extends React.Component {
         <EventList events={events} handleClick={this.onEventCardClick} />
       );
     }
-    // else {
-    //   content = <div>NO EVENTS FUCK ME</div>;
-    // }
 
     return (
       <Grid container spacing={0}>
@@ -125,6 +122,7 @@ export function mapDispatchToProps(dispatch) {
       const url = `/EventShowcase?id=${id}`;
       dispatch(push(url));
     },
+    redirect: url => dispatch(push(url)),
   };
 }
 
