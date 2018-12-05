@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { push } from 'connected-react-router';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
@@ -22,20 +22,21 @@ import Grid from 'components/MuiGrid';
 import EventList from 'components/EventList/Loadable';
 import Hero from 'components/Hero';
 import Welcome from 'components/Welcome';
-import Logo from 'components/Logo';
+// import Logo from 'components/Logo';
 import Footer from 'components/Footer';
+import Nav from 'components/Nav';
 
 import makeSelectMainPage, { makeEventsSelector } from './selectors';
 import { loadEvents } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 
-const Box = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-`;
+// const Box = styled.div`
+//   display: flex;
+//   justify-content: flex-start;
+//   padding-top: 2rem;
+//   padding-bottom: 2rem;
+// `;
 
 /* eslint-disable react/prefer-stateless-function */
 export class MainPage extends React.Component {
@@ -80,10 +81,11 @@ export class MainPage extends React.Component {
         <Hero>
           <Grid item xs={1} />
 
-          <Grid item xs={10}>
-            <Box>
+          <Grid container item xs={10}>
+            {/* <Box>
               <Logo height="5rem" width="5rem" />
-            </Box>
+            </Box> */}
+            <Nav />
           </Grid>
 
           <Grid item xs={1} />
