@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import Grid from 'components/MuiGrid';
 import Logo from 'components/Logo';
 import Row from 'components/Row';
+import H2 from 'components/H2';
 // import { push } from 'connected-react-router/immutable';
 
 import NavButton from './NavButton';
@@ -35,17 +36,17 @@ const Nav = props => (
     </Grid>
     <Grid item xs={2}>
       <NavButton {...props} path="/About">
-        About
+        <H2>About</H2>
       </NavButton>
     </Grid>
     <Grid item xs={2}>
       <NavButton {...props} path="/Gallery">
-        Gallery
+        <H2>Gallery</H2>
       </NavButton>
     </Grid>
     <Grid item xs={2}>
       <NavButton {...props} path="/Gallery">
-        Contact
+        <H2>Contact</H2>
       </NavButton>
     </Grid>
   </Row>
