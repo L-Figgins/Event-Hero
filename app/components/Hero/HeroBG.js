@@ -7,8 +7,8 @@ const HeroBG = styled.div`
   background-image: url(${BG});
   background: linear-gradient(
       0deg,
-      #0c0c0c,
-      rgba(22, 22, 22, 1) 15%,
+      rgb(20, 20, 20),
+      rgba(20, 20, 20, 1) 15%,
       transparent
     ),
     url(${BG});

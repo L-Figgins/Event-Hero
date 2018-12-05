@@ -16,7 +16,7 @@ const Vrline = styled.div`
   width: 2px;
   height: 50%;
   margin-top: 10px;
-  background-color: grey;
+  background-color: rgb(20, 20, 20);
   border: 1px;
 `;
 

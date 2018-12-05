@@ -30,11 +30,9 @@ import { loadEvents } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 
-const Box = styled.div`
+const Temp = styled.div`
   display: flex;
-  justify-content: flex-start;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  flex-direction: row;
 `;
 
 /* eslint-disable react/prefer-stateless-function */
@@ -78,15 +76,17 @@ export class MainPage extends React.Component {
         </Helmet>
         {/* <FormattedMessage {...messages.header} /> */}
         <Hero>
-          <Grid item xs={1} />
-
-          <Grid item xs={10}>
-            <Box>
-              <Logo height="5rem" width="5rem" />
-            </Box>
+          <Grid item container spacing={0}>
+            <Temp>
+              <Grid item xs={1} />
+              <Grid item xs={1}>
+                <Logo height="5rem" width="5rem" />
+              </Grid>
+              <Grid item xs={8} />
+              <Grid item xs={1} />
+              <Grid item xs={1} />
+            </Temp>
           </Grid>
-
-          <Grid item xs={1} />
         </Hero>
         <Welcome />
         {content}

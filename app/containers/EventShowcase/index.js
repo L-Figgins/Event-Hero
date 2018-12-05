@@ -46,6 +46,11 @@ import Logo from '../../components/Logo';
 //   width: 100%;
 // `;
 
+const Temp = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 const Background = styled.div`
   background-image: linear-gradient(
       0deg,
@@ -56,23 +61,21 @@ const Background = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100%;
+  min-height: 100vh;
 `;
 
 const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  top: 45%;
   width: 80%;
-  height: 100vh;
+  height: 100%;
+  overflow-y: hidden;
   margin-left: 10%;
   margin-right: 10%;
-  overflow-y: hidden;
+  margin-top: 30%;
+  margin-bottom: 10%;
   /* margin-top: 25%; */
 
   @media (max-width: 500px) {
-    top: 5%;
+    margin-top: 50%;
   }
 `;
 
@@ -125,24 +128,36 @@ export class EventShowcase extends React.Component {
     }
 
     return (
-      <Grid container spacing={0}>
+      <div>
         <Helmet>
           <title>EventShowcase</title>
           <meta name="description" content="Description of EventShowcase" />
         </Helmet>
 
         <Background img={event.imageURL}>
-          <Grid item xs={12}>
-            <Logo height="5rem" width="5rem" />
+          <Grid container spacing={0}>
+            <Temp>
+              <Grid item xs={1} />
+              <Grid item xs={1}>
+                <Logo height="5rem" width="5rem" />
+              </Grid>
+              <Grid item xs={8} />
+              <Grid item xs={1} />
+              <Grid item xs={1} />
+            </Temp>
           </Grid>
 
-          <Grid item xs={1} />
-          <Grid item xs={10}>
-            {content}
+          <Grid container spacing={0}>
+            <Temp>
+              <Grid item xs={1} />
+              <Grid item xs={10}>
+                {content}
+              </Grid>
+              <Grid item xs={1} />
+            </Temp>
           </Grid>
-          <Grid item xs={1} />
         </Background>
-      </Grid>
+      </div>
     );
   }
 }

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ArtistName = styled.div`
   font-size: 2.5em;
-  color: white;
+  color: #ffe7ae;
 `;
 
 export const Tag = styled.div`
@@ -15,7 +15,8 @@ export const ArtistGenre = styled.div`
   padding-right: 1em;
 `;
 export const ArtistBio = styled.p`
-  font-size: 0.75em;
+  font-size: 0.9rem;
+  line-height: 1.75rem;
   color: white;
   width: 80;
 `;
