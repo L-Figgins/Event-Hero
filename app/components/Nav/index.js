@@ -30,9 +30,7 @@ const Nav = props => (
         <Logo height="5rem" width="5rem" />
       </Box>
     </Grid>
-    <Grid item xs={4}>
-      col 4
-    </Grid>
+    <Grid item xs={4} />
     <Grid item xs={2}>
       <NavButton {...props} path="/About">
         About
