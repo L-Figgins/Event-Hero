@@ -36,7 +36,6 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: grey;
   margin: auto;
   border: 1px solid purple;
 `;

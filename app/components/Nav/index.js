@@ -23,7 +23,7 @@ const Box = styled.div`
 `;
 
 const Bar = styled(Row)`
-  background-color: black;
+  /* background-color: black; */
 `;
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
@@ -47,7 +47,7 @@ const Nav = props => (
       </NavButton>
     </Grid>
     <Grid item xs={2}>
-      <NavButton {...props} path="/Gallery">
+      <NavButton {...props} path="/Contact">
         <H2>Contact</H2>
       </NavButton>
     </Grid>
