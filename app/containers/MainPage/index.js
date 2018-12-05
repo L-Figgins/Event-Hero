@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { push } from 'connected-react-router';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
@@ -22,18 +22,26 @@ import Grid from 'components/MuiGrid';
 import EventList from 'components/EventList/Loadable';
 import Hero from 'components/Hero';
 import Welcome from 'components/Welcome';
-import Logo from 'components/Logo';
+// import Logo from 'components/Logo';
 import Footer from 'components/Footer';
+import Nav from 'components/Nav';
 
 import makeSelectMainPage, { makeEventsSelector } from './selectors';
 import { loadEvents } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 
-const Temp = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
+// const Box = styled.div`
+//   display: flex;
+//   justify-content: flex-start;
+//   padding-top: 2rem;
+//   padding-bottom: 2rem;
+// `;
+
+// const Temp = styled.div`
+//   display: flex;
+//   flex-direction: row;
+// `;
 
 /* eslint-disable react/prefer-stateless-function */
 export class MainPage extends React.Component {
@@ -64,9 +72,6 @@ export class MainPage extends React.Component {
         <EventList events={events} handleClick={this.onEventCardClick} />
       );
     }
-    // else {
-    //   content = <div>NO EVENTS FUCK ME</div>;
-    // }
 
     return (
       <Grid container spacing={0}>
@@ -76,16 +81,13 @@ export class MainPage extends React.Component {
         </Helmet>
         {/* <FormattedMessage {...messages.header} /> */}
         <Hero>
-          <Grid item container spacing={0}>
-            <Temp>
-              <Grid item xs={1} />
-              <Grid item xs={1}>
-                <Logo height="5rem" width="5rem" />
-              </Grid>
-              <Grid item xs={8} />
-              <Grid item xs={1} />
-              <Grid item xs={1} />
-            </Temp>
+          <Grid item xs={1} />
+
+          <Grid container item xs={10}>
+            {/* <Box>
+              <Logo height="5rem" width="5rem" />
+            </Box> */}
+            <Nav />
           </Grid>
         </Hero>
         <Welcome />
@@ -120,6 +122,7 @@ export function mapDispatchToProps(dispatch) {
       const url = `/EventShowcase?id=${id}`;
       dispatch(push(url));
     },
+    redirect: url => dispatch(push(url)),
   };
 }
 

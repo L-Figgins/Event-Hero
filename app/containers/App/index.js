@@ -22,6 +22,21 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route path="/EventShowcase" component={EventShowcase} />
+        <Route
+          exact
+          path="/About"
+          render={() => <div>About Page Goes Here</div>}
+        />
+        <Route
+          exact
+          path="/Gallery"
+          render={() => <div>Gallery Page Goes Here</div>}
+        />
+        <Route
+          exact
+          path="/Contact"
+          render={() => <div>Contact Page Goes Here</div>}
+        />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
