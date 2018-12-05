@@ -38,6 +38,11 @@ import saga from './saga';
 //   padding-bottom: 2rem;
 // `;
 
+// const Temp = styled.div`
+//   display: flex;
+//   flex-direction: row;
+// `;
+
 /* eslint-disable react/prefer-stateless-function */
 export class MainPage extends React.Component {
   constructor(props) {
@@ -87,8 +92,6 @@ export class MainPage extends React.Component {
             </Box> */}
             <Nav />
           </Grid>
-
-          <Grid item xs={1} />
         </Hero>
         <Welcome />
         {content}

@@ -19,6 +19,7 @@ const FooterWrapper = styled.div`
   background-color: rgb(22, 22, 22, 1);
   padding-top: 2rem;
   padding-bottom: 2rem;
+  color: #3a3a3a;
 `;
 
 function Footer() {
