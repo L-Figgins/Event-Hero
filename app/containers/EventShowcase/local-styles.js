@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ArtistName = styled.div`
   font-size: 2.5em;
+  font-weight: bold;
   color: #ffe7ae;
 `;
 

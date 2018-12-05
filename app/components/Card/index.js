@@ -5,7 +5,6 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
 import H2 from 'components/H2';
 import P from 'components/P';
@@ -15,11 +14,8 @@ import CardIMG from './CardIMG';
 import CardWrapper from './CardWrapper';
 import ContentWrapper from './ContentWrapper';
 
-const Overlay = styled.div``;
-
 const Card = ({ message, date, handleClick, id, imageURL }) => (
   <CardWrapper id={id} onClick={handleClick}>
-    <Overlay> </Overlay>
     <CardIMG src={imageURL} alt="Card BG Alt Text Here" />
     <Date {...date} />
     <ContentWrapper>
