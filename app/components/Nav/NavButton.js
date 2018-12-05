@@ -33,6 +33,12 @@ const Button = styled.button`
       color: yellow;
     }
   }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  margin: auto;
+  border: 1px solid purple;
 `;
 
 const NavButton = props => {

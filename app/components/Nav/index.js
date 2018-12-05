@@ -21,19 +21,21 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+const Bar = styled(Row)`
+  background-color: black;
+`;
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
 const Nav = props => (
-  <Row>
+  <Bar>
     <Grid item xs={2}>
       <Box>
         <Logo height="5rem" width="5rem" />
       </Box>
     </Grid>
-    <Grid item xs={4}>
-      col 4
-    </Grid>
+    <Grid item xs={4} />
     <Grid item xs={2}>
       <NavButton {...props} path="/About">
         <H2>About</H2>
@@ -49,7 +51,7 @@ const Nav = props => (
         <H2>Contact</H2>
       </NavButton>
     </Grid>
-  </Row>
+  </Bar>
 );
 
 Nav.propTypes = {};

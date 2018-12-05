@@ -29,7 +29,6 @@ function Welcome() {
           <Spacer xs={1} />
           <Grid item xs={10}>
             <H1>Welcome</H1>
-            {/* <FormattedMessage {...messages.title} /> */}
           </Grid>
           <Spacer xs={1} />
         </WelcomeTitle>

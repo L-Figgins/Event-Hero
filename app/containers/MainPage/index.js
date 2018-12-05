@@ -55,16 +55,12 @@ export class MainPage extends React.Component {
   }
 
   onEventCardClick(event) {
-    console.log('Clicked');
     const eventId = event.currentTarget.id;
-    console.log(`Attempting to Redirect to EventShowcase?id=${eventId}`);
     this.props.showcase(eventId);
   }
 
   render() {
-    const { events } = this.props;
-
-    console.log(events);
+    const { events, redirect } = this.props;
     let content;
 
     if (events.length > 0) {
@@ -79,15 +75,10 @@ export class MainPage extends React.Component {
           <title>MainPage</title>
           <meta name="description" content="Description of MainPage" />
         </Helmet>
-        {/* <FormattedMessage {...messages.header} /> */}
         <Hero>
           <Grid item xs={1} />
-
           <Grid container item xs={10}>
-            {/* <Box>
-              <Logo height="5rem" width="5rem" />
-            </Box> */}
-            <Nav />
+            <Nav redirect={redirect} />
           </Grid>
         </Hero>
         <Welcome />
@@ -99,10 +90,10 @@ export class MainPage extends React.Component {
 }
 
 MainPage.propTypes = {
-  // mainpage: PropTypes.object,
   getEvents: PropTypes.func,
   events: PropTypes.any,
   showcase: PropTypes.func,
+  redirect: PropTypes.func,
   // error: PropTypes.func,
   // loading: PropTypes.func,
   // mainpage: PropTypes.func,
