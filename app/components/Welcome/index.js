@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import H2 from 'components/H2';
 import H3 from 'components/H3';
-import P from 'components/P';
+// import P from 'components/P';
 import H1 from '../H1';
 import messages from './messages';
 import WelcomeTitle from './WelcomeTitle';
@@ -43,9 +43,7 @@ function Welcome() {
               <H2>The Honey Hive</H2>
               <H3>San Francisco, CA</H3>
               <WelcomeDescription>
-                <P>
-                  <FormattedMessage {...messages.description} />
-                </P>
+                <FormattedMessage {...messages.description} />
               </WelcomeDescription>
             </BiographyWrapper>
           </Grid>
