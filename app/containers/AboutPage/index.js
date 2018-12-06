@@ -13,33 +13,22 @@ import styled from 'styled-components';
 
 import Nav from 'components/Nav';
 import Hero from 'components/Hero';
+import Footer from 'components/Footer';
 import Grid from 'components/MuiGrid';
 import Row from 'components/Row';
 import H1 from 'components/H1';
 import P from 'components/P';
-import Img from 'components/Img';
+import AboutImg from './AboutImg';
+import AboutDescription from './AboutDescription';
+import AboutTitle from './AboutTitle';
 
 import about from '../../images/BG/about.jpg';
-import booking from '../../images/BG/artist.jpg';
+import booking from '../../images/BG/mic.jpg';
 
 const ContentWrapper = styled.div`
-  background-color: darkgray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 5rem;
-  width: 100%;
-`;
-
-const BookingWrapper = styled.div`
-  background-color: purple;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 5rem;
-  width: 100%;
+  background-color: rgb(20, 20, 20);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 `;
 
 const About = props => {
@@ -58,34 +47,59 @@ const About = props => {
           </Hero>
         </Row>
 
-        <Row>
-          <BookingWrapper>
-            <H1>Booking</H1>
-            <Img src={booking} />
-            <P>
-              Nam sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
-              facilisis id. Integer ac dictum libero. Duis ut ipsum tortor.
-            </P>
-          </BookingWrapper>
-        </Row>
+        <ContentWrapper>
+          <Row>
+            <Grid item xs={1} />
+            <Grid item xs={10}>
+              <AboutTitle>
+                <H1>About</H1>
+              </AboutTitle>
+              <AboutDescription>
+                <P>
+                  Nam sit amet est nibh. Donec suscipit nunc quam, sed gravida
+                  metus facilisis id. Integer ac dictum libero. Duis ut ipsum
+                  tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
+                  gravida metus facilisis id. Integer ac dictum libero. Duis ut
+                  ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam,
+                  sed gravida metus facilisis id. Integer ac dictum libero. Duis
+                  ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
+                  quam, sed gravida metus facilisis id. Integer ac dictum
+                  libero. Duis ut ipsum tortor. Nam sit amet est nibh. Donec
+                  suscipit nunc quam, sed gravida metus facilisis id. Integer ac
+                  dictum libero. Duis ut ipsum tortor. Nam sit amet est nibh.
+                  Donec suscipit nunc quam, sed gravida metus facilisis id. ut
+                  ipsum tortor.
+                </P>
+              </AboutDescription>
+            </Grid>
+            <Grid item xs={1} />
+          </Row>
+        </ContentWrapper>
+        <ContentWrapper>
+          <Row>
+            <Grid item xs={1} />
+            <Grid item xs={10}>
+              <AboutTitle>
+                <H1>Booking</H1>
+              </AboutTitle>
 
-        <Row>
-          <ContentWrapper>
-            <Grid item xs={12} />
-            <H1>Some Text Title</H1>
-            <P>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              laoreet neque id molestie vehicula. Sed aliquam vestibulum
-              euismod. Suspendisse leo nibh, maximus et dui a, lobortis interdum
-              ante. Nulla fermentum est ut leo tempor consequat. Integer rutrum
-              nisi lacus, quis sodales enim semper sed. Nam sit amet est nibh.
-              Donec suscipit nunc quam, sed gravida metus facilisis id. Integer
-              ac dictum libero. Duis ut ipsum tortor.
-            </P>
-            <Grid />
-          </ContentWrapper>
-        </Row>
+              <AboutDescription>
+                <AboutImg src={booking} />
+                <P>
+                  Nam sit amet est nibh. Donec suscipit nunc quam, sed gravida
+                  metus facilisis id. Integer ac dictum libero. Duis ut ipsum
+                  tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
+                  gravida metus facilisis id. Integer ac dictum libero. Duis ut
+                  ipsum tortor.
+                </P>
+              </AboutDescription>
+            </Grid>
+            <Grid item xs={1} />
+          </Row>
+        </ContentWrapper>
       </Grid>
+
+      <Footer />
     </div>
   );
 };

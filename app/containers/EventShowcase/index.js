@@ -13,6 +13,8 @@ import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
+import { push } from 'connected-react-router';
+
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import Grid from 'components/MuiGrid';
@@ -26,6 +28,8 @@ import reducer from './reducer';
 import saga from './saga';
 import { loadEventById } from './actions';
 
+import Nav from '../../components/Nav';
+
 // import container specific styles
 // import Gradient from './gradient';
 // import artistBG from '../../images/BG/artist.jpg';
@@ -38,8 +42,6 @@ import {
   EventDate,
   SubTitle,
 } from './local-styles';
-
-import Logo from '../../components/Logo';
 
 // const Wrapper = styled.div`
 //   height: 100%;
@@ -101,6 +103,7 @@ export class EventShowcase extends React.Component {
 
   render() {
     const { event } = this.props;
+    const { redirect } = this.props;
     let content;
     const error = <div>Oh no Error</div>;
     if (this.props.error) {
@@ -138,11 +141,9 @@ export class EventShowcase extends React.Component {
           <Grid container spacing={0}>
             <Temp>
               <Grid item xs={1} />
-              <Grid item xs={1}>
-                <Logo height="5rem" width="5rem" />
+              <Grid item xs={10}>
+                <Nav redirect={redirect} />
               </Grid>
-              <Grid item xs={8} />
-              <Grid item xs={1} />
               <Grid item xs={1} />
             </Temp>
           </Grid>
@@ -168,6 +169,7 @@ EventShowcase.propTypes = {
   error: PropTypes.any,
   location: PropTypes.any,
   dispatch: PropTypes.any,
+  redirect: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -181,6 +183,7 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     loadEvent: id => dispatch(loadEventById(id)),
+    redirect: url => dispatch(push(url)),
     dispatch,
   };
 }

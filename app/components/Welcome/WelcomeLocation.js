@@ -13,10 +13,6 @@ const WelcomeLocation = styled.div`
   h3 {
     font-size: 0.85rem;
   }
-  p {
-    font-size: 0.85rem;
-    color: #fff;
-  }
 `;
 
 export default WelcomeLocation;
