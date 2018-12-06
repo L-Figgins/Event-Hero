@@ -4,7 +4,7 @@ import BG from '../../images/BG/HH_BG.jpg';
 const HeroBG = styled.div`
   height: 75vh;
   display: flex;
-  background-image: url(${BG});
+  /* background-image: url(${props => props.img}); */
   background: linear-gradient(
       0deg,
       rgb(20, 20, 20),

@@ -35,22 +35,23 @@ const Nav = props => (
         <Logo height="5rem" width="5rem" />
       </Box>
     </Grid>
-    <Grid item xs={4} />
-    <Grid item xs={2}>
+    <Grid item xs={6} />
+    <Grid item xs={1}>
       <NavButton {...props} path="/About">
         <H2>About</H2>
       </NavButton>
     </Grid>
-    <Grid item xs={2}>
+    <Grid item xs={1}>
       <NavButton {...props} path="/Gallery">
         <H2>Gallery</H2>
       </NavButton>
     </Grid>
-    <Grid item xs={2}>
+    <Grid item xs={1}>
       <NavButton {...props} path="/Contact">
         <H2>Contact</H2>
       </NavButton>
     </Grid>
+    <Grid item xs={1} />
   </Bar>
 );
 
