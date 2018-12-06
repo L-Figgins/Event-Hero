@@ -11,27 +11,41 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import { push } from 'connected-react-router';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+
+import Nav from 'components/Nav';
+import Hero from 'components/Hero';
+import Grid from 'components/MuiGrid';
+import Row from 'components/Row';
+
 import makeSelectGallery from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
 
-import Nav from '../../components/Nav';
-import Hero from '../../components/Hero';
-
 /* eslint-disable react/prefer-stateless-function */
 export class Gallery extends React.PureComponent {
   render() {
+    const redirect = { redirect };
     return (
       <div>
         <Helmet>
           <title>Gallery</title>
           <meta name="description" content="Description of Gallery" />
         </Helmet>
-        <Nav />
+        <Grid container spacing={0}>
+          <Row>
+            <Grid item xs={1} />
+            <Grid item xs={10}>
+              <Nav redirect={redirect} />
+            </Grid>
+            <Grid item xs={1} />
+          </Row>
+        </Grid>
+
         <Hero />
         <FormattedMessage {...messages.header} />
       </div>
@@ -49,6 +63,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
+    redirect: url => dispatch(push(url)),
     dispatch,
   };
 }
