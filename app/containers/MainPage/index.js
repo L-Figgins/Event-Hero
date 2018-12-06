@@ -31,6 +31,8 @@ import { loadEvents } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 
+import HH from '../../images/BG/HH_BG.jpg';
+
 // const Box = styled.div`
 //   display: flex;
 //   justify-content: flex-start;
@@ -75,11 +77,12 @@ export class MainPage extends React.Component {
           <title>MainPage</title>
           <meta name="description" content="Description of MainPage" />
         </Helmet>
-        <Hero>
+        <Hero img={HH}>
           <Grid item xs={1} />
           <Grid container item xs={10}>
             <Nav redirect={redirect} />
           </Grid>
+          <Grid item xs={1} />
         </Hero>
         <Welcome />
         {content}

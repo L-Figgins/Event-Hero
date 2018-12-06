@@ -10,6 +10,9 @@ import Grid from 'components/MuiGrid';
 import Logo from 'components/Logo';
 import Row from 'components/Row';
 import H2 from 'components/H2';
+import Img from 'components/Img';
+
+import hamburger from '../../images/Nav/hamburger.png';
 // import { push } from 'connected-react-router/immutable';
 
 import NavButton from './NavButton';
@@ -23,6 +26,7 @@ const Box = styled.div`
 `;
 
 const Bar = styled(Row)`
+  max-height: 5rem;
   /* background-color: black; */
 `;
 // import PropTypes from 'prop-types';
@@ -32,7 +36,9 @@ const Nav = props => (
   <Bar>
     <Grid item xs={2}>
       <Box>
-        <Logo height="5rem" width="5rem" />
+        <NavButton {...props} path="/">
+          <Logo height="5rem" width="5rem" />
+        </NavButton>
       </Box>
     </Grid>
     <Grid item xs={6} />
@@ -51,7 +57,9 @@ const Nav = props => (
         <H2>Contact</H2>
       </NavButton>
     </Grid>
-    <Grid item xs={1} />
+    <Grid item xs={1}>
+      <Img src={hamburger} />
+    </Grid>
   </Bar>
 );
 

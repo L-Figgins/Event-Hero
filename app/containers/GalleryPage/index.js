@@ -26,6 +26,8 @@ import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
 
+import events from '../../images/BG/HH_BG.jpg';
+
 /* eslint-disable react/prefer-stateless-function */
 export class Gallery extends React.PureComponent {
   render() {
@@ -46,7 +48,7 @@ export class Gallery extends React.PureComponent {
           </Row>
         </Grid>
 
-        <Hero />
+        <Hero img={events} />
         <FormattedMessage {...messages.header} />
       </div>
     );

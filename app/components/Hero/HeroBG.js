@@ -1,17 +1,15 @@
 import styled from 'styled-components';
-import BG from '../../images/BG/HH_BG.jpg';
 
 const HeroBG = styled.div`
   height: 75vh;
   display: flex;
-  /* background-image: url(${props => props.img}); */
   background: linear-gradient(
       0deg,
       rgb(20, 20, 20),
       rgba(20, 20, 20, 1) 15%,
       transparent
     ),
-    url(${BG});
+    url(${props => props.img});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

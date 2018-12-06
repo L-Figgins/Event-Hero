@@ -8,7 +8,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
-import { FormattedMessage } from 'react-intl';
 import { compose } from 'redux';
 
 import Nav from 'components/Nav';
@@ -16,7 +15,7 @@ import Hero from 'components/Hero';
 import Grid from 'components/MuiGrid';
 import Row from 'components/Row';
 
-import messages from './messages';
+import contact from '../../images/BG/map.jpg';
 
 const Contact = props => {
   const { redirect } = props;
@@ -25,21 +24,21 @@ const Contact = props => {
     <div>
       <Grid container spacing={0}>
         <Row>
-          <Grid item xs={1} />
-          <Grid item xs={10}>
-            <Nav redirect={redirect} />
-          </Grid>
-          <Grid item xs={1} />
+          <Hero img={contact}>
+            <Grid item xs={1} />
+            <Grid item xs={10}>
+              <Nav redirect={redirect} />
+            </Grid>
+            <Grid item xs={1} />
+          </Hero>
         </Row>
       </Grid>
-      <FormattedMessage {...messages.header} />
-      <Hero />
     </div>
   );
 };
 
 Contact.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  redirect: PropTypes.func.isRequired,
 };
 
 function mapDispatchToProps(dispatch) {
