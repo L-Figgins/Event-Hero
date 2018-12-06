@@ -10,19 +10,29 @@ const VrWrapper = styled.div`
   align-items: center;
   padding-left: 5%;
   height: 100%;
+
+  img {
+    max-height: 6rem;
+    max-width: 6rem;
+  }
+  @media screen and (max-width: 30rem) {
+    img {
+      display: none;
+    }
+  }
 `;
 
 const Vrline = styled.div`
   width: 2px;
   height: 50%;
   margin-top: 10px;
-  background-color: white;
+  background-color: #7f7e77;
   border: 1px;
 `;
 
 const Vr = () => (
   <VrWrapper>
-    <Logo height="50px" width="50px" marginLeft="px" />
+    <Logo height="80%" width="80%" />
     <Vrline />
   </VrWrapper>
 );

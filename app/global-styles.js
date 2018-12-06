@@ -32,6 +32,19 @@ const GlobalStyle = createGlobalStyle`
     font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
   }
+
+  body::-webkit-scrollbar {
+    width: .25em;
+  }
+  
+  body::-webkit-scrollbar-track {
+      background-color: #161616;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #7f7e77;
+    outline: 1px solid slategrey;
+  }
 `;
 
 export default GlobalStyle;
