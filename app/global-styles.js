@@ -10,15 +10,11 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    background: purple;
+    background: #000;
+    font-family: 'Muli', Helvetica, Arial, sans-serif;
   }
-
-  body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
-
-  body.fontLoaded {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  body.jsFontLoaded{
+    font-family: 'Muli', Helvetica, Arial, sans-serif;
   }
 
   #app {
@@ -29,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
 
   p,
   label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
   }
 

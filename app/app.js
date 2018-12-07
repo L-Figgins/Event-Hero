@@ -38,6 +38,18 @@ const initialState = {};
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
 
+const FontFaceObserver = require('fontfaceobserver');
+const font = new FontFaceObserver('Muli');
+
+font
+  .load()
+  .then(() => {
+    console.log('Muli has loaded.');
+  })
+  .catch(() => {
+    console.log('Muli failed to load.');
+  });
+
 const render = messages => {
   ReactDOM.render(
     <Provider store={store}>

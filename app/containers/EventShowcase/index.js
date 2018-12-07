@@ -29,6 +29,7 @@ import saga from './saga';
 import { loadEventById } from './actions';
 
 import Nav from '../../components/Nav';
+import Footer from '../../components/Footer';
 
 // import container specific styles
 // import Gradient from './gradient';
@@ -158,6 +159,7 @@ export class EventShowcase extends React.Component {
             </Temp>
           </Grid>
         </Background>
+        <Footer />
       </div>
     );
   }

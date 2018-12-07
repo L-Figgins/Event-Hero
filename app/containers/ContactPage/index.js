@@ -21,17 +21,67 @@ import P from 'components/P';
 import Footer from 'components/Footer';
 import ContactTitle from './ContactTitle';
 import ContactDescription from './ContactDescription';
-// import ContactImg from './ContactImg';
+import ContactImg from './ContactImg';
 
 import contact from '../../images/BG/map.jpg';
-// import fb from '../../images/Social/facebook.png';
-// import twtr from '../../images/Social/twitter.png';
-// import web from '../../images/Social/website.png';
+import fb from '../../images/Social/fb.png';
+import twtr from '../../images/Social/twtr.png';
+import web from '../../images/Social/web.png';
 
 const ContentWrapper = styled.div`
   background-color: rgb(20, 20, 20);
   padding-top: 2rem;
   padding-bottom: 2rem;
+`;
+const ContactWrapper = styled.div`
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+const SocialBadge = styled.div`
+  color: #928f8a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.18);
+  transition: 0.5s ease;
+
+  &:hover {
+    box-shadow: 0px 15px 0px 0px rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease;
+    border: 1px solid rgb(0, 0, 0, 0.5);
+  }
+  img {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 0.75rem;
+  }
+  @media screen and (max-width: 80rem) {
+    h1 {
+      font-size: 0.65rem;
+    }
+  }
+  @media screen and (max-width: 60rem) {
+    h1 {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 40rem) {
+    h1 {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 20rem) {
+    h1 {
+      display: none;
+    }
+  }
 `;
 
 const Contact = props => {
@@ -85,9 +135,28 @@ const Contact = props => {
               <ContactTitle>
                 <H3>Find Us Online</H3>
               </ContactTitle>
-              {/* <ContactImg src={fb} />
-                <ContactImg src={twtr} />
-                <ContactImg src={web} /> */}
+              <Grid container spacing={0}>
+                <ContactWrapper>
+                  <Grid item xs={4}>
+                    <SocialBadge>
+                      <ContactImg src={fb} />
+                      <H1>Facebook.com/HoneyHiveGallery</H1>
+                    </SocialBadge>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <SocialBadge>
+                      <ContactImg src={twtr} />
+                      <H1>Twitter/@HoneyHive</H1>
+                    </SocialBadge>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <SocialBadge>
+                      <ContactImg src={web} />
+                      <H1>Website/www.HoneyHiveGallery.com</H1>
+                    </SocialBadge>
+                  </Grid>
+                </ContactWrapper>
+              </Grid>
             </Grid>
             <Grid item xs={1} />
           </Row>

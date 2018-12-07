@@ -5,6 +5,14 @@ const Button = styled.button`
   height: 100%;
   width: 100%;
   color: #7f7e77;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+  &:hover {
+    color: #fff;
+  }
 
   h2 {
     font-size: 1.25rem;
@@ -15,31 +23,26 @@ const Button = styled.button`
     h2 {
       font-size: 1.15rem;
       color: red;
+      display: block;
     }
   }
   @media screen and (max-width: 60rem) {
     h2 {
       font-size: 1.05rem;
       color: blue;
+      display: block;
     }
   }
   @media screen and (max-width: 40rem) {
     h2 {
-      font-size: 0.95rem;
-      color: green;
+      display: none;
     }
   }
   @media screen and (max-width: 20rem) {
     h2 {
-      font-size: 1.15rem;
-      color: yellow;
+      display: none;
     }
   }
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  border: 1px solid purple;
 `;
 
 const NavButton = props => {

@@ -10,9 +10,9 @@ import Grid from 'components/MuiGrid';
 import Logo from 'components/Logo';
 import Row from 'components/Row';
 import H2 from 'components/H2';
-import Img from 'components/Img';
+// import NavIMG from './NavImage';
 
-import hamburger from '../../images/Nav/hamburger.png';
+// import hamburger from '../../images/Nav/hamburger.png';
 // import { push } from 'connected-react-router/immutable';
 
 import NavButton from './NavButton';
@@ -25,40 +25,65 @@ const Box = styled.div`
   align-items: center;
 `;
 
+const StyledLink = styled.div`
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  line-height: 1;
+  font-size: 1.25rem;
+  color: #fff;
+  display: inline-block;
+  font-family: sans-serif;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+  &:hover {
+    color: #b2b0a9;
+    transition-timing-function: ease;
+    transition-duration: 0.5s;
+  }
+  &:active {
+    color: #b2b0a9;
+  }
+`;
+
 const Bar = styled(Row)`
   max-height: 5rem;
   /* background-color: black; */
 `;
+
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
 const Nav = props => (
   <Bar>
-    <Grid item xs={2}>
+    <Grid item xs={1}>
       <Box>
         <NavButton {...props} path="/">
           <Logo height="5rem" width="5rem" />
         </NavButton>
       </Box>
     </Grid>
-    <Grid item xs={6} />
+    <Grid item xs={8} />
     <Grid item xs={1}>
       <NavButton {...props} path="/About">
-        <H2>About</H2>
+        <StyledLink>
+          <H2>About</H2>
+        </StyledLink>
       </NavButton>
     </Grid>
     <Grid item xs={1}>
       <NavButton {...props} path="/Gallery">
-        <H2>Gallery</H2>
+        <StyledLink>
+          <H2>Gallery</H2>
+        </StyledLink>
       </NavButton>
     </Grid>
     <Grid item xs={1}>
       <NavButton {...props} path="/Contact">
-        <H2>Contact</H2>
+        <StyledLink>
+          <H2>Contact</H2>
+        </StyledLink>
       </NavButton>
-    </Grid>
-    <Grid item xs={1}>
-      <Img src={hamburger} />
     </Grid>
   </Bar>
 );
