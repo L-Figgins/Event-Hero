@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { FormattedMessage } from 'react-intl';
-import H1 from 'components/H1';
-import P from 'components/P';
+import H2 from 'components/H2';
+import H3 from 'components/H3';
+// import P from 'components/P';
+import H1 from '../H1';
 import messages from './messages';
 import WelcomeTitle from './WelcomeTitle';
 import WelcomeDescription from './WelcomeDescription';
@@ -13,13 +15,10 @@ import Spacer from '../Spacer';
 import Vr from './vr';
 import Wrapper from './Wrapper';
 
-const VenueBioWrapper = styled.div`
-  margin-left: 5%;
-`;
-
-const Temp = styled.div`
+const BiographyWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin: 5%;
 `;
 
 function Welcome() {
@@ -29,8 +28,7 @@ function Welcome() {
         <WelcomeTitle>
           <Spacer xs={1} />
           <Grid item xs={10}>
-            <div>Welcome</div>
-            {/* <FormattedMessage {...messages.title} /> */}
+            <H1>Welcome</H1>
           </Grid>
           <Spacer xs={1} />
         </WelcomeTitle>
@@ -39,18 +37,16 @@ function Welcome() {
           <Grid item xs={1}>
             <Vr />
           </Grid>
-          <Grid item xs={5}>
-            <Temp>
-              <VenueBioWrapper>
-                <H1>The Honey Hive</H1>
-                <P>San Francisco, CA</P>
-                <WelcomeDescription>
-                  <FormattedMessage {...messages.description} />
-                </WelcomeDescription>
-              </VenueBioWrapper>
-            </Temp>
+          <Grid item xs={8} md={5}>
+            <BiographyWrapper>
+              <H2>The Honey Hive</H2>
+              <H3>San Francisco, CA</H3>
+              <WelcomeDescription>
+                <FormattedMessage {...messages.description} />
+              </WelcomeDescription>
+            </BiographyWrapper>
           </Grid>
-          <Grid item xs={4} />
+          <Grid item xs={1} md={4} />
           <Grid item xs={1} />
         </WelcomeLocation>
       </Grid>

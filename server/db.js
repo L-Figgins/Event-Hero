@@ -1,13 +1,13 @@
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
-mongoose
-  .connect('mongodb://localhost/HoneyHive')
-  .then(() => {
-    console.log('mongodb connected');
-    mongoose.Promse = global.Promise;
-  })
-  .catch(err => {
-    console.log('error connecting: ', err);
-  });
+// mongoose
+//   .connect('mongodb://localhost/HoneyHive')
+//   .then(() => {
+//     console.log('mongodb connected');
+//     mongoose.Promse = global.Promise;
+//   })
+//   .catch(err => {
+//     console.log('error connecting: ', err);
+//   });
 
-module.exports = mongoose;
+// module.exports = mongoose;

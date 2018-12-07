@@ -11,6 +11,7 @@ function* fetchEvents() {
   try {
     yield call(delay, 500);
     const events = yield Api.loadEvents();
+    yield console.log(events);
     yield put(loadEventsSuccess(events));
   } catch (error) {
     console.log(error);

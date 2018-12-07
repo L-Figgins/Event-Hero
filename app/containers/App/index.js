@@ -13,6 +13,9 @@ import { Switch, Route } from 'react-router-dom';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import MainPage from 'containers/MainPage/Loadable';
 import EventShowcase from 'containers/EventShowcase/Loadable';
+import About from 'containers/AboutPage/Loadable';
+import Gallery from 'containers/GalleryPage/Loadable';
+import Contact from 'containers/ContactPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
 
@@ -22,6 +25,9 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route path="/EventShowcase" component={EventShowcase} />
+        <Route exact path="/About" component={About} />
+        <Route exact path="/Gallery" component={Gallery} />
+        <Route exact path="/Contact" component={Contact} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <GlobalStyle />

@@ -1,16 +1,21 @@
 import styled from 'styled-components';
 
 const WelcomeLocation = styled.div`
-  font-size: 1em;
   display: flex;
-  color: #928f8a;
-  padding-top: 3.5%;
-  /* padding-left: 2%; */
-  h1 {
+  color: #fff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  h2 {
+    font-size: 1.25rem;
     color: #ffe7ae;
   }
+  h3 {
+    font-size: 0.85rem;
+  }
   p {
-    color: white;
+    font-size: 0.85rem;
+    color: #fff;
   }
 `;
 

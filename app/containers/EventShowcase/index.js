@@ -15,6 +15,7 @@ import { compose } from 'redux';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+import Grid from 'components/MuiGrid';
 import makeSelectEventShowcase, {
   makeSelectEvent,
   makeSelectEventShowcaseError,
@@ -26,7 +27,7 @@ import saga from './saga';
 import { loadEventById } from './actions';
 
 // import container specific styles
-import Gradient from './gradient';
+// import Gradient from './gradient';
 // import artistBG from '../../images/BG/artist.jpg';
 // import Img from '../../components/Img';
 import {
@@ -40,30 +41,41 @@ import {
 
 import Logo from '../../components/Logo';
 
-const Wrapper = styled.div`
-  height: 100%;
-  width: 100%;
+// const Wrapper = styled.div`
+//   height: 100%;
+//   width: 100%;
+// `;
+
+const Temp = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 const Background = styled.div`
-  height: 100vh;
-  width: 100%;
-  background-image: url(${props => props.img});
+  background-image: linear-gradient(
+      0deg,
+      rgb(22, 22, 22),
+      rgb(22, 22, 22, 0.75)
+    ),
+    url(${props => props.img});
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  min-height: 100vh;
 `;
 
 const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
   width: 80%;
+  height: 100%;
+  overflow-y: hidden;
   margin-left: 10%;
   margin-right: 10%;
-  top: 50%;
+  margin-top: 30%;
+  margin-bottom: 10%;
+  /* margin-top: 25%; */
 
   @media (max-width: 500px) {
-    top: 25%;
+    margin-top: 50%;
   }
 `;
 
@@ -107,20 +119,7 @@ export class EventShowcase extends React.Component {
             <ArtistGenre>{event.message.artistGenre}</ArtistGenre>
             <EventDate>{date}</EventDate>
           </SubTitle>
-          <ArtistBio>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-            enim lobortis scelerisque fermentum dui faucibus in ornare. Odio ut
-            enim blandit volutpat maecenas volutpat. Habitant morbi tristique
-            senectus et netus. Donec enim diam vulputate ut pharetra sit.
-            Scelerisque eleifend donec pretium vulputate. Odio aenean sed
-            adipiscing diam donec adipiscing. Libero volutpat sed cras ornare
-            arcu dui. Dui vivamus arcu felis bibendum ut tristique et egestas
-            quis. Luctus accumsan tortor posuere ac ut consequat semper viverra
-            nam. Ac odio tempor orci dapibus ultrices. Scelerisque mauris
-            pellentesque pulvinar pellentesque habitant morbi tristique. Nibh
-            cras pulvinar mattis nunc. Vel orci porta non pulvinar neque.
-          </ArtistBio>
+          <ArtistBio>{event.message.artistBio}</ArtistBio>
         </ContentWrapper>
       );
     } else {
@@ -129,17 +128,36 @@ export class EventShowcase extends React.Component {
     }
 
     return (
-      <Wrapper>
+      <div>
         <Helmet>
           <title>EventShowcase</title>
           <meta name="description" content="Description of EventShowcase" />
         </Helmet>
-        <Gradient />
+
         <Background img={event.imageURL}>
-          <Logo />
-          {content}
+          <Grid container spacing={0}>
+            <Temp>
+              <Grid item xs={1} />
+              <Grid item xs={1}>
+                <Logo height="5rem" width="5rem" />
+              </Grid>
+              <Grid item xs={8} />
+              <Grid item xs={1} />
+              <Grid item xs={1} />
+            </Temp>
+          </Grid>
+
+          <Grid container spacing={0}>
+            <Temp>
+              <Grid item xs={1} />
+              <Grid item xs={10}>
+                {content}
+              </Grid>
+              <Grid item xs={1} />
+            </Temp>
+          </Grid>
         </Background>
-      </Wrapper>
+      </div>
     );
   }
 }

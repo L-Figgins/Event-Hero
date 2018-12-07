@@ -6,12 +6,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { push } from 'connected-react-router';
+// import styled from 'styled-components';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
@@ -22,19 +22,31 @@ import Grid from 'components/MuiGrid';
 import EventList from 'components/EventList/Loadable';
 import Hero from 'components/Hero';
 import Welcome from 'components/Welcome';
-import Logo from 'components/Logo';
+// import Logo from 'components/Logo';
+import Footer from 'components/Footer';
+import Nav from 'components/Nav';
 
 import makeSelectMainPage, { makeEventsSelector } from './selectors';
 import { loadEvents } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 
-const Box = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
-`;
+import HH from '../../images/BG/HH_BG.jpg';
+
+// const Box = styled.div`
+//   display: flex;
+//   justify-content: flex-start;
+//   padding-top: 2rem;
+//   padding-bottom: 2rem;
+// `;
+
+// const Temp = styled.div`
+//   display: flex;
+//   flex-direction: row;
+// `;
+
 /* eslint-disable react/prefer-stateless-function */
+
 export class MainPage extends React.Component {
   constructor(props) {
     super(props);
@@ -46,15 +58,12 @@ export class MainPage extends React.Component {
   }
 
   onEventCardClick(event) {
-    console.log('Clicked');
     const eventId = event.currentTarget.id;
-    console.log(`Attempting to Redirect to EventShowcase?id=${eventId}`);
     this.props.showcase(eventId);
   }
 
   render() {
-    const { events } = this.props;
-
+    const { events, redirect } = this.props;
     console.log(events);
     let content;
 
@@ -63,9 +72,6 @@ export class MainPage extends React.Component {
         <EventList events={events} handleClick={this.onEventCardClick} />
       );
     }
-    // else {
-    //   content = <div>NO EVENTS FUCK ME</div>;
-    // }
 
     return (
       <Grid container spacing={0}>
@@ -73,30 +79,29 @@ export class MainPage extends React.Component {
           <title>MainPage</title>
           <meta name="description" content="Description of MainPage" />
         </Helmet>
-        {/* <FormattedMessage {...messages.header} /> */}
-        <Hero>
-          <Grid item xs={2} lg={1}>
-            <Box>
-              <Logo height="5rem" width="5rem" />
-            </Box>
+        <Hero img={HH}>
+          <Grid item xs={1} />
+          <Grid container item xs={10}>
+            <Nav redirect={redirect} />
           </Grid>
-
-          <Grid item xs={10} lg={11}>
-            <div>text</div>
-          </Grid>
+          <Grid item xs={1} />
         </Hero>
         <Welcome />
         {content}
+        <Footer />
       </Grid>
     );
   }
 }
 
+// 103083454066898
+// EAAELyoAkOZC8BAJBR4NL61ULw5Nm6SfWub7e0pcGj7BsPo7qJXmiKeF0hVYhTPHuIvNb0ywHQa4ZCNCEab6SqxSmqT63X1zxxlA2aPPumRLPNZBUKiFxjmMZCsJ8QO9jghVk1eYoW8MngSQhTOmXVCVvpZAq4FdZBdvP6u52dOkSf2f1Ce7USIRNRf9ZBoJmp33C1rxJhgaXBG6ihWZCE4LZCAYYE0cYNXqQNUUtqcsYUpgZDZD
+
 MainPage.propTypes = {
-  // mainpage: PropTypes.object,
   getEvents: PropTypes.func,
   events: PropTypes.any,
   showcase: PropTypes.func,
+  redirect: PropTypes.func,
   // error: PropTypes.func,
   // loading: PropTypes.func,
   // mainpage: PropTypes.func,
@@ -116,6 +121,7 @@ export function mapDispatchToProps(dispatch) {
       const url = `/EventShowcase?id=${id}`;
       dispatch(push(url));
     },
+    redirect: url => dispatch(push(url)),
   };
 }
 

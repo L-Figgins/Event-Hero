@@ -1,10 +1,27 @@
+const request = require('request-promise');
 const express = require('express');
+const { AUTH_TOKEN, PAGE_ID } = require('./constants');
 const Event = require('../models/Events');
-
 const router = express.Router();
 
+// router.get('/events', (req, res) => {
+//   Event.find({}).then(events => {
+//     res.json(events);
+//   });
+// });
+
 router.get('/events', (req, res) => {
-  Event.find({}).then(events => {
+  const options = {
+    method: 'GET',
+    uri: `https://graph.facebook.com/${PAGE_ID}/events`,
+    qs: {
+      access_token: AUTH_TOKEN,
+      fields: 'cover, name, id, description',
+    },
+  };
+
+  request(options).then(fbRes => {
+    const events = JSON.parse(fbRes).data;
     res.json(events);
   });
 });

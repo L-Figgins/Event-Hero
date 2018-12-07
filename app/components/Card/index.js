@@ -7,27 +7,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import H2 from 'components/H2';
-import P from 'components/P';
-import Date from 'components/Date';
+// import Date from 'components/Date'; // REDO COMPONENT TO HANDLE UNIVERSAL DATE STRING
 
-import IMG from './CardIMG';
+import CardIMG from './CardIMG';
 import CardWrapper from './CardWrapper';
 import ContentWrapper from './ContentWrapper';
 
-const Card = ({ message, date, handleClick, id, imageURL }) => (
-  <CardWrapper iD={id} onClick={handleClick}>
-    <IMG src={imageURL} alt="Card BG Alt Text Here" />
-    <Date {...date} />
+const Card = ({ id, name, cover, handleClick }) => (
+  <CardWrapper id={id} onClick={handleClick}>
+    <CardIMG src={cover.source} alt="Card BG Alt Text Here" />
+    {/* <Date {...date} /> */}
     <ContentWrapper>
-      <H2>{message.artistName}</H2>
-      <P>{message.artistGenre} </P>
+      <H2>{name}</H2>
+      {/* <P>{message.artistGenre} </P> */}
     </ContentWrapper>
   </CardWrapper>
 );
 
 Card.propTypes = {
-  message: PropTypes.object,
-  date: PropTypes.object,
+  id: PropTypes.number,
+  name: PropTypes.string,
+  cover: PropTypes.object,
+  handleClick: PropTypes.func,
 };
 
 export default Card;

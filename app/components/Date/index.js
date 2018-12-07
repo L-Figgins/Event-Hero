@@ -29,8 +29,7 @@ const DateWrapper = styled.div`
   position: absolute;
   display: inline-flex;
   top: 10%;
-  left: 5%;
-  transform: translate(5%, -10%);
+  left: 10%;
 `;
 
 function Date({ day, month, weekday }) {
