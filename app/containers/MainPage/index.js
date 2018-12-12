@@ -64,7 +64,7 @@ export class MainPage extends React.Component {
 
   render() {
     const { events, redirect } = this.props;
-    console.log(events);
+    console.log('Events Recieved by MainPage:', events);
     let content;
 
     if (events.length > 0) {

@@ -1,0 +1,207 @@
+          FaceBook Graph API note Cheat Sheet for Honey Hive V2
+
+                  THE GRAFT API CONSISTS OF
+
+nodes — basically individual objects, such as a User, a Photo, a Page, or a Comment
+edges — connections between a collection of objects and a single object, such as Photos on a Page or Comments on a Photo
+fields — data about an object, such as a User's birthday, or a Page's name
+
+
+
+--------------------------------------------EX#1------------------------------------------------------------------
+
+This is the an example of a the fields returned by default in the response when requesting a Single Event Node at  
+https://graph.facebook.com/{A_HONEY_HIVE_EVENT_ID}.
+#NOTE THE CURLY BRACES ARE NOT INCLUDED
+
+
+
+FIGURE#1
+        {
+          "description": "dj electronic bleh bleh blakjdfl lorem impas
+                          dj electronic bleh bleh blakjdfl lorem impas
+                          dj electronic bleh bleh blakjdfl lorem impas
+                          dj electronic bleh bleh blakjdfl lorem impas",
+          "end_time": "2018-12-13T22:00:00-0800",
+          "name": "A DJ",
+          "place": {
+            "name": "HiveTest",
+            "location": {
+              "city": "Portland",
+              "country": "United States",
+              "latitude": 45.5118,
+              "longitude": -122.67563,
+              "state": "OR",
+              "street": "4133 an address"
+            },
+            "id": "718351648548456"
+          },
+          "start_time": "2018-12-13T19:00:00-0800",
+          "id": "1616399178459972"
+        }
+
+        :FIELDS TO CONSIDER ADDING TO THE REQUEST:
+        COVER <I WILL ADD MORE TO THIS LIST
+
+---------------------------------------------------EX#2------------------------------------------------------------------
+
+This is an Example taken directly from the HoneyHiveV2 project illustrating how the concents of nodes, edges, and FIELDS
+work together.  
+
+FIGURE#2 This is the structure of a default response when requesting 
+https://graph.facebook.api.com/{HONEY_HIVE_PAGE_ID}/events
+
+
+  NOTICE THAT WHEN ACCESSING AN EDGE THE RESPONSE IS STILL AN OBJECT. HOWEVER, THE EVENTS ARE LOCATED OR
+  ANY OTHER ARRAY OF DATA WILL LOCATED WITHIN THE OBJECT'S DATA PROPERTY
+        {
+          "data": [
+            {
+              "description": "dj electronic bleh bleh blakjdfl lorem impas
+        dj electronic bleh bleh blakjdfl lorem impas
+        dj electronic bleh bleh blakjdfl lorem impas
+        dj electronic bleh bleh blakjdfl lorem impas",
+              "end_time": "2018-12-13T22:00:00-0800",
+              "name": "A DJ",
+              "place": {
+                "name": "HiveTest",
+                "location": {
+                  "city": "Portland",
+                  "country": "United States",
+                  "latitude": 45.5118,
+                  "longitude": -122.67563,
+                  "state": "OR",
+                  "street": "4133 an address"
+                },
+                "id": "718351648548456"
+              },
+              "start_time": "2018-12-13T19:00:00-0800",
+              "id": "1616399178459972"
+            },
+            {
+              "description": "THIS ONE BAND BLAH  THIS ONE BAND BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH lorem IP SUM THIS ONE BAND BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH lorem IP SUMBLAH BLAH BLAH BLAH BLAH BLAH BLAH lorem IP SUM",
+              "end_time": "2018-12-12T20:00:00-0800",
+              "name": "A rap show",
+              "place": {
+                "name": "HiveTest",
+                "location": {
+                  "city": "Portland",
+                  "country": "United States",
+                  "latitude": 45.5118,
+                  "longitude": -122.67563,
+                  "state": "OR",
+                  "street": "4133 an address"
+                },
+                "id": "718351648548456"
+              },
+              "start_time": "2018-12-12T19:00:00-0800",
+              "id": "583990958709763"
+            }
+          ],
+          "paging": {
+            "cursors": {
+              "before": "QVFIUlNNTFM5WHQ4MUE4SXB5R0RPMEtJdGVRZAnRKQ3h1WXE0S3gycGw5eGhZAZAGloejQ2NTFaV0JaN1E0UlNkWFRBbGZARdzZA4SGQ0VHBOSUtMbzNhSjc1Yk5n",
+              "after": "QVFIUjVTNFVlNXJlY05lenMzTktKcE9OSlNVTS1MbFV3dTFLZAENnTFVGMnJlUFBwenZAxbEE5cGxmdDl3NV9VMW1sUmpBSkh3YUVpbDczWmxzcWp6bDZA1dkh3"
+            }
+          }
+        }
+
+
+        <<<<IGNORE PAGING AND TALK TO ME IF IT BECOMES AN ISSUE>>>>
+
+  The default fields included in the response are not enough for our application. The photo and all relative information required for styling
+  is located in the object property COVER
+
+  FIGURE #3: The cover object
+
+        "cover": {
+          "offset_x": 50,
+          "offset_y": 50,
+          "source": "https://scontent.xx.fbcdn.net/v/t1.0-9/s720x720/47571899_718368588546762_509825245239050240_o.jpg?_nc_cat=101&_nc_ht=scontent.xx&oh=87599be135a5e01d72cfe04a3b88f831&oe=5CA52693",
+          "id": "718368581880096"
+        },
+
+  It is important to understand that if you need more information than what would be normally provided by the default, one must add all fields desired explicity except
+  for the object id. Object id's are always included in the response.
+
+  FIGURE#4 THIS IS FULL REQUIRED HTTP GET REQUEST TO RETURN EVENTS AND FIELDS NEEDED FOR THE MAIN Page
+
+  PAGE_ID AND AUTH_TOKEN VALUES CAN BE FOUND IN /server/routes/constants.js
+  `https://graph.facebook.com/v3.2/${PAGE_ID}/events?fields=cover,name,start_time,end_time&access_token=${AUTH_TOKEN}`
+
+  THIS IS THE ACTUALLY RESPONSE FROM FACEBOOKS API
+
+
+          {
+          "data": [
+            {
+              "cover": {
+                "offset_x": 50,
+                "offset_y": 50,
+                "source": "https://scontent.xx.fbcdn.net/v/t1.0-9/s720x720/47571899_718368588546762_509825245239050240_o.jpg?_nc_cat=101&_nc_ht=scontent.xx&oh=87599be135a5e01d72cfe04a3b88f831&oe=5CA52693",
+                "id": "718368581880096"
+              },
+              "name": "A DJ",
+              "description": "dj electronic bleh bleh blakjdfl lorem impas
+                              dj electronic bleh bleh blakjdfl lorem impas
+                              dj electronic bleh bleh blakjdfl lorem impas
+                              dj electronic bleh bleh blakjdfl lorem impas",
+              "start_time": "2018-12-13T19:00:00-0800",
+              "end_time": "2018-12-13T22:00:00-0800",
+              "id": "1616399178459972"
+            },
+            {
+              "cover": {
+                "offset_x": 50,
+                "offset_y": 50,
+                "source": "https://scontent.xx.fbcdn.net/v/t1.0-9/s720x720/47147233_718368028546818_5491654809410863104_o.jpg?_nc_cat=107&_nc_ht=scontent.xx&oh=fe97fe4be2a86607d36180479b43ce01&oe=5C6851B9",
+                "id": "718368025213485"
+              },
+              "name": "A rap show",
+              "description": "THIS ONE BAND BLAH  THIS ONE BAND BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH lorem IP SUM THIS ONE BAND BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH lorem IP SUMBLAH BLAH BLAH BLAH BLAH BLAH BLAH lorem IP SUM",
+              "start_time": "2018-12-12T19:00:00-0800",
+              "end_time": "2018-12-12T20:00:00-0800",
+              "id": "583990958709763"
+            }
+          ],
+          "paging": {
+            "cursors": {
+              "before": "QVFIUlNNTFM5WHQ4MUE4SXB5R0RPMEtJdGVRZAnRKQ3h1WXE0S3gycGw5eGhZAZAGloejQ2NTFaV0JaN1E0UlNkWFRBbGZARdzZA4SGQ0VHBOSUtMbzNhSjc1Yk5n",
+              "after": "QVFIUjVTNFVlNXJlY05lenMzTktKcE9OSlNVTS1MbFV3dTFLZAENnTFVGMnJlUFBwenZAxbEE5cGxmdDl3NV9VMW1sUmpBSkh3YUVpbDczWmxzcWp6bDZA1dkh3"
+            }
+          }
+          }
+
+These http requests are long and irritationg to form with only templated strings, so please use the request-promise library. The request function is
+used to create and send an http request to the facebook graph api. The function expects an object to descripe the type of request to make
+
+
+ FIGURE#5: THIS IS THE SAME HTTP EXAMPLE BUT USING REQUEST PROMISE
+
+      request({
+        method: 'GET',
+        uri: `https://graph.facebook.com/${PAGE_ID}/events`,
+        qs: {
+          fields: 'cover, name, id, description',
+          access_token: AUTH_TOKEN,
+        }
+      })
+
+
+  the qs object is the query string object. The query string begins to the right of the ?
+  https://graph.facebook.com/v3.2/${PAGE_ID}/events?fields=cover,name,start_time,end_time&access_token=${AUTH_TOKEN}
+
+
+
+   The only key value pairs we have to worry about for our facebook api calls are fields and access_token.
+   As illustrated above access_token = the AUTHTOKEN and fields is a string of all fields 
+   you want to be returned with the api call seperated by commas.
+
+---------------------   I HOPE THIS HELPS --------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
