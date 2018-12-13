@@ -2,8 +2,8 @@ import React from 'react';
 import Card from '../Card';
 import Wrapper from './Wrapper';
 import Grid from '../MuiGrid';
+import Row from '../Row';
 import H1 from '../H1';
-import Spacer from '../Spacer';
 import ListHeaderWrapper from './ListHeaderWrapper';
 
 const EventList = ({ events, handleClick }) => {
@@ -12,15 +12,23 @@ const EventList = ({ events, handleClick }) => {
   ));
 
   const content = (
-    <Grid item xs={12}>
+    <Grid container spacing={0}>
       <ListHeaderWrapper>
-        <Spacer xs={1} />
-        <Grid item xs={10}>
-          <H1 fontSize="5em">Upcoming Events</H1>
-        </Grid>
-        <Spacer xs={1} />
+        <Row>
+          <Grid xs={1} />
+          <Grid item xs={10}>
+            <H1 fontSize="5em">Upcoming Events</H1>
+          </Grid>
+          <Grid xs={1} />
+        </Row>
+        <Row>
+          <Grid xs={1} />
+          <Grid item xs={10}>
+            <Wrapper>{cards}</Wrapper>
+          </Grid>
+          <Grid xs={1} />
+        </Row>
       </ListHeaderWrapper>
-      <Wrapper>{cards}</Wrapper>
     </Grid>
   );
 

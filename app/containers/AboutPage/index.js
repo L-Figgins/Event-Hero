@@ -22,7 +22,7 @@ import AboutImg from './AboutImg';
 import AboutDescription from './AboutDescription';
 import AboutTitle from './AboutTitle';
 
-import about from '../../images/BG/about.jpg';
+import about from '../../images/BG/about-HH.jpg';
 import booking from '../../images/BG/mic.jpg';
 
 const ContentWrapper = styled.div`

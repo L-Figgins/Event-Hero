@@ -19,11 +19,12 @@ import H1 from 'components/H1';
 import H3 from 'components/H3';
 import P from 'components/P';
 import Footer from 'components/Footer';
+import A from '../../components/A';
 import ContactTitle from './ContactTitle';
 import ContactDescription from './ContactDescription';
 import ContactImg from './ContactImg';
 
-import contact from '../../images/BG/map.jpg';
+import contact from '../../images/BG/contact-HH.jpg';
 import fb from '../../images/Social/fb.png';
 import twtr from '../../images/Social/twtr.png';
 import web from '../../images/Social/web.png';
@@ -42,6 +43,7 @@ const ContactWrapper = styled.div`
 `;
 const SocialBadge = styled.div`
   color: #928f8a;
+  border: 1px solid #928f8a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +55,7 @@ const SocialBadge = styled.div`
   &:hover {
     box-shadow: 0px 15px 0px 0px rgba(0, 0, 0, 0.5);
     transition: 0.5s ease;
-    border: 1px solid rgb(0, 0, 0, 0.5);
+    border: 1px solid #ffe7ae;
   }
   img {
     padding: 2rem;
@@ -65,6 +67,11 @@ const SocialBadge = styled.div`
   @media screen and (max-width: 80rem) {
     h1 {
       font-size: 0.65rem;
+    }
+  }
+  @media screen and (max-width: 70rem) {
+    h1 {
+      display: none;
     }
   }
   @media screen and (max-width: 60rem) {
@@ -138,22 +145,28 @@ const Contact = props => {
               <Grid container spacing={0}>
                 <ContactWrapper>
                   <Grid item xs={4}>
-                    <SocialBadge>
-                      <ContactImg src={fb} />
-                      <H1>Facebook.com/HoneyHiveGallery</H1>
-                    </SocialBadge>
+                    <A href="http://www.facebook.com/HoneyHiveGallery">
+                      <SocialBadge>
+                        <ContactImg src={fb} />
+                        <H1>Facebook.com/HoneyHiveGallery</H1>
+                      </SocialBadge>
+                    </A>
                   </Grid>
                   <Grid item xs={4}>
-                    <SocialBadge>
-                      <ContactImg src={twtr} />
-                      <H1>Twitter/@HoneyHive</H1>
-                    </SocialBadge>
+                    <A href="https://twitter.com/honeyhivesf?lang=en">
+                      <SocialBadge>
+                        <ContactImg src={twtr} />
+                        <H1>Twitter/@HoneyHive</H1>
+                      </SocialBadge>
+                    </A>
                   </Grid>
                   <Grid item xs={4}>
-                    <SocialBadge>
-                      <ContactImg src={web} />
-                      <H1>Website/www.HoneyHiveGallery.com</H1>
-                    </SocialBadge>
+                    <A href="https://www.honeyhive.com/">
+                      <SocialBadge>
+                        <ContactImg src={web} />
+                        <H1>Website/www.HoneyHiveGallery.com</H1>
+                      </SocialBadge>
+                    </A>
                   </Grid>
                 </ContactWrapper>
               </Grid>

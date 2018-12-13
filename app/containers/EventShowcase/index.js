@@ -70,7 +70,7 @@ const Background = styled.div`
 const ContentWrapper = styled.div`
   width: 80%;
   height: 100%;
-  overflow-y: hidden;
+  overflow: hidden;
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 30%;
@@ -157,9 +157,9 @@ export class EventShowcase extends React.Component {
               </Grid>
               <Grid item xs={1} />
             </Temp>
+            <Footer />
           </Grid>
         </Background>
-        <Footer />
       </div>
     );
   }
