@@ -32,16 +32,16 @@ router.get('/events/:id', (req, res) => {
 
   const options = {
     method: 'GET',
-    uri: `https://graph.facebook.com/${EVENT_ID}`,
+    uri: `https://graph.facebook.com/v3.2/${EVENT_ID}`,
     qs: {
       access_token: AUTH_TOKEN,
-      fields: 'id, cover, name, start_time, end_time',
+      fields: 'id, name, description, cover',
     },
   };
 
   request(options).then(fbRes => {
     console.log(fbRes);
-    const event = JSON.parse(fbRes).data;
+    const event = JSON.parse(fbRes);
     res.json(event);
   });
 });

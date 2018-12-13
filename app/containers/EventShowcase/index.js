@@ -12,6 +12,7 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import LoadingIndicator from 'components/LoadingIndicator';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
@@ -39,23 +40,13 @@ import {
 
 import Logo from '../../components/Logo';
 
-// const Wrapper = styled.div`
-//   height: 100%;
-//   width: 100%;
-// `;
-
 const Temp = styled.div`
   display: flex;
   flex-direction: row;
 `;
 
 const Background = styled.div`
-  background-image: linear-gradient(
-      0deg,
-      rgb(22, 22, 22),
-      rgb(22, 22, 22, 0.75)
-    ),
-    url(${props => props.img});
+  background-image: url(${props => props.img});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -90,32 +81,19 @@ export class EventShowcase extends React.Component {
   render() {
     // const { event } = this.props;
     let content;
-    const error = <div>Oh no Error</div>;
-    if (this.props.error) {
-      console.log(this.props.error);
-      content = error;
-    } else if (this.props.event) {
-      console.log('In Event = tru block');
+    const { event, loading, error } = this.props;
+    const ErrorMsg = <div>Oh no Error</div>;
+
+    if (error) {
+      console.log('error', error);
+      content = ErrorMsg;
+    } else if (loading) {
+      console.log('loading');
+      content = <LoadingIndicator />;
+    } else if (event) {
+      console.log('event exists');
       content = (
-        <ContentWrapper>
-          <Tag>Artist Profile</Tag>
-          <ArtistName>{this.props.event.name}</ArtistName>
-          <ArtistBio>{this.props.event.description}</ArtistBio>
-        </ContentWrapper>
-      );
-    } else {
-      console.log('HMMMMMMMM DA FUQ');
-      console.log('Event:', this.props.event);
-    }
-
-    return (
-      <div>
-        <Helmet>
-          <title>EventShowcase</title>
-          <meta name="description" content="Description of EventShowcase" />
-        </Helmet>
-
-        <Background img={this.props.event.cover.source}>
+        <Background img={event.cover.source}>
           <Grid container spacing={0}>
             <Temp>
               <Grid item xs={1} />
@@ -132,12 +110,26 @@ export class EventShowcase extends React.Component {
             <Temp>
               <Grid item xs={1} />
               <Grid item xs={10}>
-                {content}
+                <ContentWrapper>
+                  <Tag>Artist Profile</Tag>
+                  <ArtistName>{this.props.event.name}</ArtistName>
+                  <ArtistBio>{this.props.event.description}</ArtistBio>
+                </ContentWrapper>
               </Grid>
               <Grid item xs={1} />
             </Temp>
           </Grid>
         </Background>
+      );
+    }
+    return (
+      <div>
+        <Helmet>
+          <title>EventShowcase</title>
+          <meta name="description" content="Description of EventShowcase" />
+        </Helmet>
+
+        {content}
       </div>
     );
   }
@@ -147,6 +139,7 @@ export class EventShowcase extends React.Component {
 EventShowcase.propTypes = {
   event: PropTypes.any,
   error: PropTypes.any,
+  loading: PropTypes.bool,
   location: PropTypes.any,
   loadEvent: PropTypes.any,
 };
