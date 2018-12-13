@@ -1,156 +1,131 @@
-<img src="https://raw.githubusercontent.com/react-boilerplate/react-boilerplate-brand/master/assets/banner-metal-optimized.jpg" alt="react boilerplate banner" align="center" />
+![Social Integrated Events Templating Application](Logo_Large.png)
 
-<br />
+# Social Integrated Events Templating Application
 
-<div align="center"><strong>Start your next react project in seconds</strong></div>
-<div align="center">A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</div>
+[![HitCount](http://hits.dwyl.com/{L-Figgins13}/{Genesis}.svg)](http://hits.dwyl.com/{L-Figgins13}/{Genesis})
+[![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts 'JavaScript The Good Parts')
+[![Node version](https://img.shields.io/node/v/[NPM-MODULE-NAME].svg?style=flat)](http://nodejs.org/download/)
+[![Build Status](https://travis-ci.org/{L-Figgins13}/{Genesis}.png?branch=master)](https://travis-ci.org/{L-Figgins13}/{Genesis})
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-<br />
+**Social Integrated Events Templating Application** is a **Universal JavaScript Application** utilizing the **react-boilerplate**(https://www.reactboilerplate.com/) technologies stack. This application began with the sole intent of providing a venue owner in San Francisco with an event website to promote his business. The application had several key focus points that guided its creation. The application needed to be simple to use for someone with low technical competence to update and revise at a later point in time after development was complete. The application needed to integrate with social media so that venue goers could easily keep in contact with the venue and stay informed. Lastly, the application needed to have constantly updated events so as to help guide venue participants to more information about the shows and their favorite artists from the venue. It was upon finishing development on this initial application that we realized the true power of the application we had built lied in integrating social media into a powerful javascript template. A template for rapid creation and editing of webapps for the developers, and easily editable information displayed in a friendly and familiar format (For example, a Facebook Page) was possibe for the client and consumers. Thus, we are now extending the app's functionality to allow for more easy editing and control overall for the template.
 
-<div align="center">
-  <!-- Dependency Status -->
-  <a href="https://david-dm.org/react-boilerplate/react-boilerplate">
-    <img src="https://david-dm.org/react-boilerplate/react-boilerplate.svg" alt="Dependency Status" />
-  </a>
-  <!-- devDependency Status -->
-  <a href="https://david-dm.org/react-boilerplate/react-boilerplate#info=devDependencies">
-    <img src="https://david-dm.org/react-boilerplate/react-boilerplate/dev-status.svg" alt="devDependency Status" />
-  </a>
-  <!-- Build Status -->
-  <a href="https://travis-ci.org/react-boilerplate/react-boilerplate">
-    <img src="https://travis-ci.org/react-boilerplate/react-boilerplate.svg" alt="Build Status" />
-  </a>
-  <!-- Test Coverage -->
-  <a href="https://coveralls.io/r/react-boilerplate/react-boilerplate">
-    <img src="https://coveralls.io/repos/github/react-boilerplate/react-boilerplate/badge.svg" alt="Test Coverage" />
-  </a>
-</div>
-<div align="center">
-    <!-- Backers -->
-  <a href="#backers">
-    <img src="https://opencollective.com/react-boilerplate/backers/badge.svg" alt="Backers" />
-  </a>
-      <!-- Sponsors -->
-  <a href="#sponsors">
-    <img src="https://opencollective.com/react-boilerplate/sponsors/badge.svg" alt="Sponsors" />
-  </a>
-  <a href="http://thinkmill.com.au/?utm_source=github&utm_medium=badge&utm_campaign=react-boilerplate">
-    <img alt="Supported by Thinkmill" src="https://thinkmill.github.io/badge/heart.svg" />
-  </a>
-  <!-- Gitter -->
-  <a href="https://gitter.im/mxstbr/react-boilerplate">
-    <img src="https://camo.githubusercontent.com/54dc79dc7da6b76b17bc8013342da9b4266d993c/68747470733a2f2f6261646765732e6769747465722e696d2f6d78737462722f72656163742d626f696c6572706c6174652e737667" alt="Gitter Chat" />
-  </a>
-</div>
+- [Website](www.socialeventsapp.github.io)
+- [Documentation](www.socialeventsapp.io/documentation)(https://github.com/react-boilerplate/react-boilerplate/tree/master/docs)
 
-<br />
+### Event Venue - Example Template
 
-<div align="center">
-  <sub>Created by <a href="https://twitter.com/mxstbr">Max Stoiber</a> and maintained with ❤️ by an amazing <a href="https://github.com/orgs/react-boilerplate/teams/core">team of developers</a>.</sub>
-</div>
+<p align="center">
+<img src="https://raw.githubusercontent.com/Picture.jpg" width="1920" height="1280" alt="Featured Example - Venue Template">
+<img src="https://raw.githubusercontent.com/Picture.jpg" width="1920" height="1280" alt="Featured Example - Venue Template">
+</p>
 
-## Features
+### RoadMap
 
-<dl>
-  <dt>Quick scaffolding</dt>
-  <dd>Create components, containers, routes, selectors and sagas - and their tests - right from the CLI!</dd>
+**Planned Updates:**
 
-  <dt>Instant feedback</dt>
-  <dd>Enjoy the best DX (Developer eXperience) and code your app at the speed of thought! Your saved changes to the CSS and JS are reflected instantaneously without refreshing the page. Preserve application state even when you update something in the underlying code!</dd>
+- Editing Tools For Developers
+- Better Style Organizing
+- More Social Platform API Integrations (i.e. Graph API)
+- More Example Template Layouts
+- Light / Dark Mode & React Theme
+- Google Maps Integration (Location / Contact Page)
 
-  <dt>Predictable state management</dt>
-  <dd>Unidirectional data flow allows for change logging and time travel debugging.</dd>
+**Exisiting Features:**
 
-  <dt>Next generation JavaScript</dt>
-  <dd>Use template strings, object destructuring, arrow functions, JSX syntax and more.</dd>
+- Event Home Page. Check for upcoming events being updated live throughout each month.
+- About. Find information about the venue or speak to venue booking about booking a gig.
+- Contact. Find information about the venue locations, and social media links.
+- Artist Details. Click events to learn more about the event, the artist playing the venue, and purchase tickets.
+- Gallery. View photo albums containing live updated photographs and videos captured from the event.
 
-  <dt>Next generation CSS</dt>
-  <dd>Write composable CSS that's co-located with your components for complete modularity. Unique generated class names keep the specificity low while eliminating style clashes. Ship only the styles that are on the page for the best performance.</dd>
+**Exisiting Development Features:**
 
-  <dt>Industry-standard routing</dt>
-  <dd>It's natural to want to add pages (e.g. `/about`) to your application, and routing makes this possible.</dd>
+- Prettier auto formatting
+- linting
+- unit testing, watching, remote testing
+- generators for creating components , containers, etc.
+- i18n internationilization capable messages
+- webpack bundling
+- hot module replacement
+- redux with sagas for state management & side effect handling
 
-  <dt>Industry-standard i18n internationalization support</dt>
-  <dd>Scalable apps need to support multiple languages, easily add and support multiple languages with `react-intl`.</dd>
+### React-BoilerPlate Features
 
-  <dt>Offline-first</dt>
-  <dd>The next frontier in performant web apps: availability without a network connection from the instant your users load the app.</dd>
+By using react-boilerplate for our application base we are gifted with the following features to begin with:
+**Quick scaffolding**
+Create components, containers, routes, selectors and sagas - and their tests - right from the CLI!
+**Instant feedback**
+Enjoy the best DX (Developer eXperience) and code your app at the speed of thought! Your saved changes to the CSS and JS are reflected instantaneously without refreshing the page. Preserve application state even when you update something in the underlying code!
+**Predictable state management**
+**Unidirectional data flow** allows for change logging and time travel debugging.
+**Next generation JavaScript**
+Use template strings, object destructuring, arrow functions, JSX syntax and more.
+**Next generation CSS**
+Write composable CSS that's co-located with your components for complete modularity. Unique generated class names keep the specificity low while eliminating style clashes. Ship only the styles that are on the page for the best performance.
+**Industry-standard routing**
+It's natural to want to add pages (e.g. `/about`) to your application, and routing makes this possible.
+**Industry-standard i18n internationalization support**
+Scalable apps need to support multiple languages, easily add and support multiple languages with `react-intl`.
+Offline-first
+The next frontier in performant web apps: availability without a network connection from the instant your users load the app.
+**Static code analysis**
+Focus on writing new features without worrying about formatting or code quality. With the right editor setup, your code will automatically be formatted and linted as you work.
+**SEO**
+We support SEO (document head tags management) for search engines that support indexing of JavaScript content. (eg. Google)
 
-  <dt>Static code analysis</dt>
-  <dd>Focus on writing new features without worrying about formatting or code quality. With the right editor setup, your code will automatically be formatted and linted as you work.</dd>
+### Installing for Development
 
-  <dt>SEO</dt>
-  <dd>We support SEO (document head tags management) for search engines that support indexing of JavaScript content. (eg. Google)</dd>
-</dl>
+If you would like to contribute to Social Integrated Events Templating Application clone or download the zipped source file and complete the following steps:
 
-But wait... there's more!
+1. `Make sure that you have Node.js v8.10 and npm v5 or above installed.`
 
-- _The best test setup:_ Automatically guarantee code quality and non-breaking
-  changes. (Seen a react app with 100% test coverage before?)
-- _Native web app:_ Your app's new home? The home screen of your users' phones.
-- _The fastest fonts:_ Say goodbye to vacant text.
-- _Stay fast_: Profile your app's performance from the comfort of your command
-  line!
-- _Catch problems:_ AppVeyor and TravisCI setups included by default, so your
-  tests get run automatically on Windows and Unix.
+2. `git clone "https://github.com/L-Figgins13/HoneyHiveV2"`
 
-There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on how to structure your React.js apps with scalability in mind. It provides rationale for the majority of boilerplate's design decisions.
+3. `cd HoneyHiveV2`
 
-<sub><i>Keywords: React.js, Redux, Hot Reloading, ESNext, Babel, react-router, Offline First, ServiceWorker, `styled-components`, redux-saga, FontFaceObserver</i></sub>
+4. `npm install`
 
-## Quick start
+5. `npm start`
 
-1.  Make sure that you have Node.js v8.10 and npm v5 or above installed.
-2.  Clone this repo using `git clone --depth=1 https://github.com/react-boilerplate/react-boilerplate.git <YOUR_PROJECT_NAME>`
-3.  Move to the appropriate directory: `cd <YOUR_PROJECT_NAME>`.<br />
-4.  Run `npm run setup` in order to install dependencies and clean the git repo.<br />
-    _At this point you can run `npm start` to see the example app at `http://localhost:3000`._
-5.  Run `npm run clean` to delete the example app.
+### Available Development Commands
 
-Now you're ready to rumble!
+```
+   For a full list of development commands available from react-boilerplate, please visit the documentation:
+   https://github.com/react-boilerplate/react-boilerplate/tree/master/docs
 
-> Please note that this boilerplate is **production-ready and not meant for beginners**! If you're just starting out with react or redux, please refer to https://github.com/petehunt/react-howto instead. If you want a solid, battle-tested base to build your next product upon and have some experience with react, this is the perfect start for you.
+   Here are the basic two to get you up and running:
+   - npm start - starts development app at localhost:3000
+   - npm run generate - generate components, containers, and more.
+```
 
-## Documentation
+**Webpack Configs**
 
-- [**The Hitchhikers Guide to `react-boilerplate`**](docs/general/introduction.md): An introduction for newcomers to this boilerplate.
-- [Overview](docs/general): A short overview of the included tools
-- [**Commands**](docs/general/commands.md): Getting the most out of this boilerplate
-- [Testing](docs/testing): How to work with the built-in test harness
-- [Styling](docs/css): How to work with the CSS tooling
-- [Your app](docs/js): Supercharging your app with Routing, Redux, simple
-  asynchronicity helpers, etc.
-- [**Troubleshooting**](docs/general/gotchas.md): Solutions to common problems faced by developers.
+Social Integrated Events Templating Application uses Webpack for bundling modules. There are two types of Webpack configs provided:
 
-## Supporters
+- **webpack.config.js** for development
+- **webpack.config.server.js** for bundling server in production
 
-This project would not be possible without the support by these amazing folks. [**Become a sponsor**](https://opencollective.com/react-boilerplate) to get your company in front of thousands of engaged react developers and help us out!
+For more information on using webpack, please visit: https://webpack.js.org/
 
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/0/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/1/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/2/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/3/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/4/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/5/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/6/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/7/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/8/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/9/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/9/avatar.svg"></a>
+## Built With
 
----
+- [Express](https://expressjs.com/) - Server Middleware
+- [React](https://reactjs.org/) - A javascript library for building user interfaces.
+- [Redux](https://redux.js.org/) - A predictable state container for JavaScript apps.
+- [NodeJS](https://nodejs.org/en/) - Npm and General Project Structure
+- [Styled Components](https://github.com/styled-components/styled-components) - General Component Styling
 
-<a href="https://opencollective.com/react-boilerplate/backer/0/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/0/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/1/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/1/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/2/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/2/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/3/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/3/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/4/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/4/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/5/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/5/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/6/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/6/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/7/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/7/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/8/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/8/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/9/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/9/avatar.svg"></a>
+## Contributing
+
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Authors
+
+- **Logan Figgins** - _Designer & Developer_ - @github/L-Figgins13 - [Social Integrated Events Templating Application](https://github.com/L-Figgins13)
+- **Zack Watkins** - _Designer & Developer_ - @github/TheByteForge - [Social Integrated Events Templating Application](https://github.com/TheByteForge)
 
 ## License
 
-This project is licensed under the MIT license, Copyright (c) 2018 Maximilian
-Stoiber. For more information see `LICENSE.md`.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
