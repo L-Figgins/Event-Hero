@@ -22,6 +22,9 @@ import Row from 'components/Row';
 import styled from 'styled-components';
 import H1 from '../../components/H1';
 import H3 from '../../components/H3';
+import P from '../../components/P';
+import GalleryTitle from './GalleryTitle';
+import GalleryDescription from './GalleryDescription';
 
 import makeSelectGallery from './selectors';
 import reducer from './reducer';
@@ -33,42 +36,20 @@ const GalleryWrapper = styled.div`
   background-color: rgb(22, 22, 22);
 `;
 
-const GalleryTitle = styled.div`
-  h1 {
-    font-size: 7rem;
-    margin: 0;
-    color: #fff;
-  }
-  @media screen and (max-width: 80rem) {
-    h1 {
-      font-size: 6rem;
-      color: red;
-    }
-  }
-  @media screen and (max-width: 60rem) {
-    h1 {
-      font-size: 5rem;
-      color: blue;
-    }
-  }
-  @media screen and (max-width: 40rem) {
-    h1 {
-      font-size: 4rem;
-      color: green;
-    }
-  }
-  @media screen and (max-width: 20rem) {
-    h1 {
-      font-size: 3rem;
-      color: yellow;
-    }
-  }
+const AlbumWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(22, 22, 22);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 `;
 
 /* eslint-disable react/prefer-stateless-function */
 export class Gallery extends React.PureComponent {
   render() {
     const redirect = { redirect };
+
     return (
       <div>
         <Helmet>
@@ -86,14 +67,46 @@ export class Gallery extends React.PureComponent {
                 <Grid item xs={1} />
               </Hero>
             </Row>
+
             <Row>
               <Grid item xs={1} />
               <Grid item xs={10}>
                 <GalleryTitle>
                   <H1>Gallery</H1>
-                  <H3>Dec. 2018</H3>
+                  <H3>DEC. 2018</H3>
                 </GalleryTitle>
               </Grid>
+              <Grid item xs={1} />
+            </Row>
+
+            <Row>
+              <Grid item xs={12}>
+                <AlbumWrapper>GALLERY PICS HERE </AlbumWrapper>
+              </Grid>
+            </Row>
+
+            <Row>
+              <Grid item xs={1} />
+              <Grid item xs={10}>
+                <GalleryDescription>
+                  <P>
+                    Nam sit amet est nibh. Donec suscipit nunc quam, sed gravida
+                    metus facilisis id. Integer ac dictum libero. Duis ut ipsum
+                    tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
+                    gravida metus facilisis id. Integer ac dictum libero. Duis
+                    ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
+                    quam, sed gravida metus facilisis id. Integer ac dictum
+                    libero. Duis ut ipsum tortor. Nam sit amet est nibh. Donec
+                    suscipit nunc quam, sed gravida metus facilisis id. Integer
+                    ac dictum libero. Duis ut ipsum tortor. Nam sit amet est
+                    nibh. Donec suscipit nunc quam, sed gravida metus facilisis
+                    id. Integer ac dictum libero. Duis ut ipsum tortor. Nam sit
+                    amet est nibh. Donec suscipit nunc quam, sed gravida metus
+                    facilisis id. ut ipsum tortor.
+                  </P>
+                </GalleryDescription>
+              </Grid>
+
               <Grid item xs={1} />
             </Row>
           </GalleryWrapper>
