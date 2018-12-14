@@ -79,6 +79,7 @@
     "prop-types": "15.6.2",
     "query-string": "^6.2.0",
     "react": "16.6.0",
+    "react-burger-menu": "^2.5.4",
     "react-dom": "16.6.0",
     "react-helmet": "5.2.0",
     "react-intl": "2.7.2",
@@ -90,6 +91,7 @@
     "reselect": "4.0.0",
     "sanitize.css": "4.1.0",
     "styled-components": "4.0.2",
+    "styled-icons": "^5.5.0",
     "warning": "4.0.2"
   },
   "devDependencies": {
