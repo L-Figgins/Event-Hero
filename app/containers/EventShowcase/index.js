@@ -66,6 +66,20 @@ const TicketButton = styled.button`
   font-weight: bold;
   color: #ffe7ae;
   border: 1px solid #ffe7ae;
+  &:hover {
+    box-shadow: 0px 15px 0px 0px rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease;
+    border: 1px solid #fff;
+    h1 {
+      color: #fff;
+    }
+  }
+  &:active {
+    h1 {
+      color: #928f8a;
+      border: 1px solid #928f8a;
+    }
+  }
   h1 {
     font-size: 1rem;
     margin: 0;
@@ -111,35 +125,48 @@ const Background = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  min-height: 100vh;
+  min-height: 75vh;
+
+  @media (max-width: 500px) {
+    height: 100vh;
+  }
 `;
 
 const ContentWrapper = styled.div`
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
   @media screen and (max-width: 80rem) {
     h1 {
-      font-size: 6rem;
+      font-size: 1rem;
       color: red;
     }
   }
   @media screen and (max-width: 60rem) {
     h1 {
-      font-size: 5rem;
+      font-size: 1rem;
       color: blue;
     }
   }
   @media screen and (max-width: 40rem) {
     h1 {
-      font-size: 4rem;
+      font-size: 1.25rem;
       color: green;
     }
   }
   @media screen and (max-width: 20rem) {
     h1 {
-      font-size: 3rem;
+      font-size: 1.5rem;
       color: yellow;
     }
   }
