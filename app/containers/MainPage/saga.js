@@ -1,5 +1,4 @@
-import { delay } from 'redux-saga';
-import { takeEvery, put, call } from 'redux-saga/effects';
+import { takeLatest, put } from 'redux-saga/effects';
 import { loadEventsSuccess, loadEventsFailure } from './actions';
 import { LOAD_EVENTS } from './constants';
 import { Api } from '../../api';
@@ -9,8 +8,8 @@ import { Api } from '../../api';
 
 function* fetchEvents() {
   try {
-    yield call(delay, 500);
     const events = yield Api.loadEvents();
+    // yield console.log(events);
     yield put(loadEventsSuccess(events));
   } catch (error) {
     console.log(error);
@@ -19,7 +18,7 @@ function* fetchEvents() {
 }
 
 export default function* watchFetchEvents() {
-  yield takeEvery(LOAD_EVENTS, fetchEvents);
+  yield takeLatest(LOAD_EVENTS, fetchEvents);
 }
 
 // export default function* rootSaga() {

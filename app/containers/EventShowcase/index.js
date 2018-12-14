@@ -12,6 +12,7 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import LoadingIndicator from 'components/LoadingIndicator';
 
 import { push } from 'connected-react-router';
 
@@ -37,11 +38,10 @@ import Footer from '../../components/Footer';
 // import artistBG from '../../images/BG/artist.jpg';
 // import Img from '../../components/Img';
 import {
-  ArtistGenre,
   ArtistName,
+  ArtistGenre,
   Tag,
   ArtistBio,
-  EventDate,
   SubTitle,
 } from './local-styles';
 
@@ -116,12 +116,7 @@ const Temp = styled.div`
 `;
 
 const Background = styled.div`
-  background-image: linear-gradient(
-      0deg,
-      rgb(22, 22, 22),
-      rgb(22, 22, 22, 0.75)
-    ),
-    url(${props => props.img});
+  background-image: url(${props => props.img});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -176,16 +171,6 @@ const ContentWrapper = styled.div`
   }
 `;
 
-// const StyledImg = styled(Img)`
-//   height: 100vh;
-//   width: 100%;
-//   z-index: 1;
-//   position: absolute;
-//   /* width: 80%;
-//   margin-left: 10%;
-//   margin-right: 10%; */
-// `;
-
 /* eslint-disable react/prefer-stateless-function */
 export class EventShowcase extends React.Component {
   componentDidMount() {
@@ -193,49 +178,25 @@ export class EventShowcase extends React.Component {
     const query = queryString.parse(this.props.location.search);
     console.log('Query ID:', query.id);
 
-    this.props.dispatch(loadEventById(query.id));
+    this.props.loadEvent(query.id);
   }
 
   render() {
-    const { event } = this.props;
-    const { redirect } = this.props;
+    // const { event } = this.props;
     let content;
-    const error = <div>Oh no Error</div>;
-    if (this.props.error) {
-      console.log(this.props.error);
-      content = error;
+    const { event, loading, error, redirect } = this.props;
+    const ErrorMsg = <div>Oh no Error</div>;
+
+    if (error) {
+      console.log('error', error);
+      content = ErrorMsg;
+    } else if (loading) {
+      console.log('loading');
+      content = <LoadingIndicator />;
     } else if (event) {
-      console.log('In Event = tru block');
-      const date = `${event.date.weekday} ${event.date.month} ${
-        event.date.day
-      }`;
+      console.log('event exists');
       content = (
-        <ContentWrapper>
-          <Tag>Artist Profile</Tag>
-          <ArtistName>{event.message.artistName}</ArtistName>
-          <SubTitle>
-            <ArtistGenre>{event.message.artistGenre}</ArtistGenre>
-            <EventDate>{date}</EventDate>
-          </SubTitle>
-          <ArtistBio>{event.message.artistBio}</ArtistBio>
-          <TicketButton>
-            <H1>Purchase Tickets</H1>
-          </TicketButton>
-        </ContentWrapper>
-      );
-    } else {
-      console.log('HMMMMMMMM DA FUQ');
-      console.log('Event:', event);
-    }
-
-    return (
-      <div>
-        <Helmet>
-          <title>EventShowcase</title>
-          <meta name="description" content="Description of EventShowcase" />
-        </Helmet>
-
-        <Background img={event.imageURL}>
+        <Background img={event.cover.source}>
           <Grid container spacing={0}>
             <Temp>
               <Grid item xs={1} />
@@ -250,13 +211,37 @@ export class EventShowcase extends React.Component {
             <Temp>
               <Grid item xs={1} />
               <Grid item xs={10}>
-                {content}
+                <ContentWrapper>
+                  <Tag>Artist Profile</Tag>
+                  <ArtistName>{event.name}</ArtistName>
+                  <SubTitle>
+                    <ArtistGenre>This Header No longer Exists</ArtistGenre>
+                    {/* <EventDate>{date}</EventDate> */}
+                  </SubTitle>
+                  <ArtistBio>{event.description}</ArtistBio>
+                  <TicketButton>
+                    <H1>Purchase Tickets</H1>
+                  </TicketButton>
+                </ContentWrapper>
               </Grid>
               <Grid item xs={1} />
             </Temp>
             <Footer />
           </Grid>
         </Background>
+      );
+    } else {
+      console.log('HMMMMMMMM DA FUQ');
+      console.log('Event:', event);
+    }
+
+    return (
+      <div>
+        <Helmet>
+          <title>EventShowcase</title>
+          <meta name="description" content="Description of EventShowcase" />
+        </Helmet>
+        {content}
       </div>
     );
   }
@@ -266,9 +251,10 @@ export class EventShowcase extends React.Component {
 EventShowcase.propTypes = {
   event: PropTypes.any,
   error: PropTypes.any,
+  loading: PropTypes.bool,
   location: PropTypes.any,
-  dispatch: PropTypes.any,
   redirect: PropTypes.func.isRequired,
+  loadEvent: PropTypes.any,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -283,7 +269,6 @@ function mapDispatchToProps(dispatch) {
   return {
     loadEvent: id => dispatch(loadEventById(id)),
     redirect: url => dispatch(push(url)),
-    dispatch,
   };
 }
 
