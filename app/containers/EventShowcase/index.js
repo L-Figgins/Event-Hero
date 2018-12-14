@@ -54,13 +54,13 @@ const Background = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  width: 80%;
+  display: flex;
+  /* justify-content: flex-start;
+  align-items: center; */
+  flex-direction: column;
   height: 100%;
-  overflow-y: hidden;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 30%;
-  margin-bottom: 10%;
+  /* overflow-y: hidden; */
+  /* padding: 10%; */
   /* margin-top: 25%; */
 
   @media (max-width: 500px) {
