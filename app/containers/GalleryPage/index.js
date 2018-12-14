@@ -80,9 +80,11 @@ export class Gallery extends React.PureComponent {
             </Row>
 
             <Row>
-              <Grid item xs={12}>
+              <Grid item xs={1} />
+              <Grid item xs={10}>
                 <AlbumWrapper>GALLERY PICS HERE </AlbumWrapper>
               </Grid>
+              <Grid item xs={1} />
             </Row>
 
             <Row>
