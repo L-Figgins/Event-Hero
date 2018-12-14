@@ -17,7 +17,7 @@ const EventList = ({ events, handleClick }) => {
         <Row>
           <Grid xs={1} />
           <Grid item xs={10}>
-            <H1 fontSize="5em">Upcoming Events</H1>
+            <H1 fontSize="5em">Events</H1>
           </Grid>
           <Grid xs={1} />
         </Row>

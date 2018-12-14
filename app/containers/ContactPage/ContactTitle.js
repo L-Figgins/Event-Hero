@@ -10,6 +10,7 @@ const ContactTitle = styled.div`
   }
   h3 {
     font-size: 1rem;
+    color: #928f8a;
   }
   @media screen and (max-width: 80rem) {
     h1 {

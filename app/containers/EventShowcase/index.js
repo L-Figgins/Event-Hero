@@ -18,6 +18,7 @@ import { push } from 'connected-react-router';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import Grid from 'components/MuiGrid';
+import H1 from '../../components/H1';
 import makeSelectEventShowcase, {
   makeSelectEvent,
   makeSelectEventShowcaseError,
@@ -49,6 +50,52 @@ import {
 //   width: 100%;
 // `;
 
+const TicketButton = styled.button`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(22, 22, 22);
+  box-shadow: 0px 10px 19px 0px rgba(0, 0, 0, 0.45);
+  padding-left: 10rem;
+  padding-right: 10rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  font-weight: bold;
+  color: #ffe7ae;
+  border: 1px solid #ffe7ae;
+  h1 {
+    font-size: 1rem;
+    margin: 0;
+  }
+  @media screen and (max-width: 80rem) {
+    h1 {
+      font-size: 1rem;
+      color: red;
+    }
+  }
+  @media screen and (max-width: 60rem) {
+    h1 {
+      font-size: 1rem;
+      color: blue;
+    }
+  }
+  @media screen and (max-width: 40rem) {
+    h1 {
+      font-size: 1rem;
+      color: green;
+    }
+  }
+  @media screen and (max-width: 20rem) {
+    h1 {
+      font-size: 1rem;
+      color: yellow;
+    }
+  }
+`;
+
 const Temp = styled.div`
   display: flex;
   flex-direction: row;
@@ -68,14 +115,34 @@ const Background = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  width: 80%;
+  width: 100%;
   height: 100%;
   overflow: hidden;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 30%;
-  margin-bottom: 10%;
-  /* margin-top: 25%; */
+
+  @media screen and (max-width: 80rem) {
+    h1 {
+      font-size: 6rem;
+      color: red;
+    }
+  }
+  @media screen and (max-width: 60rem) {
+    h1 {
+      font-size: 5rem;
+      color: blue;
+    }
+  }
+  @media screen and (max-width: 40rem) {
+    h1 {
+      font-size: 4rem;
+      color: green;
+    }
+  }
+  @media screen and (max-width: 20rem) {
+    h1 {
+      font-size: 3rem;
+      color: yellow;
+    }
+  }
 
   @media (max-width: 500px) {
     margin-top: 50%;
@@ -124,6 +191,9 @@ export class EventShowcase extends React.Component {
             <EventDate>{date}</EventDate>
           </SubTitle>
           <ArtistBio>{event.message.artistBio}</ArtistBio>
+          <TicketButton>
+            <H1>Purchase Tickets</H1>
+          </TicketButton>
         </ContentWrapper>
       );
     } else {

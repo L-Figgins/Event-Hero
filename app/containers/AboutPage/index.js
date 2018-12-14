@@ -23,12 +23,11 @@ import AboutDescription from './AboutDescription';
 import AboutTitle from './AboutTitle';
 
 import about from '../../images/BG/about-HH.jpg';
-import booking from '../../images/BG/mic.jpg';
+import booking from '../../images/BG/booking-HH.jpg';
 
 const ContentWrapper = styled.div`
   background-color: rgb(20, 20, 20);
   padding-top: 2rem;
-  padding-bottom: 2rem;
 `;
 
 const About = props => {
@@ -86,11 +85,16 @@ const About = props => {
               <AboutDescription>
                 <AboutImg src={booking} />
                 <P>
-                  Nam sit amet est nibh. Donec suscipit nunc quam, sed gravida
-                  metus facilisis id. Integer ac dictum libero. Duis ut ipsum
-                  tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
-                  gravida metus facilisis id. Integer ac dictum libero. Duis ut
-                  ipsum tortor.
+                  Honey Hive Booking works to ensure a smooth event and
+                  performance for everyone. Although all events are different,
+                  some performers require necessary items for a performance.
+                  These can include artist’s fees, airfare, staging, lighting,
+                  hotel accommodations and onsite production staff. Honey Hive
+                  booking takes the stress off of you and handles the
+                  organization of these necessary elements. As our client, Honey
+                  Hive works with you to discuss the details of your event. If
+                  necessary, we can provide a full service solution for a flat
+                  rate.
                 </P>
               </AboutDescription>
             </Grid>

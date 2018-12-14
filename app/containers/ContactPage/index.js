@@ -64,6 +64,7 @@ const SocialBadge = styled.div`
   h1 {
     font-size: 0.75rem;
   }
+
   @media screen and (max-width: 80rem) {
     h1 {
       font-size: 0.65rem;

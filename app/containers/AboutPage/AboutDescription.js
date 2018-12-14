@@ -3,17 +3,12 @@ import styled from 'styled-components';
 const AboutDescription = styled.div`
   font-size: 1.45rem;
   color: #928f8a;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 
-  img {
-    width: 100%;
-    height: 70vh;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
   p {
     font-size: 1rem;
+    padding-top: 2rem;
   }
   @media screen and (max-width: 80rem) {
     p {
