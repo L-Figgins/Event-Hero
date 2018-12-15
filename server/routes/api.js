@@ -46,4 +46,25 @@ router.get('/events/:id', (req, res) => {
   });
 });
 
+router.get('/albums', res => {
+  const options = {
+    method: 'GET',
+    uri: `https://graph.facebook.com/${PAGE_ID}/albums`,
+    qs: {
+      access_token: AUTH_TOKEN,
+      fields: 'id, name, description, picture.type(album)',
+    },
+  };
+
+  request(options)
+    .then(fbRes => {
+      const albums = JSON.parse(fbRes).data;
+      res.json(albums);
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
+    });
+});
+
 module.exports = router;
