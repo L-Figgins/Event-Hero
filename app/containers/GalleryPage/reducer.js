@@ -5,14 +5,30 @@
  */
 
 import { fromJS } from 'immutable';
-import { DEFAULT_ACTION } from './constants';
+import {
+  LOAD_ALBUMS,
+  LOAD_ALBUMS_SUCCESS,
+  LOAD_ALBUMS_FAILURE,
+} from './constants';
 
-export const initialState = fromJS({});
+// there is no real reason my application needs immutable
+export const initialState = fromJS({
+  loading: false,
+  error: false,
+  albums: false,
+});
 
 function galleryReducer(state = initialState, action) {
   switch (action.type) {
-    case DEFAULT_ACTION:
-      return state;
+    case LOAD_ALBUMS:
+      return state.set('loading', true).set('error', false);
+    case LOAD_ALBUMS_SUCCESS:
+      return state
+        .set('loading', false)
+        .set('error', false)
+        .set('albums', action.ablums);
+    case LOAD_ALBUMS_FAILURE:
+      return state.set('loading', false).set('error', action.error);
     default:
       return state;
   }
