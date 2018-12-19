@@ -13,13 +13,14 @@
 
 ### Event Venue - Example Template
 <p align="center">
-<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-Features.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template">
-<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Home.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - Home">
-<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-About.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - About ">
-<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Gallery.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - Gallery">
-<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Contact.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - Contact">
-<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Details.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - Details">
-<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-OverviewScreens.jpg?raw=true" width="1920" height="1280" alt="Featured Example - Venue Template - Overview">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-Features.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Home.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - Home">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-About.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - About ">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Gallery.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - Gallery">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Contact.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - Contact">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Details.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - Details">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-OverviewScreens.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - Overview">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-Details-Perspective.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - DetailsPerspective">
 </p>
 
 ### RoadMap
