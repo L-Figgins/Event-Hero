@@ -8,18 +8,18 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 **Event Hero : Social Integrated Event Venue Template WebApp** is a **Universal JavaScript Application** utilizing the **react-boilerplate**(https://www.reactboilerplate.com/) technologies stack. This application began with the sole intent of providing a venue owner in San Francisco with an event website to promote his business. The application had several key focus points that guided its creation. The application needed to be simple to use for someone with low technical competence to update and revise at a later point in time after development was complete. The application needed to integrate with social media so that venue goers could easily keep in contact with the venue and stay informed. Lastly, the application needed to have constantly updated events so as to help guide venue participants to more information about the shows and their favorite artists from the venue. It was upon finishing development on this initial application that we realized the true power of the application we had built lied in integrating social media into a powerful javascript template. A template for rapid creation and editing of webapps for the developers, and easily editable information displayed in a friendly and familiar format (For example, a Facebook Page) was possibe for the client and consumers. Thus, we are now extending the app's functionality to allow for more easy editing and control overall for the template. 
-* [Website](www.socialeventsapp.github.io)
-* [Documentation](www.socialeventsapp.io/documentation)(https://github.com/react-boilerplate/react-boilerplate/tree/master/docs)
+* [Website](www.eventhero.github.io)
+* [Documentation](https://github.com/react-boilerplate/react-boilerplate/tree/master/docs)
 
 ### Event Venue - Example Template
 <p align="center">
 <img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-Features.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template">
-<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-Home.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - Home">
-<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-About.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - About ">
-<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-Gallery.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - Gallery">
-<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-Contact.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - Contact">
-<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-Details.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - Details">
-<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-OverviewScreens.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - Overview">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Home.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - Home">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-About.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - About ">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Gallery.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - Gallery">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Contact.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - Contact">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Details.jpg?raw=true" width="1440" height="1024" alt="Featured Example - Venue Template - Details">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-OverviewScreens.jpg?raw=true" width="1920" height="1280" alt="Featured Example - Venue Template - Overview">
 </p>
 
 ### RoadMap
