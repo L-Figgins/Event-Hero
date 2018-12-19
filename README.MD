@@ -1,29 +1,38 @@
-![Event Hero : Social Integrated Event Venue Template WebApp](https://github.com/L-Figgins13/EventHero/blob/master/public/images/EventHeroLogo.png?raw=true)
+![Event Hero : Social Integrated Event Venue Template WebApp](https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHeroLogo.png?raw=true)
+
 
 # Event Hero : Social Integrated Event Venue Template WebApp
-[![HitCount](http://hits.dwyl.com/{L-Figgins13}/{Genesis}.svg)](http://hits.dwyl.com/{L-Figgins13}/{Genesis})
+[![HitCount](http://hits.dwyl.com/{L-Figgins13}/{HoneyHiveV2}.svg)](http://hits.dwyl.com/{L-Figgins13}/{HoneyHiveV2})
 [![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
 [![Node version](https://img.shields.io/node/v/[NPM-MODULE-NAME].svg?style=flat)](http://nodejs.org/download/)
-[![Build Status](https://travis-ci.org/{L-Figgins13}/{Genesis}.png?branch=master)](https://travis-ci.org/{L-Figgins13}/{Genesis})
+[![Build Status](https://travis-ci.org/{L-Figgins13}/{HoneyHiveV2}.png?branch=master)](https://travis-ci.org/{L-Figgins13}/{HoneyHiveV2})
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-**Event Hero : Social Integrated Event Venue Template WebApp** is a **Universal JavaScript Application** utilizing the **react-boilerplate**(https://www.reactboilerplate.com/) technologies stack. This application began with the sole intent of providing a venue owner in San Francisco with an event website to promote his business. The application had several key focus points that guided its creation. The application needed to be simple to use for someone with low technical competence to update and revise at a later point in time after development was complete. The application needed to integrate with social media so that venue goers could easily keep in contact with the venue and stay informed. Lastly, the application needed to have constantly updated events so as to help guide venue participants to more information about the shows and their favorite artists from the venue. It was upon finishing development on this initial application that we realized the true power of the application we had built lied in integrating social media into a powerful javascript template. A template for rapid creation and editing of webapps for the developers, and easily editable information displayed in a friendly and familiar format (For example, a Facebook Page) was possibe for the client and consumers. Thus, we are now extending the app's functionality to allow for more easy editing and control overall for the template. 
+
+**Event Hero : Social Integrated Event Venue Template WebApp** is a **Universal JavaScript Application**
+It utilizes the **react-boilerplate**(https://www.reactboilerplate.com/) technologies stack. This application began with the sole intent of providing a venue owner in San Francisco with an event website to promote his business. The application had several key focus points that guided its creation. The application needed to be simple to use for someone with low technical competence to update and revise at a later point in time after development was complete. The application needed to integrate with social media so that venue goers could easily keep in contact with the venue and stay informed. Lastly, the application needed to have constantly updated events so as to help guide venue participants to more information about the shows and their favorite artists from the venue. 
+
+It was upon finishing development on this initial application that we realized the true power of the application we had built lied in integrating social media into a powerful javascript template. A template for rapid creation and editing of webapps for the developers, and easily editable information displayed in a friendly and familiar format (For example, a Facebook Page) was possibe for the client and consumers. Thus, we are now extending the app's functionality to allow for more easy editing and control overall for the template. 
+
 * [Website](www.eventhero.github.io)
 * [Documentation](https://github.com/react-boilerplate/react-boilerplate/tree/master/docs)
+
 
 ### Event Venue - Example Template
 <p align="center">
 <img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-Features.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template">
+<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-Details-Perspective.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - DetailsPerspective">
 <img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Home.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - Home">
 <img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-About.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - About ">
 <img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Gallery.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - Gallery">
 <img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Contact.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - Contact">
 <img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-HH-Details.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - Details">
 <img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-OverviewScreens.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - Overview">
-<img src="https://github.com/L-Figgins13/HoneyHiveV2/blob/master/public/images/EventHero-Details-Perspective.jpg?raw=true" width="100%" height="auto" alt="Featured Example - Venue Template - DetailsPerspective">
 </p>
 
+
 ### RoadMap
+
 
 **Planned Updates:**
 - Editing Tools For Developers
@@ -52,8 +61,10 @@
 - Hot Module Replacement
 - Redux with Sagas for state management & side effect handling
 
+
 ### React-BoilerPlate Features
 By using react-boilerplate for our application base we are gifted with the following features to begin with:
+
 
 **Quick scaffolding**
 Create components, containers, routes, selectors and sagas - and their tests - right from the CLI!
@@ -113,6 +124,7 @@ If you would like to contribute to Event Hero : Social Integrated Event Venue Te
 
 ```
 
+
 **Webpack Configs**
 
 Event Hero : Social Integrated Event Venue Template WebApp uses Webpack for bundling modules. There are two types of Webpack configs provided:
@@ -129,14 +141,17 @@ For more information on using webpack, please visit: https://webpack.js.org/
 * [NodeJS]( https://nodejs.org/en/) - Npm and General Project Structure
 * [Styled Components](https://github.com/styled-components/styled-components) - General Component Styling
 
+
 ## Contributing 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
+
 ## Authors
 * **Logan Figgins** - *Designer & Developer* - @github/L-Figgins13 - [Event Hero : Social Integrated Event Venue Template WebApp](https://github.com/L-Figgins13)
 * **Zack Watkins** - *Designer & Developer* - @github/TheByteForge - [Event Hero : Social Integrated Event Venue Template WebApp](https://github.com/TheByteForge)
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
