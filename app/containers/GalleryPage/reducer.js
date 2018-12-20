@@ -26,7 +26,7 @@ function galleryReducer(state = initialState, action) {
       return state
         .set('loading', false)
         .set('error', false)
-        .set('albums', action.ablums);
+        .set('albums', action.albums);
     case LOAD_ALBUMS_FAILURE:
       return state.set('loading', false).set('error', action.error);
     default:

@@ -18,5 +18,22 @@ const selectGalleryDomain = state => state.get('gallery', initialState);
 const makeSelectGallery = () =>
   createSelector(selectGalleryDomain, substate => substate.toJS());
 
+const makeAlbumsSelector = () =>
+  createSelector(selectGalleryDomain, substate => substate.get('albums'));
+
+const makeLoadingSelector = () =>
+  createSelector(selectGalleryDomain, substate => substate.get('loading'));
+
+const makeErrorSelector = () =>
+  createSelector(selectGalleryDomain, substate => substate.get('error'));
+
+// const makeSelectAlbums = () =>
+//   createSelector(SelectGalery)
+
 export default makeSelectGallery;
-export { selectGalleryDomain };
+export {
+  selectGalleryDomain,
+  makeAlbumsSelector,
+  makeErrorSelector,
+  makeLoadingSelector,
+};
