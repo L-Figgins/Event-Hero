@@ -68,4 +68,29 @@ router.get('/albums', (req, res) => {
     });
 });
 
+router.get('/albums/:id', (req, res) => {
+  const albumId = parseInt(req.params.id, 10);
+  const options = {
+    method: 'Get',
+    uri: `https://graph.facebook.com/v3.2/${albumId}/photos`,
+    qs: {
+      access_token: AUTH_TOKEN,
+      fields: 'name, source.width(800)',
+    },
+  };
+
+  request(options)
+    .then(fbRes => {
+      const photos = JSON.parse(fbRes).data;
+      if (photos) {
+        console.log('Photos Recieved From Facebook Albume ID:', albumId);
+      }
+      res.json(photos);
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
+    });
+});
+
 module.exports = router;
