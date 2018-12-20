@@ -15,7 +15,7 @@ router.get('/events', (req, res) => {
     uri: `https://graph.facebook.com/${PAGE_ID}/events`,
     qs: {
       access_token: AUTH_TOKEN,
-      fields: 'cover, name, id, description',
+      fields: 'name, id, description, cover{id, source.height(600)}',
     },
   };
 
@@ -35,7 +35,7 @@ router.get('/events/:id', (req, res) => {
     uri: `https://graph.facebook.com/v3.2/${EVENT_ID}`,
     qs: {
       access_token: AUTH_TOKEN,
-      fields: 'id, name, description, cover',
+      fields: 'id, name, description, cover{id,source.height(800)}',
     },
   };
 
@@ -46,19 +46,20 @@ router.get('/events/:id', (req, res) => {
   });
 });
 
-router.get('/albums', res => {
+router.get('/albums', (req, res) => {
   const options = {
     method: 'GET',
     uri: `https://graph.facebook.com/${PAGE_ID}/albums`,
     qs: {
       access_token: AUTH_TOKEN,
-      fields: 'id, name, description, picture.type(album)',
+      fields: 'id, name, description, cover_photo{id,source.height(600)}',
     },
   };
 
   request(options)
     .then(fbRes => {
       const albums = JSON.parse(fbRes).data;
+      console.log(albums);
       res.json(albums);
     })
     .catch(error => {

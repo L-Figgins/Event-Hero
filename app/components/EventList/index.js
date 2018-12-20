@@ -15,18 +15,18 @@ const EventList = ({ events, handleClick }) => {
     <Grid container spacing={0}>
       <ListHeaderWrapper>
         <Row>
-          <Grid xs={1} />
+          <Grid item xs={1} />
           <Grid item xs={10}>
             <H1 fontSize="5em">Events</H1>
           </Grid>
-          <Grid xs={1} />
+          <Grid item xs={1} />
         </Row>
         <Row>
-          <Grid xs={1} />
+          <Grid item xs={1} />
           <Grid item xs={10}>
             <Wrapper>{cards}</Wrapper>
           </Grid>
-          <Grid xs={1} />
+          <Grid item xs={1} />
         </Row>
       </ListHeaderWrapper>
     </Grid>
