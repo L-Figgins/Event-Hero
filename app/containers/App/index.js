@@ -14,15 +14,19 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import MainPage from 'containers/MainPage/Loadable';
 import EventShowcase from 'containers/EventShowcase/Loadable';
 import About from 'containers/AboutPage/Loadable';
-import Album from 'containers/Album/Loadable';
+import Album from 'containers/AlbumPage/Loadable';
 import Gallery from 'containers/GalleryPage/Loadable';
 import Contact from 'containers/ContactPage/Loadable';
+import Grid from 'components/MuiGrid';
+// import Hamburger from 'components/Hamburger';
 
 import GlobalStyle from '../../global-styles';
+import Hamburger from '../../components/Hamburger';
 
 export default function App() {
   return (
     <div>
+      <Hamburger />
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route path="/EventShowcase" component={EventShowcase} />

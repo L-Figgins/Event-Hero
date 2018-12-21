@@ -197,7 +197,7 @@ export class EventShowcase extends React.Component {
       console.log('event exists');
       content = (
         <Background img={event.cover.source}>
-          <Grid container spacing={0}>
+          {/* <Grid container spacing={0}>
             <Temp>
               <Grid item xs={1} />
               <Grid item xs={10}>
@@ -205,7 +205,7 @@ export class EventShowcase extends React.Component {
               </Grid>
               <Grid item xs={1} />
             </Temp>
-          </Grid>
+          </Grid> */}
 
           <Grid container spacing={0}>
             <Temp>

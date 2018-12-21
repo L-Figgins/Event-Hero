@@ -4,7 +4,6 @@
  *
  */
 import React from 'react';
-// import queryString from 'query-string';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
@@ -60,9 +59,9 @@ const AlbumThumbnail = styled.div`
   background-position: center center;
 `;
 
-const AlbumList = ({ albums }) => {
+const AlbumList = ({ albums, handleClick }) => {
   const cards = albums.map(album => (
-    <AlbumThumbnail key={album.id} {...album} />
+    <AlbumThumbnail onClick={handleClick} key={album.id} {...album} />
   ));
 
   const content = <React.Fragment>{cards}</React.Fragment>;
@@ -70,71 +69,21 @@ const AlbumList = ({ albums }) => {
   return content;
 };
 
-// const Albums = props => (
-//   <Grid container spacing={0}>
-//     <GalleryWrapper>
-//       <Row>
-//         <Hero img={events}>
-//           <Grid item xs={1} />
-//           <Grid item xs={10}>
-//             <Nav redirect={props.redirect} />
-//           </Grid>
-//           <Grid item xs={1} />
-//         </Hero>
-//       </Row>
-
-//       <Row>
-//         <Grid item xs={1} />
-//         <Grid item xs={10}>
-//           <GalleryTitle>
-//             <H1>Gallery</H1>
-//             <H3>DEC. 2018</H3>
-//           </GalleryTitle>
-//         </Grid>
-//         <Grid item xs={1} />
-//       </Row>
-
-//       <Row>
-//         <Grid item xs={1} />
-//         <Grid item xs={10}>
-//           <AlbumsWrapper>
-//             <AlbumList albums={props.albums}/>
-//           </AlbumsWrapper>
-//         </Grid>
-//         <Grid item xs={1} />
-//       </Row>
-
-//       <Row>
-//         <Grid item xs={1} />
-//         <Grid item xs={10}>
-//           <GalleryDescription>
-//             <P>
-//               Nam sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
-//               facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
-//               sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
-//               facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
-//               sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
-//               facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
-//               sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
-//               facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
-//               sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
-//               facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
-//               sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
-//               facilisis id. ut ipsum tortor.
-//             </P>
-//           </GalleryDescription>
-//         </Grid>
-
-//         <Grid item xs={1} />
-//       </Row>
-//     </GalleryWrapper>
-//   </Grid>
-// );
-
 /* eslint-disable react/prefer-stateless-function */
 export class Gallery extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.onAlbumClick = this.onAlbumClick.bind(this);
+  }
+
   componentDidMount() {
     this.props.loadAlbums();
+  }
+
+  onAlbumClick(event) {
+    const albumId = event.currentTarget.id;
+    console.log(albumId);
+    this.props.loadAlbumPage(albumId);
   }
 
   render() {
@@ -147,7 +96,7 @@ export class Gallery extends React.PureComponent {
     } else if (loading) {
       content = <LoadingIndicator />;
     } else if (albums) {
-      content = <AlbumList albums={albums} />;
+      content = <AlbumList handleClick={this.onAlbumClick} albums={albums} />;
     } else {
       content = <div>Something went horribly wrong</div>;
     }
@@ -222,6 +171,7 @@ export class Gallery extends React.PureComponent {
 
 Gallery.propTypes = {
   loadAlbums: PropTypes.func.isRequired,
+  loadAlbumPage: PropTypes.func.isRequired,
   redirect: PropTypes.func.isRequired,
   loading: PropTypes.bool,
   error: PropTypes.any,
@@ -238,6 +188,10 @@ function mapDispatchToProps(dispatch) {
   return {
     redirect: url => dispatch(push(url)),
     loadAlbums: () => dispatch(loadAlbums()),
+    loadAlbumPage: id => {
+      const url = `/Gallery/Album?id=${id}`;
+      dispatch(push(url));
+    },
   };
 }
 

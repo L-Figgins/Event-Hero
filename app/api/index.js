@@ -14,8 +14,13 @@ function loadAlbums() {
   return fetch('/api/albums').then(response => response.json());
 }
 
+function loadAlbumById(id) {
+  return fetch(`/api/albums/${id}`).then(response => response.json());
+}
+
 export const Api = {
   loadEvents,
   loadEventById,
   loadAlbums,
+  loadAlbumById,
 };
