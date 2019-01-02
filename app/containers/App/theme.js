@@ -4,8 +4,13 @@ import ThemeProvider from 'styled-components';
 import PropTypes from 'prop-types';
 
 const theme = {
-  breakpoints: [32, 48, 64, 80],
-  space: [0, 4, 8, 16, 32, 64, 128],
+  breakpoints: {
+    xs: 0, // zero represents the default (for mobile-first approach),
+    sm: '25rem',
+    md: '48rem',
+    lg: '80rem',
+    xl: '100rem',
+  },
   fonts: {
     sans: 'system-ui, sans-serif',
     mono: 'Menlo, monospace',
@@ -19,7 +24,6 @@ const theme = {
     black: '#000',
     white: '#fff',
   },
-  radii: [0, 2, 4],
   primary: 'tomato',
 };
 

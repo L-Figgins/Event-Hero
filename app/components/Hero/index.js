@@ -1,13 +1,8 @@
 import React from 'react';
 import HeroBG from './HeroBG';
-import Grid from '../MuiGrid';
 
 /* eslint-disable react/prefer-stateless-function */
-const Hero = props => (
-  <Grid container item xs={12}>
-    <HeroBG {...props} />
-  </Grid>
-);
+const Hero = props => <HeroBG {...props} />;
 
 Hero.propTypes = {};
 

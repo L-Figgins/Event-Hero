@@ -16,23 +16,24 @@ import injectReducer from 'utils/injectReducer';
 import styled from 'styled-components';
 
 // Rebass
-import { Box, Flex, Text } from 'rebass';
+import { Box, Flex, Text, Link } from 'rebass';
 
 // import components
 
 // import EventList from 'components/EventList/Loadable';
 // import Nav from 'components/Nav';
-import Hero from 'components/Hero';
+// import Hero from 'components/Hero';
 
 import makeSelectMainPage, { makeEventsSelector } from './selectors';
 import { loadEvents } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 
-import HH from '../../images/BG/HH_BG.jpg';
+// import HH from '../../images/BG/HH_BG.jpg';
 
 const TestBox = styled.div`
   color: ${props => props.theme.primary};
+  border: 1px solid red;
 `;
 
 export class TestMain extends React.Component {
@@ -67,49 +68,20 @@ export class TestMain extends React.Component {
           <title>TESTMain</title>
           <meta name="description" content="Description of MainPage" />
         </Helmet>
-        <Hero img={HH} />
 
-        <Flex mx={-2}>
-          <Box width={1 / 2} px={2}>
-            <Text p={1} color="white" bg="blue">
-              Half
-            </Text>
-          </Box>
-          <Box width={1 / 2} px={2}>
-            <Text p={1} color="white" bg="blue">
-              Half
-            </Text>
-          </Box>
+        <Flex px={2} color="white" bg="black" alignItems="center">
+          <Text p={2} fontWeight="bold">
+            HoneyHive
+          </Text>
+          <Box mx="auto" />
+          <Link href="#!" p={2} color="white">
+            Profile
+          </Link>
         </Flex>
 
-        <Flex px={4} py={4}>
-          <TestBox width={1 / 6} px={2}>
-            <Text p={1}>Grey Half</Text>
-          </TestBox>
-          <Box width={1 / 6} px={2}>
-            <Text p={1} color="white" bg="blue">
-              Half
-            </Text>
-          </Box>
-          <Box width={1 / 6} px={2}>
-            <Text p={1} color="white" bg="blue">
-              Half
-            </Text>
-          </Box>
-          <Box width={1 / 6} px={2}>
-            <Text p={1} color="white" bg="blue">
-              Half
-            </Text>
-          </Box>
-          <Box width={1 / 6} px={2}>
-            <Text p={1} color="white" bg="blue">
-              Half
-            </Text>
-          </Box>
-          <Box width={1 / 6} px={2}>
-            <Text p={1} color="white" bg="blue">
-              Half
-            </Text>
+        <Flex>
+          <Box width={{ xs: 1, sm: 1, md: 1 / 2, lg: 1, xl: 1 }}>
+            <TestBox>Test</TestBox>
           </Box>
         </Flex>
       </div>
