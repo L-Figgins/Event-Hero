@@ -16,7 +16,10 @@ import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 
 import LoadingIndicator from 'components/LoadingIndicator';
+import Photos from 'components/Photos';
+import H1 from 'components/H1';
 
+import styled from 'styled-components';
 import makeSelectAlbumPage, {
   makeSelectAlbum,
   makeSelectAlbumLoading,
@@ -25,6 +28,15 @@ import makeSelectAlbumPage, {
 import reducer from './reducer';
 import saga from './saga';
 import { loadAlbumById } from './actions';
+
+const AlbumHeader = styled.div`
+  display: flex;
+  justify-content: center;
+  background-color: rgb(22, 22, 22);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: white;
+`;
 
 /* eslint-disable react/prefer-stateless-function */
 export class AlbumPage extends React.Component {
@@ -39,7 +51,15 @@ export class AlbumPage extends React.Component {
     const { album, error, loading } = this.props;
     if (album) {
       console.log(this.props.album);
-      content = <div>album loaded</div>;
+      console.log(album.name);
+      content = (
+        <React.Fragment>
+          <AlbumHeader>
+            <H1>{album.name}</H1>
+          </AlbumHeader>
+          <Photos photos={album.photos} />;
+        </React.Fragment>
+      );
     } else if (error) {
       console.log(error);
       content = <div>Oh no error</div>;
@@ -53,6 +73,7 @@ export class AlbumPage extends React.Component {
           <title>AlbumPage</title>
           <meta name="description" content="Description of AlbumPage" />
         </Helmet>
+
         {content}
       </div>
     );
