@@ -85,6 +85,13 @@ const Nav = props => (
         </StyledLink>
       </NavButton>
     </Grid>
+    <Grid item xs={1}>
+      <NavButton {...props} path="/TestMain">
+        <StyledLink>
+          <H2>TestMain</H2>
+        </StyledLink>
+      </NavButton>
+    </Grid>
   </Bar>
 );
 

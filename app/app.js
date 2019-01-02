@@ -16,6 +16,8 @@ import { ConnectedRouter } from 'connected-react-router/immutable';
 import history from 'utils/history';
 import 'sanitize.css/sanitize.css';
 
+import { ThemeProvider } from 'styled-components';
+
 // Import root app
 import App from 'containers/App';
 
@@ -32,6 +34,9 @@ import configureStore from './configureStore';
 
 // Import i18n messages
 import { translationMessages } from './i18n';
+
+// Application Theme
+import theme from './containers/App/theme';
 
 // Create redux store with history
 const initialState = {};
@@ -55,7 +60,9 @@ const render = messages => {
     <Provider store={store}>
       <LanguageProvider messages={messages}>
         <ConnectedRouter history={history}>
-          <App />
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
         </ConnectedRouter>
       </LanguageProvider>
     </Provider>,
