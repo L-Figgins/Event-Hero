@@ -5,13 +5,14 @@ import { FormattedMessage } from 'react-intl';
 import H2 from 'components/H2';
 import H3 from 'components/H3';
 // import P from 'components/P';
+import { Flex, Box } from 'rebass';
 import H1 from '../H1';
 import messages from './messages';
 import WelcomeTitle from './WelcomeTitle';
 import WelcomeDescription from './WelcomeDescription';
 import WelcomeLocation from './WelcomeLocation';
-import Grid from '../MuiGrid';
-import Spacer from '../Spacer';
+// import Grid from '../MuiGrid';
+
 import Vr from './vr';
 import Wrapper from './Wrapper';
 
@@ -24,20 +25,20 @@ const BiographyWrapper = styled.div`
 function Welcome() {
   return (
     <Wrapper>
-      <Grid item xs={12}>
+      <Flex xs={1}>
         <WelcomeTitle>
-          <Spacer xs={1} />
-          <Grid item xs={10}>
+          <Box xs={1 / 12} />
+          <Box xs={10 / 12}>
             <H1>Welcome</H1>
-          </Grid>
-          <Spacer xs={1} />
+          </Box>
+          <Box xs={1 / 12} />
         </WelcomeTitle>
         <WelcomeLocation>
-          <Spacer xs={1} />
-          <Grid item xs={1}>
+          <Box xs={1 / 12} />
+          <Box xs={1 / 12}>
             <Vr />
-          </Grid>
-          <Grid item xs={8} md={5}>
+          </Box>
+          <Box xs={8 / 12} md={5 / 12}>
             <BiographyWrapper>
               <H2>The Honey Hive</H2>
               <H3>San Francisco, CA</H3>
@@ -45,11 +46,11 @@ function Welcome() {
                 <FormattedMessage {...messages.description} />
               </WelcomeDescription>
             </BiographyWrapper>
-          </Grid>
-          <Grid item xs={1} md={4} />
-          <Grid item xs={1} />
+          </Box>
+          <Box xs={1 / 12} md={4 / 12} />
+          <Box xs={1 / 12} />
         </WelcomeLocation>
-      </Grid>
+      </Flex>
     </Wrapper>
   );
 }

@@ -19,8 +19,8 @@ import styled from 'styled-components';
 import { Box, Flex, Text, Link } from 'rebass';
 
 // import components
-
-// import EventList from 'components/EventList/Loadable';
+import Welcome from 'components/Welcome';
+import EventList from 'components/EventList/Loadable';
 // import Nav from 'components/Nav';
 // import Hero from 'components/Hero';
 
@@ -52,15 +52,15 @@ export class TestMain extends React.Component {
   }
 
   render() {
-    // const { events, redirect } = this.props;
-    // console.log('Events Recieved by MainPage:', events);
-    // let content;
+    const { events } = this.props;
+    console.log('Events Recieved by MainPage:', events);
+    let content;
 
-    // if (events.length > 0) {
-    //   content = (
-    //     <EventList events={events} handleClick={this.onEventCardClick} />
-    //   );
-    // }
+    if (events.length > 0) {
+      content = (
+        <EventList events={events} handleClick={this.onEventCardClick} />
+      );
+    }
 
     return (
       <div>
@@ -80,9 +80,17 @@ export class TestMain extends React.Component {
         </Flex>
 
         <Flex>
-          <Box width={{ xs: 1, sm: 1, md: 1 / 2, lg: 1, xl: 1 }}>
+          <Box
+            width={{ xs: 1 / 12, sm: 2 / 12, md: 3 / 12, lg: 4 / 12, xl: 1 }}
+          >
             <TestBox>Test</TestBox>
           </Box>
+        </Flex>
+
+        <Welcome />
+
+        <Flex justifyContent="center">
+          <Box width={{ xs: 10 / 12 }}>{content}</Box>
         </Flex>
       </div>
     );
@@ -94,7 +102,7 @@ export class TestMain extends React.Component {
 
 TestMain.propTypes = {
   getEvents: PropTypes.func,
-  // events: PropTypes.any,
+  events: PropTypes.any,
   showcase: PropTypes.func,
   // redirect: PropTypes.func,
   // error: PropTypes.func,

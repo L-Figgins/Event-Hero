@@ -6,10 +6,10 @@ import PropTypes from 'prop-types';
 const theme = {
   breakpoints: {
     xs: 0, // zero represents the default (for mobile-first approach),
-    sm: '25rem',
-    md: '48rem',
-    lg: '80rem',
-    xl: '100rem',
+    sm: '20rem',
+    md: '40rem',
+    lg: '60rem',
+    xl: '80rem',
   },
   fonts: {
     sans: 'system-ui, sans-serif',

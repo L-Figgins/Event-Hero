@@ -1,8 +1,9 @@
 import React from 'react';
+import { Flex, Box } from 'rebass';
 import Card from '../Card';
 import Wrapper from './Wrapper';
-import Grid from '../MuiGrid';
-import Row from '../Row';
+// import Grid from '../MuiGrid';
+// import Row from '../Row';
 import H1 from '../H1';
 import ListHeaderWrapper from './ListHeaderWrapper';
 
@@ -12,24 +13,18 @@ const EventList = ({ events, handleClick }) => {
   ));
 
   const content = (
-    <Grid container spacing={0}>
-      <ListHeaderWrapper>
-        <Row>
-          <Grid item xs={1} />
-          <Grid item xs={10}>
-            <H1 fontSize="5em">Events</H1>
-          </Grid>
-          <Grid item xs={1} />
-        </Row>
-        <Row>
-          <Grid item xs={1} />
-          <Grid item xs={10}>
-            <Wrapper>{cards}</Wrapper>
-          </Grid>
-          <Grid item xs={1} />
-        </Row>
-      </ListHeaderWrapper>
-    </Grid>
+    <ListHeaderWrapper>
+      <Flex justifyContent="center">
+        <Box width={{ xs: 10 / 12 }}>
+          <H1 fontSize="5em">Events</H1>
+        </Box>
+      </Flex>
+      <Flex justifyContent="center">
+        <Box width={{ xs: 10 / 12 }}>
+          <Wrapper>{cards}</Wrapper>
+        </Box>
+      </Flex>
+    </ListHeaderWrapper>
   );
 
   return content;
