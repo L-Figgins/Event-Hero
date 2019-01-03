@@ -5,7 +5,8 @@ import { FormattedMessage } from 'react-intl';
 import H2 from 'components/H2';
 import H3 from 'components/H3';
 // import P from 'components/P';
-import { Flex, Box } from 'rebass';
+import { Flex } from 'rebass';
+import TestBox from 'components/TestBox';
 import H1 from '../H1';
 import messages from './messages';
 import WelcomeTitle from './WelcomeTitle';
@@ -25,31 +26,33 @@ const BiographyWrapper = styled.div`
 function Welcome() {
   return (
     <Wrapper>
-      <Flex>
-        <WelcomeTitle>
-          <Box borders="test" width={{ xs: 1 / 12 }} />
-          <Box borders="test" width={{ xs: 10 / 12 }}>
+      <Flex flexWrap="wrap">
+        <TestBox borders="test" width={{ xs: 1 / 12 }} />
+        <TestBox borders="test" width={{ xs: 10 / 12 }}>
+          <WelcomeTitle>
             <H1>Welcome</H1>
-          </Box>
-          <Box width={{ xs: 1 / 12 }} />
-        </WelcomeTitle>
-        <WelcomeLocation>
-          <Box width={{ xs: 1 / 12 }} />
-          <Box width={{ xs: 1 / 12 }}>
+          </WelcomeTitle>
+        </TestBox>
+        <TestBox width={{ xs: 1 / 12 }} />
+
+        <Flex width={1} py="2rem">
+          <TestBox width={{ xs: 0, lg: 1 / 12 }} />
+          <TestBox width={{ xs: 2 / 12, lg: 1 / 12 }}>
             <Vr />
-          </Box>
-          <Box width={{ xs: 8 / 12, md: 5 / 12 }}>
+          </TestBox>
+          <TestBox width={{ xs: 8 / 12, lg: 8 / 12 }}>
             <BiographyWrapper>
-              <H2>The Honey Hive</H2>
-              <H3>San Francisco, CA</H3>
+              <WelcomeLocation>
+                <H2>The Honey Hive</H2>
+                <H3>San Francisco, CA</H3>
+              </WelcomeLocation>
               <WelcomeDescription>
                 <FormattedMessage {...messages.description} />
               </WelcomeDescription>
             </BiographyWrapper>
-          </Box>
-          <Box width={{ xs: 1 / 12, md: 4 / 12 }} />
-          <Box width={{ xs: 1 / 12 }} />
-        </WelcomeLocation>
+          </TestBox>
+          <TestBox width={{ xs: 2 / 12 }} />
+        </Flex>
       </Flex>
     </Wrapper>
   );

@@ -15,15 +15,8 @@ import H2 from 'components/H2';
 // import hamburger from '../../images/Nav/hamburger.png';
 // import { push } from 'connected-react-router/immutable';
 
+import { Box } from 'rebass';
 import NavButton from './NavButton';
-
-const Box = styled.div`
-  display: flex;
-  flex-direction: column;
-  /* margin-bottom: 2rem; */
-  justify-content: center;
-  align-items: center;
-`;
 
 const StyledLink = styled.div`
   outline: none;

@@ -21,17 +21,17 @@ import { Box, Flex, Text, Link } from 'rebass';
 // import components
 import Welcome from 'components/Welcome';
 import EventList from 'components/EventList/Loadable';
-// import Nav from 'components/Nav';
-// import Hero from 'components/Hero';
+import Nav from 'components/Nav';
+import Hero from 'components/Hero';
 
 import makeSelectMainPage, { makeEventsSelector } from './selectors';
 import { loadEvents } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 
-// import HH from '../../images/BG/HH_BG.jpg';
+import HH from '../../images/BG/HH_BG.jpg';
 
-const TestBox = styled.div`
+const TestBox = styled(Box)`
   color: ${props => props.theme.primary};
   border: 1px solid red;
 `;
@@ -52,7 +52,7 @@ export class TestMain extends React.Component {
   }
 
   render() {
-    const { events } = this.props;
+    const { events, redirect } = this.props;
     console.log('Events Recieved by MainPage:', events);
     let content;
 
@@ -79,18 +79,22 @@ export class TestMain extends React.Component {
           </Link>
         </Flex>
 
-        <Flex>
-          <Box
-            width={{ xs: 1 / 12, sm: 2 / 12, md: 3 / 12, lg: 4 / 12, xl: 1 }}
-          >
-            <TestBox>Test</TestBox>
-          </Box>
-        </Flex>
+        <Hero img={HH}>
+          <Flex>
+            <TestBox width={{ xs: 1 / 12 }} />
+            <TestBox width={{ xs: 10 / 12 }}>
+              <Nav redirect={redirect} />
+            </TestBox>
+            <TestBox width={{ xs: 1 / 12 }} />
+          </Flex>
+        </Hero>
 
         <Welcome />
 
         <Flex justifyContent="center">
+          <Box width={{ xs: 1 / 12 }} bg="black" />
           <Box width={{ xs: 10 / 12 }}>{content}</Box>
+          <Box width={{ xs: 1 / 12 }} bg="black" />
         </Flex>
       </div>
     );
@@ -104,7 +108,7 @@ TestMain.propTypes = {
   getEvents: PropTypes.func,
   events: PropTypes.any,
   showcase: PropTypes.func,
-  // redirect: PropTypes.func,
+  redirect: PropTypes.func,
   // error: PropTypes.func,
   // loading: PropTypes.func,
   // mainpage: PropTypes.func,

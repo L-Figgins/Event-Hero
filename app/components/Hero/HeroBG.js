@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const HeroBG = styled.div`
   height: 75vh;
-  display: flex;
+  /* display: flex; */
   background: linear-gradient(
       0deg,
       rgb(20, 20, 20),
