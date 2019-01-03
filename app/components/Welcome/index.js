@@ -25,20 +25,20 @@ const BiographyWrapper = styled.div`
 function Welcome() {
   return (
     <Wrapper>
-      <Flex xs={1}>
+      <Flex>
         <WelcomeTitle>
-          <Box xs={1 / 12} />
-          <Box xs={10 / 12}>
+          <Box borders="test" width={{ xs: 1 / 12 }} />
+          <Box borders="test" width={{ xs: 10 / 12 }}>
             <H1>Welcome</H1>
           </Box>
-          <Box xs={1 / 12} />
+          <Box width={{ xs: 1 / 12 }} />
         </WelcomeTitle>
         <WelcomeLocation>
-          <Box xs={1 / 12} />
-          <Box xs={1 / 12}>
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 1 / 12 }}>
             <Vr />
           </Box>
-          <Box xs={8 / 12} md={5 / 12}>
+          <Box width={{ xs: 8 / 12, md: 5 / 12 }}>
             <BiographyWrapper>
               <H2>The Honey Hive</H2>
               <H3>San Francisco, CA</H3>
@@ -47,8 +47,8 @@ function Welcome() {
               </WelcomeDescription>
             </BiographyWrapper>
           </Box>
-          <Box xs={1 / 12} md={4 / 12} />
-          <Box xs={1 / 12} />
+          <Box width={{ xs: 1 / 12, md: 4 / 12 }} />
+          <Box width={{ xs: 1 / 12 }} />
         </WelcomeLocation>
       </Flex>
     </Wrapper>

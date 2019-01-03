@@ -25,6 +25,7 @@ const theme = {
     white: '#fff',
   },
   primary: 'tomato',
+  borders: '1px solid red',
 };
 
 export default theme;
