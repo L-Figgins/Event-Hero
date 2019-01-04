@@ -1,6 +1,5 @@
 import React from 'react';
-import { Flex } from 'rebass';
-import TestBox from '../TestBox';
+import { Flex, Box } from 'rebass';
 import Card from '../Card';
 import Wrapper from './Wrapper';
 // import Grid from '../MuiGrid';
@@ -16,14 +15,14 @@ const EventList = ({ events, handleClick }) => {
   const content = (
     <ListHeaderWrapper>
       <Flex justifyContent="center">
-        <TestBox width={{ xs: 1 }}>
+        <Box width={{ xs: 1 }}>
           <H1 fontSize="5em">Events</H1>
-        </TestBox>
+        </Box>
       </Flex>
       <Flex justifyContent="center">
-        <TestBox width={{ xs: 1 }}>
+        <Box width={{ xs: 1 }}>
           <Wrapper>{cards}</Wrapper>
-        </TestBox>
+        </Box>
       </Flex>
     </ListHeaderWrapper>
   );

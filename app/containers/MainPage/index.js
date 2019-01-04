@@ -6,6 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import Hide from 'hidden-styled';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
@@ -18,6 +19,7 @@ import injectReducer from 'utils/injectReducer';
 import { Box, Flex } from 'rebass';
 
 // import components
+import HomeButton from 'components/HomeButton';
 import Welcome from 'components/Welcome';
 import EventList from 'components/EventList/Loadable';
 import Nav from 'components/Nav';
@@ -63,6 +65,11 @@ export class MainPage extends React.Component {
           <title>Home Page</title>
           <meta name="description" content="Description of MainPage" />
         </Helmet>
+
+        <Hide md lg>
+          <HomeButton redirect={redirect} />
+        </Hide>
+
         <Hero img={HH}>
           <Flex bg="#141414">
             <Box width={{ xs: 1 / 12 }} />

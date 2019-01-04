@@ -36,6 +36,7 @@ const StyledLink = styled.div`
   display: inline-block;
   transition-timing-function: ease;
   transition-duration: 0.5s;
+
   &:hover {
     color: #b2b0a9;
     transition-timing-function: ease;

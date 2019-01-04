@@ -3,19 +3,14 @@ const express = require('express');
 const { AUTH_TOKEN, PAGE_ID } = require('./constants');
 const router = express.Router();
 
-// router.get('/events', (req, res) => {
-//   Event.find({}).then(events => {
-//     res.json(events);
-//   });
-// });
-
 router.get('/events', (req, res) => {
   const options = {
     method: 'GET',
     uri: `https://graph.facebook.com/${PAGE_ID}/events`,
     qs: {
       access_token: AUTH_TOKEN,
-      fields: 'name, id, description, cover{id, source.height(600)}',
+      fields:
+        'name, id, description, start_time, cover{id, source.height(600)}',
     },
   };
 

@@ -25,7 +25,7 @@ import Hamburger from '../../components/Hamburger';
 export default function App() {
   // yet another example of React.Fragment uses //
   return (
-    <>
+    <React.Fragment>
       <Hide md lg>
         <Hamburger />
       </Hide>
@@ -39,6 +39,6 @@ export default function App() {
         <Route path="" component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
-    </>
+    </React.Fragment>
   );
 }
