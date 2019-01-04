@@ -9,6 +9,7 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import Hide from 'hidden-styled';
 
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import MainPage from 'containers/MainPage/Loadable';
@@ -22,9 +23,12 @@ import GlobalStyle from '../../global-styles';
 import Hamburger from '../../components/Hamburger';
 
 export default function App() {
+  // yet another example of React.Fragment uses //
   return (
     <>
-      <Hamburger />
+      <Hide md lg>
+        <Hamburger />
+      </Hide>
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route path="/EventShowcase" component={EventShowcase} />
