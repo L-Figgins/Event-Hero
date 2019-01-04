@@ -29,7 +29,7 @@ import reducer from './reducer';
 import saga from './saga';
 import { loadEventById } from './actions';
 
-import TestBox from '../../components/TestBox';
+// import TestBox from '../../components/TestBox';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 
@@ -51,18 +51,15 @@ import {
 // `;
 
 const TicketButton = styled.button`
-  width: 50%;
+  width: 100%;
+  background-color: #141414;
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(22, 22, 22);
-  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.5);
-  padding-left: 10rem;
-  padding-right: 10rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   font-weight: bold;
   color: #ffe7ae;
   border: 1px solid #ffe7ae;
@@ -107,8 +104,7 @@ const Background = styled.div`
 
 const ContentWrapper = styled.div`
   width: 100%;
-  height: 100%;
-  min-height: 100vh;
+  min-height: 82.25vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -174,8 +170,8 @@ export class EventShowcase extends React.Component {
             </Flex>
 
             <Flex>
-              <TestBox width={{ xs: 1 / 12 }} />
-              <TestBox width={{ xs: 10 / 12 }}>
+              <Box width={{ xs: 1 / 12, lg: 3 / 12 }} />
+              <Box width={{ xs: 10 / 12, lg: 6 / 12 }}>
                 <ContentWrapper>
                   <Tag>Artist Profile</Tag>
                   <ArtistName>{event.name}</ArtistName>
@@ -188,8 +184,8 @@ export class EventShowcase extends React.Component {
                     <H1>Purchase Tickets</H1>
                   </TicketButton>
                 </ContentWrapper>
-              </TestBox>
-              <TestBox width={{ xs: 1 / 12 }} />
+              </Box>
+              <Box width={{ xs: 1 / 12, lg: 3 / 12 }} />
             </Flex>
             <Footer />
           </Overlay>

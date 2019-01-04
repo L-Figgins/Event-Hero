@@ -46,7 +46,6 @@ const AlbumsWrapper = styled.div`
   padding-top: 2rem;
   padding-bottom: 2rem;
   margin: 0;
-  border: 1px solid red;
 `;
 
 const AlbumThumbnail = styled.div`

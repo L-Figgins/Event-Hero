@@ -6,8 +6,8 @@ const CardWrapper = styled.div`
   margin: 0.75rem;
   text-align: left;
   border-radius: 0.5rem;
-  width: 35rem;
-  height: 25rem;
+  width: 100%;
+  height: 80%;
 
   box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.5);
   transition: ease 0.25s;
@@ -27,14 +27,6 @@ const CardWrapper = styled.div`
   }
   p {
     color: #a5a5a5;
-  }
-
-  @media only screen and (max-width: 540px) {
-    border: 1px solid green;
-    width: 100%;
-    height: 10%;
-    margin-left: 2rem;
-    margin-right: 2rem;
   }
 `;
 
