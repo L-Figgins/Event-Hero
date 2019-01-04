@@ -20,7 +20,7 @@ const MenuStyled = styled.div`
 
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
-    background: #373a47;
+    background: #fff;
   }
 
   /* Position and sizing of clickable cross button */
@@ -59,7 +59,7 @@ const MenuStyled = styled.div`
 
   /* Styling of overlay */
   .bm-overlay {
-    background: rgba(20, 20, 20, 0.3);
+    background: rgba(20, 20, 20, 1);
   }
 `;
 
