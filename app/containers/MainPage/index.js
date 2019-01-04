@@ -1,6 +1,6 @@
 /**
  *
- * MainPage
+ * Home Page
  *
  */
 
@@ -11,20 +11,18 @@ import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { push } from 'connected-react-router';
-// import styled from 'styled-components';
-
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 
-// import components
+// Rebass
+import { Box, Flex } from 'rebass';
 
-import Grid from 'components/MuiGrid';
-import EventList from 'components/EventList/Loadable';
-import Hero from 'components/Hero';
+// import components
 import Welcome from 'components/Welcome';
-// import Logo from 'components/Logo';
-import Footer from 'components/Footer';
+import EventList from 'components/EventList/Loadable';
 import Nav from 'components/Nav';
+import Hero from 'components/Hero';
+import Footer from 'components/Footer';
 
 import makeSelectMainPage, { makeEventsSelector } from './selectors';
 import { loadEvents } from './actions';
@@ -32,20 +30,6 @@ import reducer from './reducer';
 import saga from './saga';
 
 import HH from '../../images/BG/HH_BG.jpg';
-
-// const Box = styled.div`
-//   display: flex;
-//   justify-content: flex-start;
-//   padding-top: 2rem;
-//   padding-bottom: 2rem;
-// `;
-
-// const Temp = styled.div`
-//   display: flex;
-//   flex-direction: row;
-// `;
-
-/* eslint-disable react/prefer-stateless-function */
 
 export class MainPage extends React.Component {
   constructor(props) {
@@ -74,22 +58,28 @@ export class MainPage extends React.Component {
     }
 
     return (
-      <Grid container spacing={0}>
+      <React.Fragment>
         <Helmet>
-          <title>MainPage</title>
+          <title>Home Page</title>
           <meta name="description" content="Description of MainPage" />
         </Helmet>
         <Hero img={HH}>
-          <Grid item xs={1} />
-          <Grid container item xs={10}>
-            <Nav redirect={redirect} />
-          </Grid>
-          <Grid item xs={1} />
+          <Flex>
+            <Box width={{ xs: 1 / 12 }} />
+            <Box width={{ xs: 10 / 12 }}>
+              <Nav redirect={redirect} />
+            </Box>
+            <Box width={{ xs: 1 / 12 }} />
+          </Flex>
         </Hero>
         <Welcome />
-        {content}
+        <Flex justifyContent="center" bg="#141414">
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>{content}</Box>
+          <Box width={{ xs: 1 / 12 }} />
+        </Flex>
         <Footer />
-      </Grid>
+      </React.Fragment>
     );
   }
 }

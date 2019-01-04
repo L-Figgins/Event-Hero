@@ -7,8 +7,8 @@ const CardWrapper = styled.div`
   margin: 0.75rem;
   text-align: left;
   border-radius: 0.8rem;
-  width: 15rem;
-  height: 15rem;
+  width: 35rem;
+  height: 25rem;
 
   h1,
   h2,

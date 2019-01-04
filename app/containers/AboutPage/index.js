@@ -16,7 +16,7 @@ import Nav from 'components/Nav';
 import Hero from 'components/Hero';
 import Footer from 'components/Footer';
 // import Grid from 'components/MuiGrid';
-import TestBox from 'components/TestBox';
+// import TestBox from 'components/TestBox';
 import Row from 'components/Row';
 import H1 from 'components/H1';
 import P from 'components/P';
@@ -39,11 +39,11 @@ const About = props => {
     <React.Fragment>
       <Hero img={about}>
         <Flex>
-          <TestBox width={{ xs: 1 / 12 }} />
-          <TestBox width={{ xs: 10 / 12 }}>
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>
             <Nav redirect={redirect} />
-          </TestBox>
-          <TestBox width={{ xs: 1 / 12 }} />
+          </Box>
+          <Box width={{ xs: 1 / 12 }} />
         </Flex>
       </Hero>
 

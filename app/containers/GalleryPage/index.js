@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Flex, Text } from 'rebass';
+import { Flex, Text, Box } from 'rebass';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
@@ -20,7 +20,7 @@ import Hero from 'components/Hero';
 
 import LoadingIndicator from 'components/LoadingIndicator';
 import styled from 'styled-components';
-import TestBox from '../../components/TestBox';
+// import TestBox from '../../components/TestBox';
 import H1 from '../../components/H1';
 import H3 from '../../components/H3';
 import GalleryTitle from './GalleryTitle';
@@ -112,36 +112,36 @@ export class Gallery extends React.PureComponent {
         <GalleryWrapper>
           <Hero img={bgImg}>
             <Flex flexWrap="wrap">
-              <TestBox width={{ xs: 1 / 12 }} />
-              <TestBox width={{ xs: 10 / 12 }}>
+              <Box width={{ xs: 1 / 12 }} />
+              <Box width={{ xs: 10 / 12 }}>
                 <Nav redirect={redirect} />
-              </TestBox>
-              <TestBox width={{ xs: 1 / 12 }} />
+              </Box>
+              <Box width={{ xs: 1 / 12 }} />
             </Flex>
           </Hero>
 
           <Flex>
-            <TestBox width={{ xs: 1 / 12 }} />
-            <TestBox width={{ xs: 10 / 12 }}>
+            <Box width={{ xs: 1 / 12 }} />
+            <Box width={{ xs: 10 / 12 }}>
               <GalleryTitle>
                 <H1>Gallery</H1>
                 <H3>DEC. 2018</H3>
               </GalleryTitle>
-            </TestBox>
-            <TestBox width={{ xs: 1 / 12 }} />
+            </Box>
+            <Box width={{ xs: 1 / 12 }} />
           </Flex>
 
           <Flex flexWrap="wrap">
-            <TestBox width={{ xs: 1 / 12 }} />
-            <TestBox width={{ xs: 10 / 12 }}>
+            <Box width={{ xs: 1 / 12 }} />
+            <Box width={{ xs: 10 / 12 }}>
               <AlbumsWrapper>{content}</AlbumsWrapper>
-            </TestBox>
-            <TestBox width={{ xs: 1 / 12 }} />
+            </Box>
+            <Box width={{ xs: 1 / 12 }} />
           </Flex>
 
           <Flex>
-            <TestBox width={{ xs: 1 / 12 }} />
-            <TestBox width={{ xs: 10 / 12 }}>
+            <Box width={{ xs: 1 / 12 }} />
+            <Box width={{ xs: 10 / 12 }}>
               <Text p={{ xs: '5rem', lg: '1rem' }} color="white">
                 Nam sit amet est nibh. Donec susciTextit nunc quam, sed gravida
                 metus facilisis id. Integer ac dictum libero. Duis ut ipsum
@@ -156,9 +156,9 @@ export class Gallery extends React.PureComponent {
                 Duis ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
                 quam, sed gravida metus facilisis id. ut ipsum tortor.
               </Text>
-            </TestBox>
+            </Box>
 
-            <TestBox width={{ xs: 1 / 12 }} />
+            <Box width={{ xs: 1 / 12 }} />
           </Flex>
         </GalleryWrapper>
 

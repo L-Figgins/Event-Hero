@@ -13,12 +13,11 @@ import styled from 'styled-components';
 
 import Nav from 'components/Nav';
 import Hero from 'components/Hero';
-import Grid from 'components/MuiGrid';
 import H1 from 'components/H1';
 import H3 from 'components/H3';
 import P from 'components/P';
 import Footer from 'components/Footer';
-import { Flex } from 'rebass';
+import { Flex, Box } from 'rebass';
 // import Facebook from 'styled-icons/fa-brands/Facebook';
 import A from '../../components/A';
 import ContactTitle from './ContactTitle';
@@ -30,11 +29,11 @@ import fb from '../../images/Social/fb.png';
 import twtr from '../../images/Social/twtr.png';
 import web from '../../images/Social/web.png';
 
-const ContentWrapper = styled.div`
-  background-color: rgb(20, 20, 20);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-`;
+// const ContentWrapper = styled.div`
+//   background-color: rgb(20, 20, 20);
+//   padding-top: 2rem;
+//   padding-bottom: 2rem;
+// `;
 const ContactWrapper = styled.div`
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -97,88 +96,85 @@ const Contact = props => {
   const { redirect } = props;
 
   return (
-    <div>
+    <React.Fragment>
       <Hero img={contact}>
-        <Flex flexDirection="column">
-          <Grid item xs={1} />
-          <Grid item xs={10}>
+        <Flex flexWrap="wrap">
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>
             <Nav redirect={redirect} />
-          </Grid>
-          <Grid item xs={1} />
+          </Box>
+          <Box width={{ xs: 1 / 12 }} />
         </Flex>
       </Hero>
-      <Flex>
-        <ContentWrapper>
-          <Flex>
-            <Grid item xs={1} />
-            <Grid item xs={10}>
-              <ContactTitle>
-                <H1>Contact</H1>
-              </ContactTitle>
-              <ContactDescription>
-                <P>
-                  Nam sit amet est nibh. Donec suscipit nunc quam, sed gravida
-                  metus facilisis id. Integer ac dictum libero. Duis ut ipsum
-                  tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
-                  gravida metus facilisis id. Integer ac dictum libero. Duis ut
-                  ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam,
-                  sed gravida metus facilisis id. Integer ac dictum libero. Duis
-                  ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
-                  quam, sed gravida metus facilisis id. Integer ac dictum
-                  libero. Duis ut ipsum tortor. Nam sit amet est nibh. Donec
-                  suscipit nunc quam, sed gravida metus facilisis id. Integer ac
-                  dictum libero. Duis ut ipsum tortor. Nam sit amet est nibh.
-                  Donec suscipit nunc quam, sed gravida metus facilisis id. ut
-                  ipsum tortor.
-                </P>
-              </ContactDescription>
-            </Grid>
-            <Grid item xs={1} />
-          </Flex>
-        </ContentWrapper>
-        <ContentWrapper>
-          <Flex>
-            <Grid item xs={1} />
-            <Grid item xs={10}>
-              <ContactTitle>
-                <H3>Find Us Online</H3>
-              </ContactTitle>
-              <Grid container spacing={0}>
-                <ContactWrapper>
-                  <Grid item xs={4}>
-                    <A href="http://www.facebook.com/HoneyHiveGallery">
-                      <SocialBadge>
-                        <ContactImg src={fb} />
-                        <H1>Facebook.com/HoneyHiveGallery</H1>
-                      </SocialBadge>
-                    </A>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <A href="https://twitter.com/honeyhivesf?lang=en">
-                      <SocialBadge>
-                        <ContactImg src={twtr} />
-                        <H1>Twitter/@HoneyHive</H1>
-                      </SocialBadge>
-                    </A>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <A href="https://www.honeyhive.com/">
-                      <SocialBadge>
-                        <ContactImg src={web} />
-                        <H1>Website/www.HoneyHiveGallery.com</H1>
-                      </SocialBadge>
-                    </A>
-                  </Grid>
-                </ContactWrapper>
-              </Grid>
-            </Grid>
-            <Grid item xs={1} />
-          </Flex>
-        </ContentWrapper>
+      <Flex flexDirection="column">
+        <Flex bg="#141414" py={2}>
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>
+            <ContactTitle>
+              <H1>Contact</H1>
+            </ContactTitle>
+            <ContactDescription>
+              <P>
+                Nam sit amet est nibh. Donec suscipit nunc quam, sed gravida
+                metus facilisis id. Integer ac dictum libero. Duis ut ipsum
+                tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
+                gravida metus facilisis id. Integer ac dictum libero. Duis ut
+                ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam,
+                sed gravida metus facilisis id. Integer ac dictum libero. Duis
+                ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
+                quam, sed gravida metus facilisis id. Integer ac dictum libero.
+                Duis ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
+                quam, sed gravida metus facilisis id. Integer ac dictum libero.
+                Duis ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
+                quam, sed gravida metus facilisis id. ut ipsum tortor.
+              </P>
+            </ContactDescription>
+          </Box>
+          <Box width={{ xs: 1 / 12 }} />
+        </Flex>
+      </Flex>
+
+      <Flex bg="#141414">
+        <Box width={{ xs: 1 / 12 }} />
+
+        <Box width={{ xs: 10 / 12 }}>
+          <ContactTitle>
+            <H3>Find Us Online</H3>
+          </ContactTitle>
+
+          <ContactWrapper>
+            <Box width={{ xs: 4 / 12 }}>
+              <A href="http://www.facebook.com/HoneyHiveGallery">
+                <SocialBadge>
+                  <ContactImg src={fb} />
+                  <H1>Facebook.com/HoneyHiveGallery</H1>
+                </SocialBadge>
+              </A>
+            </Box>
+            <Box width={{ xs: 4 / 12 }}>
+              <A href="https://twitter.com/honeyhivesf?lang=en">
+                <SocialBadge>
+                  <ContactImg src={twtr} />
+                  <H1>Twitter/@HoneyHive</H1>
+                </SocialBadge>
+              </A>
+            </Box>
+            <Box width={{ xs: 4 / 12 }}>
+              <A href="https://www.honeyhive.com/">
+                <SocialBadge>
+                  <ContactImg src={web} />
+                  <H1>Website/www.HoneyHiveGallery.com</H1>
+                </SocialBadge>
+              </A>
+            </Box>
+          </ContactWrapper>
+        </Box>
+
+        <Box width={{ xs: 1 / 12 }} />
       </Flex>
 
       <Footer />
-    </div>
+    </React.Fragment>
   );
 };
 

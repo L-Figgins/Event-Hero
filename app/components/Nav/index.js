@@ -9,7 +9,7 @@ import styled, { withTheme } from 'styled-components';
 // import Grid from 'components/MuiGrid';
 import Logo from 'components/Logo';
 import H2 from 'components/H2';
-import TestBox from 'components/TestBox';
+import Box from 'components/TestBox';
 
 // import NavIMG from './NavImage';
 
@@ -56,45 +56,37 @@ const StyledLink = styled.div`
 
 const Nav = props => (
   <Bar>
-    <TestBox width={{ xs: 1 / 12 }}>
+    <Box width={{ xs: 1 / 12 }}>
       <NavButton {...props} path="/">
         <Logo height="5rem" width="5rem" />
       </NavButton>
-    </TestBox>
+    </Box>
 
-    <TestBox width={{ xs: 8 / 12 }} />
+    <Box width={{ xs: 8 / 12 }} />
 
-    <TestBox width={{ xs: 1 / 12 }}>
+    <Box width={{ xs: 1 / 12 }}>
       <NavButton {...props} path="/About">
         <StyledLink>
           <H2>About</H2>
         </StyledLink>
       </NavButton>
-    </TestBox>
+    </Box>
 
-    <TestBox width={{ xs: 1 / 12 }}>
+    <Box width={{ xs: 1 / 12 }}>
       <NavButton {...props} path="/Gallery">
         <StyledLink>
           <H2>Gallery</H2>
         </StyledLink>
       </NavButton>
-    </TestBox>
+    </Box>
 
-    <TestBox width={{ xs: 1 / 12 }}>
+    <Box width={{ xs: 1 / 12 }}>
       <NavButton {...props} path="/Contact">
         <StyledLink>
           <H2>Contact</H2>
         </StyledLink>
       </NavButton>
-    </TestBox>
-
-    <TestBox width={{ xs: 1 / 12 }}>
-      <NavButton {...props} path="/TestMain">
-        <StyledLink>
-          <H2>TestMain</H2>
-        </StyledLink>
-      </NavButton>
-    </TestBox>
+    </Box>
   </Bar>
 );
 

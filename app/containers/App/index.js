@@ -17,7 +17,6 @@ import About from 'containers/AboutPage/Loadable';
 import Album from 'containers/AlbumPage/Loadable';
 import Gallery from 'containers/GalleryPage/Loadable';
 import Contact from 'containers/ContactPage/Loadable';
-import TestMain from 'containers/TestMain/Loadable';
 
 import GlobalStyle from '../../global-styles';
 // import Hamburger from '../../components/Hamburger';
@@ -33,7 +32,6 @@ export default function App() {
         <Route exact path="/Gallery" component={Gallery} />
         <Route path="/Gallery/Album" component={Album} />
         <Route exact path="/Contact" component={Contact} />
-        <Route exact path="/TestMain" component={TestMain} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
