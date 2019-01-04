@@ -12,8 +12,8 @@ const theme = {
     xl: '80rem',
   },
   fonts: {
-    sans: 'system-ui, sans-serif',
-    mono: 'Menlo, monospace',
+    sans: 'Muli, system-ui, sans-serif',
+    mono: 'Muli, monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72, 96],
   fontWeights: {

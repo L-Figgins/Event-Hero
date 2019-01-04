@@ -33,7 +33,6 @@ const StyledLink = styled.div`
   font-size: 1.25rem;
   color: #fff;
   display: inline-block;
-  font-family: sans-serif;
   transition-timing-function: ease;
   transition-duration: 0.5s;
   &:hover {

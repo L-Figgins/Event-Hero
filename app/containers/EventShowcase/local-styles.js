@@ -15,11 +15,8 @@ export const ArtistGenre = styled.div`
   font-size: 1em;
   color: #fff;
   font-weight: bold;
-  padding-right: 1em;
 `;
 export const ArtistBio = styled.p`
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   font-size: 0.9rem;
   line-height: 1.75rem;
   color: #928f8a;
@@ -33,7 +30,4 @@ export const EventDate = styled.div`
 `;
 
 // TODO RENAME THIS
-export const SubTitle = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
+export const SubTitle = styled.div``;

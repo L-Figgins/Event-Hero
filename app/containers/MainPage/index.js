@@ -64,7 +64,7 @@ export class MainPage extends React.Component {
           <meta name="description" content="Description of MainPage" />
         </Helmet>
         <Hero img={HH}>
-          <Flex>
+          <Flex bg="#141414">
             <Box width={{ xs: 1 / 12 }} />
             <Box width={{ xs: 10 / 12 }}>
               <Nav redirect={redirect} />

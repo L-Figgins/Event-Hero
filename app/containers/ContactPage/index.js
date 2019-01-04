@@ -14,7 +14,7 @@ import styled from 'styled-components';
 import Nav from 'components/Nav';
 import Hero from 'components/Hero';
 import H1 from 'components/H1';
-import H3 from 'components/H3';
+import H2 from 'components/H2';
 import P from 'components/P';
 import Footer from 'components/Footer';
 import { Flex, Box } from 'rebass';
@@ -139,7 +139,7 @@ const Contact = props => {
 
         <Box width={{ xs: 10 / 12 }}>
           <ContactTitle>
-            <H3>Find Us Online</H3>
+            <H2>Find Us Online</H2>
           </ContactTitle>
 
           <ContactWrapper>

@@ -22,14 +22,13 @@ const Button = styled.button`
   @media screen and (max-width: 80rem) {
     h2 {
       font-size: 1.15rem;
-      color: red;
+
       display: block;
     }
   }
   @media screen and (max-width: 60rem) {
     h2 {
       font-size: 1.05rem;
-      color: blue;
       display: block;
     }
   }

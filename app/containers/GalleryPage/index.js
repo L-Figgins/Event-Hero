@@ -37,10 +37,6 @@ import saga from './saga';
 import bgImg from '../../images/BG/gallery-HH.jpg';
 import { loadAlbums } from './actions';
 
-const GalleryWrapper = styled.div`
-  background-color: rgb(22, 22, 22);
-`;
-
 const AlbumsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -49,15 +45,28 @@ const AlbumsWrapper = styled.div`
   background-color: rgb(22, 22, 22);
   padding-top: 2rem;
   padding-bottom: 2rem;
+  margin: 0;
+  border: 1px solid red;
 `;
 
 const AlbumThumbnail = styled.div`
-  height: 450px;
-  width: 450px;
-  border: 1px solid green;
+  height: 25rem;
+  width: 25rem;
+  border: 1px solid #928f8a;
   background-image: url(${props => props.cover_photo.source});
   background-size: cover;
   background-position: center center;
+  margin: 1rem;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.5);
+  transition: ease 0.25s;
+  &:hover {
+    transition: ease 0.25s;
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.5);
+  }
+  &:active {
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.8);
+    opacity: 0.5;
+  }
 `;
 
 const AlbumList = ({ albums, handleClick }) => {
@@ -109,58 +118,56 @@ export class Gallery extends React.PureComponent {
           <meta name="description" content="Description of Gallery" />
         </Helmet>
 
-        <GalleryWrapper>
-          <Hero img={bgImg}>
-            <Flex flexWrap="wrap">
-              <Box width={{ xs: 1 / 12 }} />
-              <Box width={{ xs: 10 / 12 }}>
-                <Nav redirect={redirect} />
-              </Box>
-              <Box width={{ xs: 1 / 12 }} />
-            </Flex>
-          </Hero>
-
-          <Flex>
-            <Box width={{ xs: 1 / 12 }} />
-            <Box width={{ xs: 10 / 12 }}>
-              <GalleryTitle>
-                <H1>Gallery</H1>
-                <H3>DEC. 2018</H3>
-              </GalleryTitle>
-            </Box>
-            <Box width={{ xs: 1 / 12 }} />
-          </Flex>
-
+        <Hero img={bgImg}>
           <Flex flexWrap="wrap">
             <Box width={{ xs: 1 / 12 }} />
             <Box width={{ xs: 10 / 12 }}>
-              <AlbumsWrapper>{content}</AlbumsWrapper>
+              <Nav redirect={redirect} />
             </Box>
             <Box width={{ xs: 1 / 12 }} />
           </Flex>
+        </Hero>
 
-          <Flex>
-            <Box width={{ xs: 1 / 12 }} />
-            <Box width={{ xs: 10 / 12 }}>
-              <Text p={{ xs: '5rem', lg: '1rem' }} color="white">
-                Nam sit amet est nibh. Donec susciTextit nunc quam, sed gravida
-                metus facilisis id. Integer ac dictum libero. Duis ut ipsum
-                tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
-                gravida metus facilisis id. Integer ac dictum libero. Duis ut
-                ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam,
-                sed gravida metus facilisis id. Integer ac dictum libero. Duis
-                ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
-                quam, sed gravida metus facilisis id. Integer ac dictum libero.
-                Duis ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
-                quam, sed gravida metus facilisis id. Integer ac dictum libero.
-                Duis ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
-                quam, sed gravida metus facilisis id. ut ipsum tortor.
-              </Text>
-            </Box>
+        <Flex bg="#141414">
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>
+            <GalleryTitle>
+              <H1>Gallery</H1>
+              <H3>DEC. 2018</H3>
+            </GalleryTitle>
+          </Box>
+          <Box width={{ xs: 1 / 12 }} />
+        </Flex>
 
-            <Box width={{ xs: 1 / 12 }} />
-          </Flex>
-        </GalleryWrapper>
+        <Flex flexWrap="wrap" bg="#141414">
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>
+            <AlbumsWrapper>{content}</AlbumsWrapper>
+          </Box>
+          <Box width={{ xs: 1 / 12 }} />
+        </Flex>
+
+        <Flex bg="#141414">
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>
+            <Text p={{ xs: '5rem', lg: '1rem' }} color="white">
+              Nam sit amet est nibh. Donec susciTextit nunc quam, sed gravida
+              metus facilisis id. Integer ac dictum libero. Duis ut ipsum
+              tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
+              gravida metus facilisis id. Integer ac dictum libero. Duis ut
+              ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
+              gravida metus facilisis id. Integer ac dictum libero. Duis ut
+              ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
+              gravida metus facilisis id. Integer ac dictum libero. Duis ut
+              ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
+              gravida metus facilisis id. Integer ac dictum libero. Duis ut
+              ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
+              gravida metus facilisis id. ut ipsum tortor.
+            </Text>
+          </Box>
+
+          <Box width={{ xs: 1 / 12 }} />
+        </Flex>
 
         <Footer />
       </div>

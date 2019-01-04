@@ -13,12 +13,11 @@ import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import LoadingIndicator from 'components/LoadingIndicator';
-
 import { push } from 'connected-react-router';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
-import Grid from 'components/MuiGrid';
+import { Flex, Box } from 'rebass';
 import H1 from '../../components/H1';
 import makeSelectEventShowcase, {
   makeSelectEvent,
@@ -30,6 +29,7 @@ import reducer from './reducer';
 import saga from './saga';
 import { loadEventById } from './actions';
 
+import TestBox from '../../components/TestBox';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 
@@ -39,7 +39,7 @@ import Footer from '../../components/Footer';
 // import Img from '../../components/Img';
 import {
   ArtistName,
-  ArtistGenre,
+  // ArtistGenre,
   Tag,
   ArtistBio,
   SubTitle,
@@ -51,12 +51,12 @@ import {
 // `;
 
 const TicketButton = styled.button`
-  width: 100%;
+  width: 50%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   background-color: rgb(22, 22, 22);
-  box-shadow: 0px 10px 19px 0px rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.5);
   padding-left: 10rem;
   padding-right: 10rem;
   padding-top: 1.5rem;
@@ -66,8 +66,12 @@ const TicketButton = styled.button`
   font-weight: bold;
   color: #ffe7ae;
   border: 1px solid #ffe7ae;
+
+  h1 {
+    font-size: 1rem;
+  }
   &:hover {
-    box-shadow: 0px 15px 0px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.5);
     transition: 0.5s ease;
     border: 1px solid #fff;
     h1 {
@@ -75,44 +79,22 @@ const TicketButton = styled.button`
     }
   }
   &:active {
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease;
+    border: 1px solid #fff;
     h1 {
       color: #928f8a;
       border: 1px solid #928f8a;
     }
   }
-  h1 {
-    font-size: 1rem;
-    margin: 0;
-  }
-  @media screen and (max-width: 80rem) {
-    h1 {
-      font-size: 1rem;
-      color: red;
-    }
-  }
-  @media screen and (max-width: 60rem) {
-    h1 {
-      font-size: 1rem;
-      color: blue;
-    }
-  }
-  @media screen and (max-width: 40rem) {
-    h1 {
-      font-size: 1rem;
-      color: green;
-    }
-  }
-  @media screen and (max-width: 20rem) {
-    h1 {
-      font-size: 1rem;
-      color: yellow;
-    }
-  }
 `;
 
-const Temp = styled.div`
-  display: flex;
-  flex-direction: row;
+const Overlay = styled.div`
+  background-color: #141414;
+  opacity: 0.8;
+  position: relative;
+  top: 0;
+  left: 0;
 `;
 
 const Background = styled.div`
@@ -120,11 +102,7 @@ const Background = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  min-height: 75vh;
-
-  @media (max-width: 500px) {
-    height: 100vh;
-  }
+  min-height: 80vh;
 `;
 
 const ContentWrapper = styled.div`
@@ -136,38 +114,27 @@ const ContentWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 2rem;
 
   @media screen and (max-width: 80rem) {
     h1 {
       font-size: 1rem;
-      color: red;
     }
   }
   @media screen and (max-width: 60rem) {
     h1 {
       font-size: 1rem;
-      color: blue;
     }
   }
   @media screen and (max-width: 40rem) {
     h1 {
       font-size: 1.25rem;
-      color: green;
     }
   }
   @media screen and (max-width: 20rem) {
     h1 {
       font-size: 1.5rem;
-      color: yellow;
     }
-  }
-
-  @media (max-width: 500px) {
-    margin-top: 50%;
   }
 `;
 
@@ -197,25 +164,23 @@ export class EventShowcase extends React.Component {
       console.log('event exists');
       content = (
         <Background img={event.cover.source}>
-          {/* <Grid container spacing={0}>
-            <Temp>
-              <Grid item xs={1} />
-              <Grid item xs={10}>
+          <Overlay>
+            <Flex flexWrap="wrap">
+              <Box width={{ xs: 1 / 12 }} />
+              <Box width={{ xs: 10 / 12 }}>
                 <Nav redirect={redirect} />
-              </Grid>
-              <Grid item xs={1} />
-            </Temp>
-          </Grid> */}
+              </Box>
+              <Box width={{ xs: 1 / 12 }} />
+            </Flex>
 
-          <Grid container spacing={0}>
-            <Temp>
-              <Grid item xs={1} />
-              <Grid item xs={10}>
+            <Flex>
+              <TestBox width={{ xs: 1 / 12 }} />
+              <TestBox width={{ xs: 10 / 12 }}>
                 <ContentWrapper>
                   <Tag>Artist Profile</Tag>
                   <ArtistName>{event.name}</ArtistName>
                   <SubTitle>
-                    <ArtistGenre>This Header No longer Exists</ArtistGenre>
+                    {/* <ArtistGenre>This Header No longer Exists</ArtistGenre> */}
                     {/* <EventDate>{date}</EventDate> */}
                   </SubTitle>
                   <ArtistBio>{event.description}</ArtistBio>
@@ -223,11 +188,11 @@ export class EventShowcase extends React.Component {
                     <H1>Purchase Tickets</H1>
                   </TicketButton>
                 </ContentWrapper>
-              </Grid>
-              <Grid item xs={1} />
-            </Temp>
+              </TestBox>
+              <TestBox width={{ xs: 1 / 12 }} />
+            </Flex>
             <Footer />
-          </Grid>
+          </Overlay>
         </Background>
       );
     } else {
