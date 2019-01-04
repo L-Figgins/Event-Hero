@@ -14,7 +14,7 @@ const MenuStyled = styled.div`
     position: fixed;
     width: 36px;
     height: 30px;
-    left: 36px;
+    right: 36px;
     top: 36px;
   }
 
@@ -31,7 +31,7 @@ const MenuStyled = styled.div`
 
   /* Color/shape of close button cross */
   .bm-cross {
-    background: #bdc3c7;
+    background: #fff;
   }
 
   /* General sidebar styles */
