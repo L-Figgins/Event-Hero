@@ -23,11 +23,12 @@ const theme = {
   colors: {
     black: '#000',
     white: '#fff',
+    primary: '#141414',
   },
-  primary: 'tomato',
+
   borders: {
-    test:'1px solid red',
-  }
+    test: '1px solid red',
+  },
 };
 
 export default theme;

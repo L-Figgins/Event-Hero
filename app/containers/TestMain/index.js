@@ -16,7 +16,7 @@ import injectReducer from 'utils/injectReducer';
 import styled from 'styled-components';
 
 // Rebass
-import { Box, Flex, Text, Link } from 'rebass';
+import { Box, Flex } from 'rebass';
 
 // import components
 import Welcome from 'components/Welcome';
@@ -68,16 +68,6 @@ export class TestMain extends React.Component {
           <title>TESTMain</title>
           <meta name="description" content="Description of MainPage" />
         </Helmet>
-
-        <Flex px={2} color="white" bg="black" alignItems="center">
-          <Text p={2} fontWeight="bold">
-            HoneyHive
-          </Text>
-          <Box mx="auto" />
-          <Link href="#!" p={2} color="white">
-            Profile
-          </Link>
-        </Flex>
 
         <Hero img={HH}>
           <Flex>

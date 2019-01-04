@@ -10,11 +10,13 @@ import { push } from 'connected-react-router';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import styled from 'styled-components';
+import { Flex, Box } from 'rebass';
 
 import Nav from 'components/Nav';
 import Hero from 'components/Hero';
 import Footer from 'components/Footer';
-import Grid from 'components/MuiGrid';
+// import Grid from 'components/MuiGrid';
+import TestBox from 'components/TestBox';
 import Row from 'components/Row';
 import H1 from 'components/H1';
 import P from 'components/P';
@@ -34,22 +36,22 @@ const About = props => {
   const { redirect } = props;
 
   return (
-    <div>
-      <Grid container spacing={0}>
-        <Row>
-          <Hero img={about}>
-            <Grid item xs={1} />
-            <Grid item xs={10}>
-              <Nav redirect={redirect} />
-            </Grid>
-            <Grid item xs={1} />
-          </Hero>
-        </Row>
+    <React.Fragment>
+      <Hero img={about}>
+        <Flex>
+          <TestBox width={{ xs: 1 / 12 }} />
+          <TestBox width={{ xs: 10 / 12 }}>
+            <Nav redirect={redirect} />
+          </TestBox>
+          <TestBox width={{ xs: 1 / 12 }} />
+        </Flex>
+      </Hero>
 
+      <Flex flexWrap="wrap">
         <ContentWrapper>
           <Row>
-            <Grid item xs={1} />
-            <Grid item xs={10}>
+            <Box width={{ xs: 1 / 12 }} />
+            <Box width={{ xs: 10 / 12 }}>
               <AboutTitle>
                 <H1>About</H1>
               </AboutTitle>
@@ -70,14 +72,14 @@ const About = props => {
                   ipsum tortor.
                 </P>
               </AboutDescription>
-            </Grid>
-            <Grid item xs={1} />
+            </Box>
+            <Box width={{ xs: 1 / 12 }} />
           </Row>
         </ContentWrapper>
         <ContentWrapper>
           <Row>
-            <Grid item xs={1} />
-            <Grid item xs={10}>
+            <Box width={{ xs: 1 / 12 }} />
+            <Box width={{ xs: 10 / 12 }}>
               <AboutTitle>
                 <H1>Booking</H1>
               </AboutTitle>
@@ -97,14 +99,13 @@ const About = props => {
                   rate.
                 </P>
               </AboutDescription>
-            </Grid>
-            <Grid item xs={1} />
+            </Box>
+            <Box width={{ xs: 1 / 12 }} />
           </Row>
         </ContentWrapper>
-      </Grid>
-
+      </Flex>
       <Footer />
-    </div>
+    </React.Fragment>
   );
 };
 

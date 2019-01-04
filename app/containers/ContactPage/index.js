@@ -14,11 +14,11 @@ import styled from 'styled-components';
 import Nav from 'components/Nav';
 import Hero from 'components/Hero';
 import Grid from 'components/MuiGrid';
-import Row from 'components/Row';
 import H1 from 'components/H1';
 import H3 from 'components/H3';
 import P from 'components/P';
 import Footer from 'components/Footer';
+import { Flex } from 'rebass';
 // import Facebook from 'styled-icons/fa-brands/Facebook';
 import A from '../../components/A';
 import ContactTitle from './ContactTitle';
@@ -98,19 +98,18 @@ const Contact = props => {
 
   return (
     <div>
-      <Grid container spacing={0}>
-        <Row>
-          <Hero img={contact}>
-            <Grid item xs={1} />
-            <Grid item xs={10}>
-              <Nav redirect={redirect} />
-            </Grid>
-            <Grid item xs={1} />
-          </Hero>
-        </Row>
-
+      <Hero img={contact}>
+        <Flex flexDirection="column">
+          <Grid item xs={1} />
+          <Grid item xs={10}>
+            <Nav redirect={redirect} />
+          </Grid>
+          <Grid item xs={1} />
+        </Flex>
+      </Hero>
+      <Flex>
         <ContentWrapper>
-          <Row>
+          <Flex>
             <Grid item xs={1} />
             <Grid item xs={10}>
               <ContactTitle>
@@ -135,10 +134,10 @@ const Contact = props => {
               </ContactDescription>
             </Grid>
             <Grid item xs={1} />
-          </Row>
+          </Flex>
         </ContentWrapper>
         <ContentWrapper>
-          <Row>
+          <Flex>
             <Grid item xs={1} />
             <Grid item xs={10}>
               <ContactTitle>
@@ -174,9 +173,9 @@ const Contact = props => {
               </Grid>
             </Grid>
             <Grid item xs={1} />
-          </Row>
+          </Flex>
         </ContentWrapper>
-      </Grid>
+      </Flex>
 
       <Footer />
     </div>

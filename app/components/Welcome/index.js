@@ -27,8 +27,8 @@ function Welcome() {
   return (
     <Wrapper>
       <Flex flexWrap="wrap">
-        <TestBox borders="test" width={{ xs: 1 / 12 }} />
-        <TestBox borders="test" width={{ xs: 10 / 12 }}>
+        <TestBox width={{ xs: 1 / 12 }} />
+        <TestBox width={{ xs: 10 / 12 }}>
           <WelcomeTitle>
             <H1>Welcome</H1>
           </WelcomeTitle>
@@ -36,7 +36,7 @@ function Welcome() {
         <TestBox width={{ xs: 1 / 12 }} />
 
         <Flex width={1} py="2rem">
-          <TestBox width={{ xs: 0, lg: 1 / 12 }} />
+          <TestBox width={{ xs: 1 / 12 }} />
           <TestBox width={{ xs: 2 / 12, lg: 1 / 12 }}>
             <Vr />
           </TestBox>
@@ -51,7 +51,8 @@ function Welcome() {
               </WelcomeDescription>
             </BiographyWrapper>
           </TestBox>
-          <TestBox width={{ xs: 2 / 12 }} />
+          <TestBox width={{ xs: 1 / 12 }} />
+          <TestBox width={{ xs: 1 / 12 }} />
         </Flex>
       </Flex>
     </Wrapper>
