@@ -15,9 +15,11 @@ import { Flex, Box } from 'rebass';
 import Nav from 'components/Nav';
 import Hero from 'components/Hero';
 import Footer from 'components/Footer';
+import Hide from 'hidden-styled';
+import HomeButton from 'components/HomeButton';
 // import Grid from 'components/MuiGrid';
 // import TestBox from 'components/TestBox';
-import Row from 'components/Row';
+
 import H1 from 'components/H1';
 import P from 'components/P';
 import AboutImg from './AboutImg';
@@ -37,19 +39,21 @@ const About = props => {
 
   return (
     <React.Fragment>
+      <Hide md lg>
+        <HomeButton redirect={redirect} />
+      </Hide>
+
       <Hero img={about}>
-        <Flex>
-          <Box width={{ xs: 1 / 12 }} />
-          <Box width={{ xs: 10 / 12 }}>
+        <Flex bg="#141414" flexWrap="wrap">
+          <Box width={{ xs: 1 }}>
             <Nav redirect={redirect} />
           </Box>
-          <Box width={{ xs: 1 / 12 }} />
         </Flex>
       </Hero>
 
       <Flex flexWrap="wrap">
         <ContentWrapper>
-          <Row>
+          <Flex>
             <Box width={{ xs: 1 / 12 }} />
             <Box width={{ xs: 10 / 12 }}>
               <AboutTitle>
@@ -74,10 +78,10 @@ const About = props => {
               </AboutDescription>
             </Box>
             <Box width={{ xs: 1 / 12 }} />
-          </Row>
+          </Flex>
         </ContentWrapper>
         <ContentWrapper>
-          <Row>
+          <Flex>
             <Box width={{ xs: 1 / 12 }} />
             <Box width={{ xs: 10 / 12 }}>
               <AboutTitle>
@@ -101,7 +105,7 @@ const About = props => {
               </AboutDescription>
             </Box>
             <Box width={{ xs: 1 / 12 }} />
-          </Row>
+          </Flex>
         </ContentWrapper>
       </Flex>
       <Footer />

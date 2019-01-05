@@ -66,6 +66,8 @@
     "compression": "1.7.3",
     "connected-react-router": "4.5.0",
     "cross-env": "5.2.0",
+    "date-and-time": "^0.6.3",
+    "datejs": "^1.0.0-rc3",
     "es6-promise": "^4.2.5",
     "express": "4.16.4",
     "fontfaceobserver": "2.0.13",

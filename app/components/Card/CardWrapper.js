@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 const CardWrapper = styled.div`
   position: relative;
-  background: #1e1e1e;
+  background: rgba(0, 0, 0, 0);
   margin: 0.75rem;
   text-align: left;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   width: 100%;
   height: 80%;
   box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.5);

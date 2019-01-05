@@ -29,6 +29,7 @@ export default function App() {
       <Hide md lg>
         <Hamburger />
       </Hide>
+
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route path="/EventShowcase" component={EventShowcase} />

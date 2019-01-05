@@ -2,9 +2,9 @@
 // import { mount } from 'enzyme';
 // import { enzymeFind } from 'styled-components/test-utils';
 
-// import Row from '../index';
+// import HomeButton from '../index';
 
-describe('<Row />', () => {
+describe('<HomeButton />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });

@@ -72,11 +72,9 @@ export class MainPage extends React.Component {
 
         <Hero img={HH}>
           <Flex bg="#141414">
-            <Box width={{ xs: 1 / 12 }} />
-            <Box width={{ xs: 10 / 12 }}>
+            <Box width={{ xs: 1 }}>
               <Nav redirect={redirect} />
             </Box>
-            <Box width={{ xs: 1 / 12 }} />
           </Flex>
         </Hero>
         <Welcome />

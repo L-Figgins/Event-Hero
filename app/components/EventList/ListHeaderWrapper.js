@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const ListHeaderWrapper = styled.div`
   background-color: #161616;
+
   h1 {
     font-size: 7rem;
     color: #fff;

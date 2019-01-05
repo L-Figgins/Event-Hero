@@ -7,21 +7,24 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { slide as Menu } from 'react-burger-menu';
+// import { Flex, Box } from 'rebass';
+import Logo from 'components/Logo';
+import PropTypes from 'prop-types';
 
 const MobileBar = styled.div`
   background-color: #141414;
   width: 100vw;
-  height: 10rem;
+  height: 5rem;
 `;
 
 const MenuStyled = styled.div`
   /* Position and sizing of burger button */
   .bm-burger-button {
     position: absolute;
-    width: 36px;
-    height: 30px;
-    right: 36px;
-    top: 36px;
+    width: 2.25rem;
+    height: 1.875rem;
+    right: 1.65rem;
+    top: 1.55rem;
   }
 
   /* Color/shape of burger icon bars */
@@ -54,8 +57,9 @@ const MenuStyled = styled.div`
 
   /* Wrapper for item list */
   .bm-item-list {
+    padding-top: 10rem;
     color: #b8b7ad;
-    padding: 0.8em;
+    padding: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,7 +111,7 @@ const MenuStyled = styled.div`
       top: 50%;
       margin-top: -8px;
       right: 0;
-      background: #f9f9f9;
+      background: #ffe7ae;
       transform: translate3d(-100%, 0, 0);
       transition: transform 0.4s;
       transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
@@ -120,7 +124,7 @@ const MenuStyled = styled.div`
       position: absolute;
       z-index: 2;
       overflow: hidden;
-      color: #424242;
+      color: #fff;
       white-space: nowrap;
       width: 0%;
       transition: width 0.4s 0.3s;
@@ -131,11 +135,25 @@ const MenuStyled = styled.div`
   }
 `;
 
-function Hamburger() {
+const MenuStyledButton = styled.div`
+  width: 2.25rem;
+  height: 2.25rem;
+  padding-bottom: 5rem;
+`;
+
+const Hamburger = props => {
+  const onClickRedirect = () => {
+    props.redirect('/');
+  };
+
   return (
     <MobileBar>
       <MenuStyled>
         <Menu width="100%">
+          <MenuStyledButton {...props} onClick={onClickRedirect}>
+            <Logo height="3.5rem" width="3.5rem" />
+          </MenuStyledButton>
+
           <a href="/" data-letters="Home" className="link link--kukuri">
             Home
           </a>
@@ -160,8 +178,8 @@ function Hamburger() {
       </MenuStyled>
     </MobileBar>
   );
-}
+};
 
-Hamburger.propTypes = {};
+Hamburger.propTypes = { redirect: PropTypes.func.isRequired };
 
 export default Hamburger;

@@ -48,7 +48,16 @@ const AlbumsWrapper = styled.div`
   margin: 0;
 `;
 
+const AlbumName = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 2rem;
+  color: whitesmoke;
+`;
+
 const AlbumThumbnail = styled.div`
+  display: flex;
   height: 25rem;
   width: 25rem;
   border: 1px solid #928f8a;
@@ -70,7 +79,9 @@ const AlbumThumbnail = styled.div`
 
 const AlbumList = ({ albums, handleClick }) => {
   const cards = albums.map(album => (
-    <AlbumThumbnail onClick={handleClick} key={album.id} {...album} />
+    <AlbumThumbnail onClick={handleClick} key={album.id} {...album}>
+      <AlbumName>{album.name}</AlbumName>
+    </AlbumThumbnail>
   ));
 
   const content = <React.Fragment>{cards}</React.Fragment>;
@@ -118,12 +129,10 @@ export class Gallery extends React.PureComponent {
         </Helmet>
 
         <Hero img={bgImg}>
-          <Flex flexWrap="wrap">
-            <Box width={{ xs: 1 / 12 }} />
-            <Box width={{ xs: 10 / 12 }}>
+          <Flex bg="#141414" flexWrap="wrap">
+            <Box width={{ xs: 1 }}>
               <Nav redirect={redirect} />
             </Box>
-            <Box width={{ xs: 1 / 12 }} />
           </Flex>
         </Hero>
 

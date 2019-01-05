@@ -161,12 +161,10 @@ export class EventShowcase extends React.Component {
       content = (
         <Background img={event.cover.source}>
           <Overlay>
-            <Flex flexWrap="wrap">
-              <Box width={{ xs: 1 / 12 }} />
-              <Box width={{ xs: 10 / 12 }}>
+            <Flex bg="#141414" flexWrap="wrap">
+              <Box width={{ xs: 1 }}>
                 <Nav redirect={redirect} />
               </Box>
-              <Box width={{ xs: 1 / 12 }} />
             </Flex>
 
             <Flex>

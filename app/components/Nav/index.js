@@ -10,18 +10,25 @@ import Hide from 'hidden-styled';
 // import Grid from 'components/MuiGrid';
 import Logo from 'components/Logo';
 import H2 from 'components/H2';
-import Box from 'components/TestBox';
+import { Flex, Box } from 'rebass';
 
 // import NavIMG from './NavImage';
 
 // import hamburger from '../../images/Nav/hamburger.png';
 // import { push } from 'connected-react-router/immutable';
 
-import { Flex } from 'rebass';
 import NavButton from './NavButton';
 
 const StyledBar = styled(Flex)`
   background-color: ${props => props.theme.colors.primary};
+  height: 5rem;
+
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.8);
+
+  h2 {
+    font-weight: 900;
+    font-size: 1rem;
+  }
 `;
 
 const Bar = props => <StyledBar {...props} />;
@@ -47,29 +54,22 @@ const StyledLink = styled.div`
   }
 `;
 
-// const Bar = styled(Row)`
-//   max-height: 5rem;
-//   background-color: rgb(20, 20, 20);
-// `;
-
-// import PropTypes from 'prop-types';
-// import styled from 'styled-components';
-
 const Nav = props => (
   <Hide xs sm>
     <Bar>
+      <Box width={{ xs: 1 / 12 }} />
       <Box width={{ xs: 1 / 12 }}>
         <NavButton {...props} path="/">
-          <Logo height="5rem" width="5rem" />
+          <Logo height="4rem" width="4rem" />
         </NavButton>
       </Box>
 
-      <Box width={{ xs: 8 / 12 }} />
+      <Box width={{ xs: 6 / 12 }} />
 
       <Box width={{ xs: 1 / 12 }}>
         <NavButton {...props} path="/About">
           <StyledLink>
-            <H2>About</H2>
+            <H2>ABOUT</H2>
           </StyledLink>
         </NavButton>
       </Box>
@@ -77,7 +77,7 @@ const Nav = props => (
       <Box width={{ xs: 1 / 12 }}>
         <NavButton {...props} path="/Gallery">
           <StyledLink>
-            <H2>Gallery</H2>
+            <H2>GALLERY</H2>
           </StyledLink>
         </NavButton>
       </Box>
@@ -85,10 +85,11 @@ const Nav = props => (
       <Box width={{ xs: 1 / 12 }}>
         <NavButton {...props} path="/Contact">
           <StyledLink>
-            <H2>Contact</H2>
+            <H2>CONTACT</H2>
           </StyledLink>
         </NavButton>
       </Box>
+      <Box width={{ xs: 1 / 12 }} />
     </Bar>
   </Hide>
 );

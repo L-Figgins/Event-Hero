@@ -17,6 +17,8 @@ import H1 from 'components/H1';
 import H2 from 'components/H2';
 import P from 'components/P';
 import Footer from 'components/Footer';
+import HomeButton from 'components/HomeButton';
+import Hide from 'hidden-styled';
 import { Flex, Box } from 'rebass';
 // import Facebook from 'styled-icons/fa-brands/Facebook';
 import A from '../../components/A';
@@ -97,15 +99,18 @@ const Contact = props => {
 
   return (
     <React.Fragment>
+      <Hide md lg>
+        <HomeButton redirect={redirect} />
+      </Hide>
+
       <Hero img={contact}>
-        <Flex flexWrap="wrap">
-          <Box width={{ xs: 1 / 12 }} />
-          <Box width={{ xs: 10 / 12 }}>
+        <Flex bg="#141414" flexWrap="wrap">
+          <Box width={{ xs: 1 }}>
             <Nav redirect={redirect} />
           </Box>
-          <Box width={{ xs: 1 / 12 }} />
         </Flex>
       </Hero>
+
       <Flex flexDirection="column">
         <Flex bg="#141414" py={2}>
           <Box width={{ xs: 1 / 12 }} />
