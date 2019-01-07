@@ -1,24 +1,23 @@
-/**
+/** **********
  *
  * Home Page
  *
- */
+ *********** */
 
+// React / React Router
 import React from 'react';
 import PropTypes from 'prop-types';
-import Hide from 'hidden-styled';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import { createStructuredSelector } from 'reselect';
-import { compose } from 'redux';
 import { push } from 'connected-react-router';
-import injectSaga from 'utils/injectSaga';
-import injectReducer from 'utils/injectReducer';
+
+// Dependencies
+import Hide from 'hidden-styled';
 
 // Rebass
 import { Box, Flex } from 'rebass';
 
-// import components
+// Components
 import HomeButton from 'components/HomeButton';
 import Welcome from 'components/Welcome';
 import EventList from 'components/EventList/Loadable';
@@ -26,11 +25,17 @@ import Nav from 'components/Nav';
 import Hero from 'components/Hero';
 import Footer from 'components/Footer';
 
+// Redux
+import { compose } from 'redux';
+import injectSaga from 'utils/injectSaga';
+import injectReducer from 'utils/injectReducer';
+import { createStructuredSelector } from 'reselect';
+import saga from './saga';
+import reducer from './reducer';
 import makeSelectMainPage, { makeEventsSelector } from './selectors';
 import { loadEvents } from './actions';
-import reducer from './reducer';
-import saga from './saga';
 
+// Imported Media
 import HH from '../../images/BG/HH_BG.jpg';
 
 export class MainPage extends React.Component {
