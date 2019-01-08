@@ -63,16 +63,15 @@ export class MainPage extends React.Component {
     const { events, error, loading, redirect } = this.props;
     let content;
 
-    if (error) {
-      console.log('error', error);
-    } else if (loading) {
-      console.log('loading');
-      content = <LoadingIndicator />;
-    }
     if (events.length > 0) {
       content = (
         <EventList events={events} handleClick={this.onEventCardClick} />
       );
+    } else if (error) {
+      console.log('error', error);
+    } else if (loading) {
+      console.log('loading');
+      content = <LoadingIndicator />;
     }
 
     return (

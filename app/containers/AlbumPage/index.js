@@ -57,7 +57,12 @@ export class AlbumPage extends React.Component {
           <AlbumHeader>
             <H1>{album.name}</H1>
           </AlbumHeader>
-          <Photos photos={album.photos} />;
+          <Photos photos={album.photos} />
+
+          <AlbumHeader>
+            <H1>{album.name}</H1>
+          </AlbumHeader>
+          <Photos photos={album.photos} />
         </React.Fragment>
       );
     } else if (error) {

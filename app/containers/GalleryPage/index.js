@@ -93,7 +93,7 @@ export class Gallery extends React.PureComponent {
     }
 
     return (
-      <div>
+      <React.Fragment>
         <Helmet>
           <title>Gallery</title>
           <meta
@@ -152,7 +152,7 @@ export class Gallery extends React.PureComponent {
         </Flex>
 
         <Footer />
-      </div>
+      </React.Fragment>
     );
   }
 }

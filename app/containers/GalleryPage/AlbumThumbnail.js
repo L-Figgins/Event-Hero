@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const AlbumThumbnail = styled.div`
   display: flex;
   height: 25rem;
-  width: 25rem;
+  width: 100%;
   border: 1px solid #928f8a;
   background-image: url(${props => props.cover_photo.source});
   background-size: cover;

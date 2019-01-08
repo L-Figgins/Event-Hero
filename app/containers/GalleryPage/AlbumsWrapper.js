@@ -5,7 +5,8 @@ const AlbumsWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: rgb(22, 22, 22);
+  width: 100%;
+  background-color: #141414;
   padding-top: 2rem;
   padding-bottom: 2rem;
   margin: 0;
