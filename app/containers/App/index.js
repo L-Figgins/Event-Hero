@@ -20,10 +20,12 @@ import Gallery from 'containers/GalleryPage/Loadable';
 import Contact from 'containers/ContactPage/Loadable';
 
 import Helmet from 'react-helmet';
+import AOS from 'aos';
 import GlobalStyle from '../../global-styles';
 import Hamburger from '../../components/Hamburger';
 
 export default function App() {
+  AOS.init();
   return (
     <React.Fragment>
       <Helmet>
