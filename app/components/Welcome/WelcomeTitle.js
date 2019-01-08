@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const WelcomeTitle = styled.div`
-  padding-top: 2rem;
   font-size: 7rem;
   margin: 0;
   color: #fff;
