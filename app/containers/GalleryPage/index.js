@@ -1,81 +1,52 @@
-/**
+/** ***********
  *
  * Gallery
  *
- */
+ ************ */
+
+// React / React Router
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Flex, Text, Box } from 'rebass';
-import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
-import { createStructuredSelector } from 'reselect';
-import { compose } from 'redux';
-import { push } from 'connected-react-router';
 
+import { push } from 'connected-react-router';
+import { Helmet } from 'react-helmet';
+
+// Redux
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+import { createStructuredSelector } from 'reselect';
 
+// Rebass
+import { Flex, Text, Box } from 'rebass';
+
+// Dependencies
+
+// Components
 import Nav from 'components/Nav';
 import Hero from 'components/Hero';
-
 import LoadingIndicator from 'components/LoadingIndicator';
-import styled from 'styled-components';
-// import TestBox from '../../components/TestBox';
+import { loadAlbums } from './actions';
+
 import H1 from '../../components/H1';
 import H3 from '../../components/H3';
 import GalleryTitle from './GalleryTitle';
-// import GalleryDescription from './GalleryDescription';
 import Footer from '../../components/Footer';
+import AlbumsWrapper from './AlbumsWrapper';
+import AlbumName from './AlbumName';
+import AlbumThumbnail from './AlbumThumbnail';
 
+import reducer from './reducer';
+import saga from './saga';
 import {
   makeAlbumsSelector,
   makeErrorSelector,
   makeLoadingSelector,
 } from './selectors';
-import reducer from './reducer';
-import saga from './saga';
+
+// Imported Media
 import bgImg from '../../images/BG/gallery-HH.jpg';
-import { loadAlbums } from './actions';
-
-const AlbumsWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(22, 22, 22);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  margin: 0;
-`;
-
-const AlbumName = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding: 2rem;
-  color: whitesmoke;
-`;
-
-const AlbumThumbnail = styled.div`
-  display: flex;
-  height: 25rem;
-  width: 25rem;
-  border: 1px solid #928f8a;
-  background-image: url(${props => props.cover_photo.source});
-  background-size: cover;
-  background-position: center center;
-  margin: 1rem;
-  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.5);
-  transition: ease 0.25s;
-  &:hover {
-    transition: ease 0.25s;
-    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.5);
-  }
-  &:active {
-    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.8);
-    opacity: 0.5;
-  }
-`;
 
 const AlbumList = ({ albums, handleClick }) => {
   const cards = albums.map(album => (
@@ -125,7 +96,10 @@ export class Gallery extends React.PureComponent {
       <div>
         <Helmet>
           <title>Gallery</title>
-          <meta name="description" content="Description of Gallery" />
+          <meta
+            name="description"
+            content="A Gallery Of Our Events, Live Populated By Our Facebook Page."
+          />
         </Helmet>
 
         <Hero img={bgImg}>

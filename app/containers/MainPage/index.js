@@ -8,8 +8,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
 import { push } from 'connected-react-router';
+import { Helmet } from 'react-helmet';
 
 // Dependencies
 import Hide from 'hidden-styled';
