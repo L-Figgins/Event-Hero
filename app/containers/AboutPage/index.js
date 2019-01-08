@@ -1,38 +1,40 @@
-/**
+/** ***********
  *
  * About
  *
- */
+ ************ */
 
+// React / React Router
 import React from 'react';
 import PropTypes from 'prop-types';
 import { push } from 'connected-react-router';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
+
+//  Redux
 import { compose } from 'redux';
-import styled from 'styled-components';
+
+//  Rebass
 import { Flex, Box } from 'rebass';
 
+//  Dependencies
+import Hide from 'hidden-styled';
+
+//  Components
 import Nav from 'components/Nav';
 import Hero from 'components/Hero';
 import Footer from 'components/Footer';
-import Hide from 'hidden-styled';
 import HomeButton from 'components/HomeButton';
-// import Grid from 'components/MuiGrid';
-// import TestBox from 'components/TestBox';
-
 import H1 from 'components/H1';
 import P from 'components/P';
+import ContentWrapper from './ContentWrapper';
 import AboutImg from './AboutImg';
 import AboutDescription from './AboutDescription';
 import AboutTitle from './AboutTitle';
 
+//  Imported Media
 import about from '../../images/BG/about-HH.jpg';
 import booking from '../../images/BG/booking-HH.jpg';
-
-const ContentWrapper = styled.div`
-  background-color: rgb(20, 20, 20);
-  padding-top: 2rem;
-`;
 
 const About = props => {
   const { redirect } = props;
@@ -42,6 +44,14 @@ const About = props => {
       <Hide md lg>
         <HomeButton redirect={redirect} />
       </Hide>
+
+      <Helmet>
+        <title>About Page</title>
+        <meta
+          name="description"
+          content="Information About Our Music & Events Venue"
+        />
+      </Helmet>
 
       <Hero img={about}>
         <Flex bg="#141414" flexWrap="wrap">

@@ -1,24 +1,46 @@
-/**
+/** ***********
  *
- * EventShowcase
+ * Event Showcase
  *
- */
-
+ ************ */
+// React
 import React from 'react';
 import PropTypes from 'prop-types';
-import queryString from 'query-string';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import { createStructuredSelector } from 'reselect';
-import { compose } from 'redux';
-import LoadingIndicator from 'components/LoadingIndicator';
+
+// React Router
 import { push } from 'connected-react-router';
 
+// Redux
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { compose } from 'redux';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+import queryString from 'query-string';
+import LoadingIndicator from 'components/LoadingIndicator';
+
+// Rebass
 import { Flex, Box } from 'rebass';
+
+// Dependencies
+import {
+  ArtistName,
+  // ArtistGenre,
+  Tag,
+  ArtistBio,
+  SubTitle,
+} from './local-styles';
+
+// Components
 import H1 from '../../components/H1';
+import Nav from '../../components/Nav';
+import Footer from '../../components/Footer';
+import TicketButton from './TicketButton';
+import Overlay from './Overlay';
+import Background from './Background';
+import ContentWrapper from './ContentWrapper';
+
 import makeSelectEventShowcase, {
   makeSelectEvent,
   makeSelectEventShowcaseError,
@@ -28,111 +50,6 @@ import { makeSelectLocation } from '../App/selectors';
 import reducer from './reducer';
 import saga from './saga';
 import { loadEventById } from './actions';
-
-// import TestBox from '../../components/TestBox';
-import Nav from '../../components/Nav';
-import Footer from '../../components/Footer';
-
-// import container specific styles
-// import Gradient from './gradient';
-// import artistBG from '../../images/BG/artist.jpg';
-// import Img from '../../components/Img';
-import {
-  ArtistName,
-  // ArtistGenre,
-  Tag,
-  ArtistBio,
-  SubTitle,
-} from './local-styles';
-
-// const Wrapper = styled.div`
-//   height: 100%;
-//   width: 100%;
-// `;
-
-const TicketButton = styled.button`
-  width: 100%;
-  background-color: #141414;
-  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-weight: bold;
-  color: #ffe7ae;
-  border: 1px solid #ffe7ae;
-
-  h1 {
-    font-size: 1rem;
-  }
-  &:hover {
-    box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.5);
-    transition: 0.5s ease;
-    border: 1px solid #fff;
-    h1 {
-      color: #fff;
-    }
-  }
-  &:active {
-    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.5);
-    transition: 0.5s ease;
-    border: 1px solid #fff;
-    h1 {
-      color: #928f8a;
-      border: 1px solid #928f8a;
-    }
-  }
-`;
-
-const Overlay = styled.div`
-  background-color: #141414;
-  opacity: 0.8;
-  position: relative;
-  top: 0;
-  left: 0;
-`;
-
-const Background = styled.div`
-  background-image: url(${props => props.img});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  min-height: 80vh;
-`;
-
-const ContentWrapper = styled.div`
-  width: 100%;
-  min-height: 82.25vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  padding: 2rem;
-
-  @media screen and (max-width: 80rem) {
-    h1 {
-      font-size: 1rem;
-    }
-  }
-  @media screen and (max-width: 60rem) {
-    h1 {
-      font-size: 1rem;
-    }
-  }
-  @media screen and (max-width: 40rem) {
-    h1 {
-      font-size: 1.25rem;
-    }
-  }
-  @media screen and (max-width: 20rem) {
-    h1 {
-      font-size: 1.5rem;
-    }
-  }
-`;
 
 /* eslint-disable react/prefer-stateless-function */
 export class EventShowcase extends React.Component {
@@ -173,10 +90,7 @@ export class EventShowcase extends React.Component {
                 <ContentWrapper>
                   <Tag>Artist Profile</Tag>
                   <ArtistName>{event.name}</ArtistName>
-                  <SubTitle>
-                    {/* <ArtistGenre>This Header No longer Exists</ArtistGenre> */}
-                    {/* <EventDate>{date}</EventDate> */}
-                  </SubTitle>
+                  <SubTitle>{/* <EventDate>{date}</EventDate> */}</SubTitle>
                   <ArtistBio>{event.description}</ArtistBio>
                   <TicketButton>
                     <H1>Purchase Tickets</H1>
@@ -190,15 +104,17 @@ export class EventShowcase extends React.Component {
         </Background>
       );
     } else {
-      console.log('HMMMMMMMM DA FUQ');
-      console.log('Event:', event);
+      console.log('Event Not Found:', event);
     }
 
     return (
       <div>
         <Helmet>
-          <title>EventShowcase</title>
-          <meta name="description" content="Description of EventShowcase" />
+          <title>Event Showcase</title>
+          <meta
+            name="description"
+            content="A Showcase Of Our Latest Ongoing Events"
+          />
         </Helmet>
         {content}
       </div>

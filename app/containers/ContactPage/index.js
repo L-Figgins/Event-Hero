@@ -1,16 +1,26 @@
-/**
+/** ***********
  *
  * Contact
  *
- */
+ ************ */
 
+// React / React Router
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import Helmet from 'react-helmet';
 import { push } from 'connected-react-router';
-import { compose } from 'redux';
-import styled from 'styled-components';
 
+// Redux
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+
+// Rebass
+import { Flex, Box } from 'rebass';
+
+// Dependencies
+import Hide from 'hidden-styled';
+
+// Components
 import Nav from 'components/Nav';
 import Hero from 'components/Hero';
 import H1 from 'components/H1';
@@ -18,81 +28,18 @@ import H2 from 'components/H2';
 import P from 'components/P';
 import Footer from 'components/Footer';
 import HomeButton from 'components/HomeButton';
-import Hide from 'hidden-styled';
-import { Flex, Box } from 'rebass';
-// import Facebook from 'styled-icons/fa-brands/Facebook';
 import A from '../../components/A';
+import ContactWrapper from './ContactWrapper';
 import ContactTitle from './ContactTitle';
 import ContactDescription from './ContactDescription';
 import ContactImg from './ContactImg';
+import SocialBadge from './SocialBadge';
 
+// Imported Media
 import contact from '../../images/BG/contact-HH.jpg';
 import fb from '../../images/Social/fb.png';
 import twtr from '../../images/Social/twtr.png';
 import web from '../../images/Social/web.png';
-
-// const ContentWrapper = styled.div`
-//   background-color: rgb(20, 20, 20);
-//   padding-top: 2rem;
-//   padding-bottom: 2rem;
-// `;
-const ContactWrapper = styled.div`
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-const SocialBadge = styled.div`
-  color: #928f8a;
-  border: 1px solid #928f8a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  margin: 0.5rem;
-  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.18);
-  transition: 0.5s ease;
-
-  &:hover {
-    box-shadow: 0px 15px 0px 0px rgba(0, 0, 0, 0.5);
-    transition: 0.5s ease;
-    border: 1px solid #ffe7ae;
-  }
-  img {
-    padding: 2rem;
-  }
-
-  h1 {
-    font-size: 0.75rem;
-  }
-
-  @media screen and (max-width: 80rem) {
-    h1 {
-      font-size: 0.65rem;
-    }
-  }
-  @media screen and (max-width: 70rem) {
-    h1 {
-      display: none;
-    }
-  }
-  @media screen and (max-width: 60rem) {
-    h1 {
-      display: none;
-    }
-  }
-  @media screen and (max-width: 40rem) {
-    h1 {
-      display: none;
-    }
-  }
-  @media screen and (max-width: 20rem) {
-    h1 {
-      display: none;
-    }
-  }
-`;
 
 const Contact = props => {
   const { redirect } = props;
@@ -102,6 +49,14 @@ const Contact = props => {
       <Hide md lg>
         <HomeButton redirect={redirect} />
       </Hide>
+
+      <Helmet>
+        <title>Contact Page</title>
+        <meta
+          name="description"
+          content="Want To Get In Touch? Here's How To Reach Us"
+        />
+      </Helmet>
 
       <Hero img={contact}>
         <Flex bg="#141414" flexWrap="wrap">
