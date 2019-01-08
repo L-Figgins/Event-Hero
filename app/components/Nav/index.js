@@ -22,12 +22,12 @@ import NavButton from './NavButton';
 const StyledBar = styled(Flex)`
   background-color: ${props => props.theme.colors.primary};
   height: 5rem;
-
   box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.8);
 
   h2 {
-    font-weight: 900;
-    font-size: 1rem;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-transform: capitalize;
   }
 `;
 
@@ -38,7 +38,6 @@ const StyledLink = styled.div`
   text-decoration: none;
   position: relative;
   line-height: 1;
-  font-size: 1.25rem;
   color: #fff;
   display: inline-block;
   transition-timing-function: ease;
@@ -69,7 +68,7 @@ const Nav = props => (
       <Box width={{ xs: 1 / 12 }}>
         <NavButton {...props} path="/About">
           <StyledLink>
-            <H2>ABOUT</H2>
+            <H2>About</H2>
           </StyledLink>
         </NavButton>
       </Box>
@@ -77,7 +76,7 @@ const Nav = props => (
       <Box width={{ xs: 1 / 12 }}>
         <NavButton {...props} path="/Gallery">
           <StyledLink>
-            <H2>GALLERY</H2>
+            <H2>Gallery</H2>
           </StyledLink>
         </NavButton>
       </Box>
@@ -85,7 +84,7 @@ const Nav = props => (
       <Box width={{ xs: 1 / 12 }}>
         <NavButton {...props} path="/Contact">
           <StyledLink>
-            <H2>CONTACT</H2>
+            <H2>Contact</H2>
           </StyledLink>
         </NavButton>
       </Box>

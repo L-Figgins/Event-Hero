@@ -4,10 +4,11 @@ const Photo = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+
   flex-wrap: wrap;
   padding: 2rem;
   height: 25rem;
-  width: 50%;
+  width: 25rem;
 
   border: 1px solid #928f8a;
   background-image: url(${props => props.source});

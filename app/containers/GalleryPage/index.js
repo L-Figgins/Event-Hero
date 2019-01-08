@@ -122,33 +122,26 @@ export class Gallery extends React.PureComponent {
           <Box width={{ xs: 1 / 12 }} />
         </Flex>
 
+        <Flex bg="#141414">
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>
+            <Text p={{ xs: '5rem', lg: '1rem' }} color="white">
+              Check out photos and videos from our recent events. The Gallery
+              page hosts our Facebook albums which are updated daily with bands
+              and artists that have attended and played our venue. For more
+              information about these photos view the individual gallery or
+              visit our contact page and Faqebook for more information.
+            </Text>
+          </Box>
+
+          <Box width={{ xs: 1 / 12 }} />
+        </Flex>
+
         <Flex flexWrap="wrap" bg="#141414">
           <Box width={{ xs: 1 / 12 }} />
           <Box width={{ xs: 10 / 12 }}>
             <AlbumsWrapper>{content}</AlbumsWrapper>
           </Box>
-          <Box width={{ xs: 1 / 12 }} />
-        </Flex>
-
-        <Flex bg="#141414">
-          <Box width={{ xs: 1 / 12 }} />
-          <Box width={{ xs: 10 / 12 }}>
-            <Text p={{ xs: '5rem', lg: '1rem' }} color="white">
-              Nam sit amet est nibh. Donec susciTextit nunc quam, sed gravida
-              metus facilisis id. Integer ac dictum libero. Duis ut ipsum
-              tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
-              gravida metus facilisis id. Integer ac dictum libero. Duis ut
-              ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
-              gravida metus facilisis id. Integer ac dictum libero. Duis ut
-              ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
-              gravida metus facilisis id. Integer ac dictum libero. Duis ut
-              ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
-              gravida metus facilisis id. Integer ac dictum libero. Duis ut
-              ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
-              gravida metus facilisis id. ut ipsum tortor.
-            </Text>
-          </Box>
-
           <Box width={{ xs: 1 / 12 }} />
         </Flex>
 

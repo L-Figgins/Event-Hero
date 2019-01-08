@@ -7,6 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
+import { Flex, Box } from 'rebass';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
@@ -18,8 +19,8 @@ import injectReducer from 'utils/injectReducer';
 import LoadingIndicator from 'components/LoadingIndicator';
 import Photos from 'components/Photos';
 import styled from 'styled-components';
+import Nav from '../../components/Nav';
 import AlbumsWrapper from './AlbumsWrapper';
-
 import makeSelectAlbumPage, {
   makeSelectAlbum,
   makeSelectAlbumLoading,
@@ -49,6 +50,7 @@ export class AlbumPage extends React.Component {
   }
 
   render() {
+    const { redirect } = this.props;
     let content;
     const { album, error, loading } = this.props;
     if (album) {
@@ -73,7 +75,20 @@ export class AlbumPage extends React.Component {
           <title>AlbumPage</title>
           <meta name="description" content="Description of AlbumPage" />
         </Helmet>
-        <AlbumsWrapper>{content}</AlbumsWrapper>
+
+        <Flex bg="#141414" flexWrap="wrap">
+          <Box width={{ xs: 1 }}>
+            <Nav redirect={redirect} />
+          </Box>
+        </Flex>
+
+        <Flex bg="#141414" justifyContent="center" alignItems="center">
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>
+            <AlbumsWrapper>{content}</AlbumsWrapper>
+          </Box>
+          <Box width={{ xs: 1 / 12 }} />
+        </Flex>
       </React.Fragment>
     );
   }
@@ -85,6 +100,7 @@ AlbumPage.propTypes = {
   album: PropTypes.object,
   error: PropTypes.any,
   loading: PropTypes.bool,
+  redirect: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({

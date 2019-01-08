@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    background: #000;
+    background: #141414;
     font-family: 'Muli', Helvetica, Arial, sans-serif;
   }
   body.jsFontLoaded{

@@ -27,7 +27,6 @@ import Footer from 'components/Footer';
 import HomeButton from 'components/HomeButton';
 import H1 from 'components/H1';
 import P from 'components/P';
-import ContentWrapper from './ContentWrapper';
 import AboutImg from './AboutImg';
 import AboutDescription from './AboutDescription';
 import AboutTitle from './AboutTitle';
@@ -61,62 +60,57 @@ const About = props => {
         </Flex>
       </Hero>
 
-      <Flex flexWrap="wrap">
-        <ContentWrapper>
-          <Flex>
-            <Box width={{ xs: 1 / 12 }} />
-            <Box width={{ xs: 10 / 12 }}>
-              <AboutTitle>
-                <H1>About</H1>
-              </AboutTitle>
-              <AboutDescription>
-                <P>
-                  Nam sit amet est nibh. Donec suscipit nunc quam, sed gravida
-                  metus facilisis id. Integer ac dictum libero. Duis ut ipsum
-                  tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
-                  gravida metus facilisis id. Integer ac dictum libero. Duis ut
-                  ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam,
-                  sed gravida metus facilisis id. Integer ac dictum libero. Duis
-                  ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
-                  quam, sed gravida metus facilisis id. Integer ac dictum
-                  libero. Duis ut ipsum tortor. Nam sit amet est nibh. Donec
-                  suscipit nunc quam, sed gravida metus facilisis id. Integer ac
-                  dictum libero. Duis ut ipsum tortor. Nam sit amet est nibh.
-                  Donec suscipit nunc quam, sed gravida metus facilisis id. ut
-                  ipsum tortor.
-                </P>
-              </AboutDescription>
-            </Box>
-            <Box width={{ xs: 1 / 12 }} />
-          </Flex>
-        </ContentWrapper>
-        <ContentWrapper>
-          <Flex>
-            <Box width={{ xs: 1 / 12 }} />
-            <Box width={{ xs: 10 / 12 }}>
-              <AboutTitle>
-                <H1>Booking</H1>
-              </AboutTitle>
+      <Flex flexWrap="wrap" bg="#141414">
+        <Flex>
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>
+            <AboutTitle>
+              <H1>About</H1>
+            </AboutTitle>
+            <AboutDescription>
+              <P>
+                Nam sit amet est nibh. Donec suscipit nunc quam, sed gravida
+                metus facilisis id. Integer ac dictum libero. Duis ut ipsum
+                tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
+                gravida metus facilisis id. Integer ac dictum libero. Duis ut
+                ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam,
+                sed gravida metus facilisis id. Integer ac dictum libero. Duis
+                ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
+                quam, sed gravida metus facilisis id. Integer ac dictum libero.
+                Duis ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
+                quam, sed gravida metus facilisis id. Integer ac dictum libero.
+                Duis ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
+                quam, sed gravida metus facilisis id. ut ipsum tortor.
+              </P>
+            </AboutDescription>
+          </Box>
+          <Box width={{ xs: 1 / 12 }} />
+        </Flex>
 
-              <AboutDescription>
-                <AboutImg src={booking} />
-                <P>
-                  Honey Hive Booking works to ensure a smooth event and
-                  performance for everyone. Although all events are different,
-                  some performers require necessary items for a performance.
-                  These can include artist’s fees, airfare, staging, lighting,
-                  hotel accommodations and onsite production staff. Honey Hive
-                  booking takes the stress off of you and handles the
-                  organization of these necessary elements. As our client, Honey
-                  Hive works with you to discuss the details of your event. If
-                  necessary, we can provide a full service solution for a flat
-                  rate.
-                </P>
-              </AboutDescription>
-            </Box>
-            <Box width={{ xs: 1 / 12 }} />
-          </Flex>
-        </ContentWrapper>
+        <Flex>
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>
+            <AboutTitle>
+              <H1>Booking</H1>
+            </AboutTitle>
+
+            <AboutDescription>
+              <AboutImg src={booking} />
+              <P>
+                Honey Hive Booking works to ensure a smooth event and
+                performance for everyone. Although all events are different,
+                some performers require necessary items for a performance. These
+                can include artist’s fees, airfare, staging, lighting, hotel
+                accommodations and onsite production staff. Honey Hive booking
+                takes the stress off of you and handles the organization of
+                these necessary elements. As our client, Honey Hive works with
+                you to discuss the details of your event. If necessary, we can
+                provide a full service solution for a flat rate.
+              </P>
+            </AboutDescription>
+          </Box>
+          <Box width={{ xs: 1 / 12 }} />
+        </Flex>
       </Flex>
       <Footer />
     </React.Fragment>

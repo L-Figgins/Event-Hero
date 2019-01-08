@@ -6,9 +6,12 @@ const Button = styled.button`
   width: 100%;
   color: #7f7e77;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: auto;
+  &:focus {
+    outline: 0;
+  }
 
   &:hover {
     color: #fff;
