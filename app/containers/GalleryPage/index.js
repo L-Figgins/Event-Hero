@@ -30,11 +30,11 @@ import LoadingIndicator from 'components/LoadingIndicator';
 import { loadAlbums } from './actions';
 
 import H1 from '../../components/H1';
-import H3 from '../../components/H3';
 import GalleryTitle from './GalleryTitle';
 import Footer from '../../components/Footer';
 import AlbumsWrapper from './AlbumsWrapper';
 import AlbumName from './AlbumName';
+import AlbumDate from './AlbumDate';
 import AlbumThumbnail from './AlbumThumbnail';
 
 import reducer from './reducer';
@@ -51,6 +51,8 @@ import bgImg from '../../images/BG/gallery-HH.jpg';
 const AlbumList = ({ albums, handleClick }) => {
   const cards = albums.map(album => (
     <AlbumThumbnail onClick={handleClick} key={album.id} {...album}>
+      {/* <AlbumDate>{album.Date}</AlbumDate> */}
+      <AlbumDate>Dec 2016</AlbumDate>
       <AlbumName>{album.name}</AlbumName>
     </AlbumThumbnail>
   ));
@@ -115,7 +117,6 @@ export class Gallery extends React.PureComponent {
           <Box width={{ xs: 10 / 12 }}>
             <GalleryTitle>
               <H1>Gallery</H1>
-              <H3>DEC. 2018</H3>
             </GalleryTitle>
           </Box>
           <Box width={{ xs: 1 / 12 }} />
