@@ -6,17 +6,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Logo from 'components/Logo';
-// import { Box, Flex } from 'rebass';
-
-const StyledButton = styled.div`
-  position: absolute;
-  left: 1.85rem;
-  top: 0.75rem;
-  width: 2.25rem;
-  height: 2.25rem;
-`;
+import StyledButton from './StyledButton';
 
 const HomeButton = props => {
   const onClickRedirect = () => {

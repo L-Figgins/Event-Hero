@@ -24,6 +24,7 @@ import EventList from 'components/EventList/Loadable';
 import Nav from 'components/Nav';
 import Hero from 'components/Hero';
 import Footer from 'components/Footer';
+import LoadingIndicator from 'components/LoadingIndicator';
 
 // Redux
 import { compose } from 'redux';
@@ -32,7 +33,12 @@ import injectReducer from 'utils/injectReducer';
 import { createStructuredSelector } from 'reselect';
 import saga from './saga';
 import reducer from './reducer';
-import makeSelectMainPage, { makeEventsSelector } from './selectors';
+import makeSelectMainPage, {
+  makeEventsSelector,
+  makeLoadingSelector,
+  makeErrorSelector,
+} from './selectors';
+
 import { loadEvents } from './actions';
 
 // Imported Media
@@ -54,9 +60,15 @@ export class MainPage extends React.Component {
   }
 
   render() {
-    const { events, redirect } = this.props;
+    const { events, error, loading, redirect } = this.props;
     let content;
 
+    if (error) {
+      console.log('error', error);
+    } else if (loading) {
+      console.log('loading');
+      content = <LoadingIndicator />;
+    }
     if (events.length > 0) {
       content = (
         <EventList events={events} handleClick={this.onEventCardClick} />
@@ -93,22 +105,19 @@ export class MainPage extends React.Component {
   }
 }
 
-// 103083454066898
-// EAAELyoAkOZC8BAJBR4NL61ULw5Nm6SfWub7e0pcGj7BsPo7qJXmiKeF0hVYhTPHuIvNb0ywHQa4ZCNCEab6SqxSmqT63X1zxxlA2aPPumRLPNZBUKiFxjmMZCsJ8QO9jghVk1eYoW8MngSQhTOmXVCVvpZAq4FdZBdvP6u52dOkSf2f1Ce7USIRNRf9ZBoJmp33C1rxJhgaXBG6ihWZCE4LZCAYYE0cYNXqQNUUtqcsYUpgZDZD
-
 MainPage.propTypes = {
   getEvents: PropTypes.func,
   events: PropTypes.any,
   showcase: PropTypes.func,
   redirect: PropTypes.func,
-  // error: PropTypes.func,
-  // loading: PropTypes.func,
+  error: PropTypes.any,
+  loading: PropTypes.bool,
   // mainpage: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
-  // loading: makeLoadingSelector(),
-  // error: makeErrorSelector(),
+  loading: makeLoadingSelector(),
+  error: makeErrorSelector(),
   mainpage: makeSelectMainPage(),
   events: makeEventsSelector(),
 });
