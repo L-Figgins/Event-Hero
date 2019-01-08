@@ -35,8 +35,8 @@ import saga from './saga';
 import reducer from './reducer';
 import makeSelectMainPage, {
   makeEventsSelector,
-  makeLoadingSelector,
-  makeErrorSelector,
+  // makeLoadingSelector,
+  // makeErrorSelector,
 } from './selectors';
 
 import { loadEvents } from './actions';
@@ -115,8 +115,8 @@ MainPage.propTypes = {
 };
 
 const mapStateToProps = createStructuredSelector({
-  loading: makeLoadingSelector(),
-  error: makeErrorSelector(),
+  // loading: makeLoadingSelector(),
+  // error: makeErrorSelector(),
   mainpage: makeSelectMainPage(),
   events: makeEventsSelector(),
 });
