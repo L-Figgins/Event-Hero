@@ -65,11 +65,9 @@ export class EventShowcase extends React.Component {
     // const { event } = this.props;
     let content;
     const { event, loading, error, redirect } = this.props;
-    const ErrorMsg = <div>Oh no Error</div>;
 
     if (error) {
       console.log('error', error);
-      content = ErrorMsg;
     } else if (loading) {
       console.log('loading');
       content = <LoadingIndicator />;
