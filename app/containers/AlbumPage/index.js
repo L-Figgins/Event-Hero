@@ -17,9 +17,9 @@ import injectReducer from 'utils/injectReducer';
 
 import LoadingIndicator from 'components/LoadingIndicator';
 import Photos from 'components/Photos';
-import H1 from 'components/H1';
-
 import styled from 'styled-components';
+import AlbumsWrapper from './AlbumsWrapper';
+
 import makeSelectAlbumPage, {
   makeSelectAlbum,
   makeSelectAlbumLoading,
@@ -32,10 +32,12 @@ import { loadAlbumById } from './actions';
 const AlbumHeader = styled.div`
   display: flex;
   justify-content: center;
-  background-color: rgb(22, 22, 22);
+  background-color: #141414;
   padding-top: 2rem;
   padding-bottom: 2rem;
   color: white;
+  font-size: 1.75rem;
+  text-transform: uppercase;
 `;
 
 /* eslint-disable react/prefer-stateless-function */
@@ -54,9 +56,7 @@ export class AlbumPage extends React.Component {
       console.log(album.name);
       content = (
         <React.Fragment>
-          <AlbumHeader>
-            <H1>{album.name}</H1>
-          </AlbumHeader>
+          <AlbumHeader>{album.name}</AlbumHeader>
           <Photos photos={album.photos} />
         </React.Fragment>
       );
@@ -68,14 +68,13 @@ export class AlbumPage extends React.Component {
     }
 
     return (
-      <div>
+      <React.Fragment>
         <Helmet>
           <title>AlbumPage</title>
           <meta name="description" content="Description of AlbumPage" />
         </Helmet>
-
-        {content}
-      </div>
+        <AlbumsWrapper>{content}</AlbumsWrapper>
+      </React.Fragment>
     );
   }
 }

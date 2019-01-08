@@ -5,8 +5,7 @@ const AlbumThumbnail = styled.div`
   justify-content: flex-end;
   align-items: flex-start;
   flex-direction: column;
-  padding: 1rem;
-
+  padding: 2rem;
   height: 25rem;
   width: 100%;
 

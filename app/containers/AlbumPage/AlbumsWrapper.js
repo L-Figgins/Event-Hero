@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-const PhotosWrapper = styled.div`
+const AlbumsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -12,4 +13,4 @@ const PhotosWrapper = styled.div`
   margin: 0;
 `;
 
-export default PhotosWrapper;
+export default AlbumsWrapper;
