@@ -42,7 +42,7 @@ import makeSelectMainPage, {
 import { loadEvents } from './actions';
 
 // Imported Media
-import HH from '../../images/BG/HH_BG.jpg';
+import HH from '../../images/BG/HomeBG.jpg';
 
 export class MainPage extends React.Component {
   constructor(props) {
@@ -92,6 +92,7 @@ export class MainPage extends React.Component {
             </Box>
           </Flex>
         </Hero>
+
         <Welcome />
         <Flex justifyContent="center" bg="#141414">
           <Box width={{ xs: 1 / 12 }} />
