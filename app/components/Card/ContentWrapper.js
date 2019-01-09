@@ -5,11 +5,6 @@ const ContentWrapper = styled.div`
   position: absolute;
   bottom: 10%;
   left: 10%;
-
-  h2 {
-    font-size: 2.5rem;
-    text-transform: capitalize;
-  }
 `;
 
 export default ContentWrapper;

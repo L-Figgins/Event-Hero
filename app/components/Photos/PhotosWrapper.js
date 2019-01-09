@@ -10,7 +10,6 @@ const PhotosWrapper = styled.div`
   background-color: #141414;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  margin: 0;
 `;
 
 export default PhotosWrapper;

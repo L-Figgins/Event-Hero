@@ -47,7 +47,8 @@ router.get('/albums', (req, res) => {
     uri: `https://graph.facebook.com/${PAGE_ID}/albums`,
     qs: {
       access_token: PAGE_ACCESS_TOKEN,
-      fields: 'id, name, description, cover_photo{id,source.height(600)}',
+      fields:
+        'id, name, description, backdated_time, created_time, cover_photo{id,source.height(600)}',
     },
   };
 

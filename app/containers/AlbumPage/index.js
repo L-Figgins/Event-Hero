@@ -20,7 +20,7 @@ import LoadingIndicator from 'components/LoadingIndicator';
 import Photos from 'components/Photos';
 import styled from 'styled-components';
 import Nav from '../../components/Nav';
-import AlbumsWrapper from './AlbumsWrapper';
+import Wrapper from './Wrapper';
 import makeSelectAlbumPage, {
   makeSelectAlbum,
   makeSelectAlbumLoading,
@@ -59,7 +59,9 @@ export class AlbumPage extends React.Component {
       content = (
         <React.Fragment>
           <AlbumHeader>{album.name}</AlbumHeader>
-          <Photos photos={album.photos} />
+          <Box>
+            <Photos photos={album.photos} />
+          </Box>
         </React.Fragment>
       );
     } else if (error) {
@@ -85,7 +87,7 @@ export class AlbumPage extends React.Component {
         <Flex bg="#141414" justifyContent="center" alignItems="center">
           <Box width={{ xs: 1 / 12 }} />
           <Box width={{ xs: 10 / 12 }}>
-            <AlbumsWrapper>{content}</AlbumsWrapper>
+            <Wrapper>{content}</Wrapper>
           </Box>
           <Box width={{ xs: 1 / 12 }} />
         </Flex>

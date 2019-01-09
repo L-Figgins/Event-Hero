@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const EventsWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;

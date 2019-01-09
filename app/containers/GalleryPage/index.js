@@ -7,6 +7,8 @@
 // React / React Router
 import React from 'react';
 import PropTypes from 'prop-types';
+import date from 'date-and-time';
+import styled from 'styled-components';
 
 import { push } from 'connected-react-router';
 import { Helmet } from 'react-helmet';
@@ -47,15 +49,67 @@ import {
 
 // Imported Media
 import bgImg from '../../images/BG/gallery-HH.jpg';
+import photoIconImage from '../../images/Icons/iconfinder_32_171485.png';
+
+const PhotoCount = styled.div`
+  text-align: right;
+  padding-right: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+`;
+
+const PhotoIcon = styled.div`
+  background-image: url(${props => props.img});
+  background-size: contain;
+  height: 1.5rem;
+  width: 1.5rem;
+`;
 
 const AlbumList = ({ albums, handleClick }) => {
-  const cards = albums.map(album => (
-    <AlbumThumbnail onClick={handleClick} key={album.id} {...album}>
-      {/* <AlbumDate>{album.Date}</AlbumDate> */}
-      <AlbumDate>Dec 2016</AlbumDate>
-      <AlbumName>{album.name}</AlbumName>
-    </AlbumThumbnail>
-  ));
+  const cards = albums.map(album => {
+    if (
+      album.name.toLowerCase().trim() === 'cover photos' ||
+      album.name.toLowerCase().trim() === 'profile pictures'
+    ) {
+      return null;
+    }
+
+    let d;
+    let formattedDate = '';
+    if (album.backedated_time) {
+      const temp = album.backedated_time.split('T')[0].trim();
+      console.log(temp);
+      d = new Date(temp);
+      console.log(d);
+      formattedDate = date.format(d, 'MMM DD YYYY');
+    } else if (album.created_time) {
+      const temp = album.created_time.split('T')[0].trim();
+      console.log(temp);
+      d = new Date(temp);
+      console.log(d);
+      formattedDate = date.format(d, 'MMM DD YYYY');
+    } else {
+      console.log('Errom in Album List');
+    }
+
+    return (
+      <AlbumThumbnail onClick={handleClick} key={album.id} {...album}>
+        <AlbumDate>{formattedDate}</AlbumDate>
+
+        <Flex width={1} flexDirection="row">
+          <Box width={{ xs: 10 / 12, lg: 10 / 12 }}>
+            <AlbumName>{album.name}</AlbumName>
+          </Box>
+          <Box justifySelf="flex-end" width={{ xs: 1 / 12, lg: 2 / 12 }}>
+            <PhotoIcon img={photoIconImage} />
+            <PhotoCount>5</PhotoCount>
+          </Box>
+        </Flex>
+      </AlbumThumbnail>
+    );
+  });
 
   const content = <React.Fragment>{cards}</React.Fragment>;
 
@@ -125,7 +179,7 @@ export class Gallery extends React.PureComponent {
         <Flex bg="#141414">
           <Box width={{ xs: 1 / 12 }} />
           <Box width={{ xs: 10 / 12 }}>
-            <Text p={{ xs: '5rem', lg: '1rem' }} color="white">
+            <Text p={{ xs: '5rem', lg: '1rem' }} color="#928f8a">
               Check out photos and videos from our recent events. The Gallery
               page hosts our Facebook albums which are updated daily with bands
               and artists that have attended and played our venue. For more
