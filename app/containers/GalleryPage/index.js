@@ -124,7 +124,7 @@ export class Gallery extends React.PureComponent {
               <Grid item xs={10}>
                 <GalleryTitle>
                   <H1>Gallery</H1>
-                  <H3>DEC. 2018</H3>
+                  <H3>JAN. 2018</H3>
                 </GalleryTitle>
               </Grid>
               <Grid item xs={1} />
