@@ -6,9 +6,12 @@ const Button = styled.button`
   width: 100%;
   color: #7f7e77;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: auto;
+  &:focus {
+    outline: 0;
+  }
 
   &:hover {
     color: #fff;
@@ -22,14 +25,13 @@ const Button = styled.button`
   @media screen and (max-width: 80rem) {
     h2 {
       font-size: 1.15rem;
-      color: red;
+
       display: block;
     }
   }
   @media screen and (max-width: 60rem) {
     h2 {
       font-size: 1.05rem;
-      color: blue;
       display: block;
     }
   }

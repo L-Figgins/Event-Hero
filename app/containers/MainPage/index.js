@@ -1,51 +1,48 @@
-/**
+/** **********
  *
- * MainPage
+ * Home Page
  *
- */
+ *********** */
 
+// React / React Router
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
-import { createStructuredSelector } from 'reselect';
-import { compose } from 'redux';
 import { push } from 'connected-react-router';
-// import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
 
+// Dependencies
+import Hide from 'hidden-styled';
+
+// Rebass
+import { Box, Flex } from 'rebass';
+
+// Components
+import HomeButton from 'components/HomeButton';
+import Welcome from 'components/Welcome';
+import EventList from 'components/EventList/Loadable';
+import Nav from 'components/Nav';
+import Hero from 'components/Hero';
+import Footer from 'components/Footer';
+import LoadingIndicator from 'components/LoadingIndicator';
+
+// Redux
+import { compose } from 'redux';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
-
-// import components
-
-import Grid from 'components/MuiGrid';
-import EventList from 'components/EventList/Loadable';
-import Hero from 'components/Hero';
-import Welcome from 'components/Welcome';
-// import Logo from 'components/Logo';
-import Footer from 'components/Footer';
-import Nav from 'components/Nav';
-
-import makeSelectMainPage, { makeEventsSelector } from './selectors';
-import { loadEvents } from './actions';
-import reducer from './reducer';
+import { createStructuredSelector } from 'reselect';
 import saga from './saga';
+import reducer from './reducer';
+import makeSelectMainPage, {
+  makeEventsSelector,
+  // makeLoadingSelector,
+  // makeErrorSelector,
+} from './selectors';
 
-import HH from '../../images/BG/HH_BG.jpg';
+import { loadEvents } from './actions';
 
-// const Box = styled.div`
-//   display: flex;
-//   justify-content: flex-start;
-//   padding-top: 2rem;
-//   padding-bottom: 2rem;
-// `;
-
-// const Temp = styled.div`
-//   display: flex;
-//   flex-direction: row;
-// `;
-
-/* eslint-disable react/prefer-stateless-function */
+// Imported Media
+import HH from '../../images/BG/HomeBG.jpg';
 
 export class MainPage extends React.Component {
   constructor(props) {
@@ -63,47 +60,58 @@ export class MainPage extends React.Component {
   }
 
   render() {
-    const { events, redirect } = this.props;
-    console.log('Events Recieved by MainPage:', events);
+    const { events, error, loading, redirect } = this.props;
     let content;
 
     if (events.length > 0) {
       content = (
         <EventList events={events} handleClick={this.onEventCardClick} />
       );
+    } else if (error) {
+      console.log('error', error);
+    } else if (loading) {
+      console.log('loading');
+      content = <LoadingIndicator />;
     }
 
     return (
-      <Grid container spacing={0}>
+      <React.Fragment>
         <Helmet>
-          <title>MainPage</title>
+          <title>Home Page</title>
           <meta name="description" content="Description of MainPage" />
         </Helmet>
+
+        <Hide md lg>
+          <HomeButton redirect={redirect} />
+        </Hide>
+
         <Hero img={HH}>
-          <Grid item xs={1} />
-          <Grid container item xs={10}>
-            <Nav redirect={redirect} />
-          </Grid>
-          <Grid item xs={1} />
+          <Flex bg="#141414">
+            <Box width={{ xs: 1 }}>
+              <Nav redirect={redirect} />
+            </Box>
+          </Flex>
         </Hero>
+
         <Welcome />
-        {content}
+        <Flex justifyContent="center" bg="#141414">
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>{content}</Box>
+          <Box width={{ xs: 1 / 12 }} />
+        </Flex>
         <Footer />
-      </Grid>
+      </React.Fragment>
     );
   }
 }
-
-// 103083454066898
-// EAAELyoAkOZC8BAJBR4NL61ULw5Nm6SfWub7e0pcGj7BsPo7qJXmiKeF0hVYhTPHuIvNb0ywHQa4ZCNCEab6SqxSmqT63X1zxxlA2aPPumRLPNZBUKiFxjmMZCsJ8QO9jghVk1eYoW8MngSQhTOmXVCVvpZAq4FdZBdvP6u52dOkSf2f1Ce7USIRNRf9ZBoJmp33C1rxJhgaXBG6ihWZCE4LZCAYYE0cYNXqQNUUtqcsYUpgZDZD
 
 MainPage.propTypes = {
   getEvents: PropTypes.func,
   events: PropTypes.any,
   showcase: PropTypes.func,
   redirect: PropTypes.func,
-  // error: PropTypes.func,
-  // loading: PropTypes.func,
+  error: PropTypes.any,
+  loading: PropTypes.bool,
   // mainpage: PropTypes.func,
 };
 

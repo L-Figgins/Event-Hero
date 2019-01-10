@@ -8,7 +8,6 @@ const CardImg = styled(NormalImg)`
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0 auto;
-  border-radius: 1rem;
 `;
 
 export default CardImg;

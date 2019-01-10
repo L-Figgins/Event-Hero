@@ -15,7 +15,6 @@ const ContactTitle = styled.div`
   @media screen and (max-width: 80rem) {
     h1 {
       font-size: 6rem;
-      color: red;
     }
     h3 {
       font-size: 0.85rem;
@@ -24,7 +23,6 @@ const ContactTitle = styled.div`
   @media screen and (max-width: 60rem) {
     h1 {
       font-size: 5rem;
-      color: blue;
     }
     h3 {
       font-size: 0.75rem;
@@ -33,7 +31,6 @@ const ContactTitle = styled.div`
   @media screen and (max-width: 40rem) {
     h1 {
       font-size: 4rem;
-      color: green;
     }
     h3 {
       font-size: 0.65rem;
@@ -42,7 +39,6 @@ const ContactTitle = styled.div`
   @media screen and (max-width: 20rem) {
     h1 {
       font-size: 3rem;
-      color: yellow;
     }
     h3 {
       font-size: 0.75rem;

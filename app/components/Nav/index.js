@@ -5,11 +5,13 @@
  */
 
 import React from 'react';
-import styled from 'styled-components';
-import Grid from 'components/MuiGrid';
+import styled, { withTheme } from 'styled-components';
+import Hide from 'hidden-styled';
+// import Grid from 'components/MuiGrid';
 import Logo from 'components/Logo';
-import Row from 'components/Row';
 import H2 from 'components/H2';
+import { Flex, Box } from 'rebass';
+
 // import NavIMG from './NavImage';
 
 // import hamburger from '../../images/Nav/hamburger.png';
@@ -17,25 +19,30 @@ import H2 from 'components/H2';
 
 import NavButton from './NavButton';
 
-const Box = styled.div`
-  display: flex;
-  flex-direction: column;
-  /* margin-bottom: 2rem; */
-  justify-content: center;
-  align-items: center;
+const StyledBar = styled(Flex)`
+  background-color: ${props => props.theme.colors.primary};
+  height: 5rem;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.8);
+
+  h2 {
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+  }
 `;
+
+const Bar = props => <StyledBar {...props} />;
 
 const StyledLink = styled.div`
   outline: none;
   text-decoration: none;
   position: relative;
   line-height: 1;
-  font-size: 1.25rem;
   color: #fff;
   display: inline-block;
-  font-family: sans-serif;
   transition-timing-function: ease;
   transition-duration: 0.5s;
+
   &:hover {
     color: #b2b0a9;
     transition-timing-function: ease;
@@ -46,48 +53,46 @@ const StyledLink = styled.div`
   }
 `;
 
-const Bar = styled(Row)`
-  max-height: 5rem;
-  background-color: rgb(20, 20, 20);
-`;
-
-// import PropTypes from 'prop-types';
-// import styled from 'styled-components';
-
 const Nav = props => (
-  <Bar>
-    <Grid item xs={1}>
-      <Box>
+  <Hide xs sm>
+    <Bar>
+      <Box width={{ xs: 1 / 12 }} />
+      <Box width={{ xs: 1 / 12 }}>
         <NavButton {...props} path="/">
-          <Logo height="5rem" width="5rem" />
+          <Logo height="4rem" width="4rem" />
         </NavButton>
       </Box>
-    </Grid>
-    <Grid item xs={8} />
-    <Grid item xs={1}>
-      <NavButton {...props} path="/About">
-        <StyledLink>
-          <H2>About</H2>
-        </StyledLink>
-      </NavButton>
-    </Grid>
-    <Grid item xs={1}>
-      <NavButton {...props} path="/Gallery">
-        <StyledLink>
-          <H2>Gallery</H2>
-        </StyledLink>
-      </NavButton>
-    </Grid>
-    <Grid item xs={1}>
-      <NavButton {...props} path="/Contact">
-        <StyledLink>
-          <H2>Contact</H2>
-        </StyledLink>
-      </NavButton>
-    </Grid>
-  </Bar>
+
+      <Box width={{ xs: 6 / 12 }} />
+
+      <Box width={{ xs: 1 / 12 }}>
+        <NavButton {...props} path="/About">
+          <StyledLink>
+            <H2>About</H2>
+          </StyledLink>
+        </NavButton>
+      </Box>
+
+      <Box width={{ xs: 1 / 12 }}>
+        <NavButton {...props} path="/Gallery">
+          <StyledLink>
+            <H2>Gallery</H2>
+          </StyledLink>
+        </NavButton>
+      </Box>
+
+      <Box width={{ xs: 1 / 12 }}>
+        <NavButton {...props} path="/Contact">
+          <StyledLink>
+            <H2>Contact</H2>
+          </StyledLink>
+        </NavButton>
+      </Box>
+      <Box width={{ xs: 1 / 12 }} />
+    </Bar>
+  </Hide>
 );
 
 Nav.propTypes = {};
 
-export default Nav;
+export default withTheme(Nav);

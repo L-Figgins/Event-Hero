@@ -12,6 +12,11 @@ const LogoIMG = styled(NormalImg)`
   background-repeat: no-repeat;
   margin: 0;
   z-index: 1;
+  /* &:hover {
+    border: 1px solid #b2b0a9;
+    transition-timing-function: ease;
+    transition-duration: 0.5s;
+  } */
 `;
 
 export default LogoIMG;

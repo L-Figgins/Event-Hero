@@ -1,21 +1,16 @@
 const request = require('request-promise');
 const express = require('express');
-const { AUTH_TOKEN, PAGE_ID } = require('./constants');
+const { PAGE_ID, PAGE_ACCESS_TOKEN } = require('./constants');
 const router = express.Router();
-
-// router.get('/events', (req, res) => {
-//   Event.find({}).then(events => {
-//     res.json(events);
-//   });
-// });
 
 router.get('/events', (req, res) => {
   const options = {
     method: 'GET',
     uri: `https://graph.facebook.com/${PAGE_ID}/events`,
     qs: {
-      access_token: AUTH_TOKEN,
-      fields: 'name, id, description, cover{id, source.height(600)}',
+      access_token: PAGE_ACCESS_TOKEN,
+      fields:
+        'name, id, description, start_time, cover{id, source.height(600)}',
     },
   };
 
@@ -34,7 +29,7 @@ router.get('/events/:id', (req, res) => {
     method: 'GET',
     uri: `https://graph.facebook.com/v3.2/${EVENT_ID}`,
     qs: {
-      access_token: AUTH_TOKEN,
+      access_token: PAGE_ACCESS_TOKEN,
       fields: 'id, name, description, cover{id,source.height(800)}',
     },
   };
@@ -51,7 +46,7 @@ router.get('/albums', (req, res) => {
     method: 'GET',
     uri: `https://graph.facebook.com/${PAGE_ID}/albums`,
     qs: {
-      access_token: AUTH_TOKEN,
+      access_token: PAGE_ACCESS_TOKEN,
       fields: 'id, name, description, cover_photo{id,source.height(600)}',
     },
   };
@@ -74,7 +69,7 @@ router.get('/albums/:id', (req, res) => {
     method: 'Get',
     uri: `https://graph.facebook.com/v3.2/${albumId}`,
     qs: {
-      access_token: AUTH_TOKEN,
+      access_token: PAGE_ACCESS_TOKEN,
       fields: 'id, name, description, photos{source.width(800)}',
     },
   };

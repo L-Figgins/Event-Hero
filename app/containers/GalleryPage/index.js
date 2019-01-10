@@ -1,67 +1,60 @@
-/**
+/** ***********
  *
  * Gallery
  *
- */
+ ************ */
+
+// React / React Router
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
-import { createStructuredSelector } from 'reselect';
-import { compose } from 'redux';
-import { push } from 'connected-react-router';
 
+import { push } from 'connected-react-router';
+import { Helmet } from 'react-helmet';
+
+// Redux
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+import { createStructuredSelector } from 'reselect';
 
+// Rebass
+import { Flex, Text, Box } from 'rebass';
+
+// Dependencies
+
+// Components
 import Nav from 'components/Nav';
 import Hero from 'components/Hero';
-import Grid from 'components/MuiGrid';
-import Row from 'components/Row';
 import LoadingIndicator from 'components/LoadingIndicator';
-import styled from 'styled-components';
-import H1 from '../../components/H1';
-import H3 from '../../components/H3';
-import P from '../../components/P';
-import GalleryTitle from './GalleryTitle';
-import GalleryDescription from './GalleryDescription';
+import { loadAlbums } from './actions';
 
+import H1 from '../../components/H1';
+import GalleryTitle from './GalleryTitle';
+import Footer from '../../components/Footer';
+import AlbumsWrapper from './AlbumsWrapper';
+import AlbumName from './AlbumName';
+import AlbumDate from './AlbumDate';
+import AlbumThumbnail from './AlbumThumbnail';
+
+import reducer from './reducer';
+import saga from './saga';
 import {
   makeAlbumsSelector,
   makeErrorSelector,
   makeLoadingSelector,
 } from './selectors';
-import reducer from './reducer';
-import saga from './saga';
+
+// Imported Media
 import bgImg from '../../images/BG/gallery-HH.jpg';
-import { loadAlbums } from './actions';
-
-const GalleryWrapper = styled.div`
-  background-color: rgb(22, 22, 22);
-`;
-
-const AlbumsWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(22, 22, 22);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-`;
-
-const AlbumThumbnail = styled.div`
-  height: 450px;
-  width: 450px;
-  border: 1px solid green;
-  background-image: url(${props => props.cover_photo.source});
-  background-size: cover;
-  background-position: center center;
-`;
 
 const AlbumList = ({ albums, handleClick }) => {
   const cards = albums.map(album => (
-    <AlbumThumbnail onClick={handleClick} key={album.id} {...album} />
+    <AlbumThumbnail onClick={handleClick} key={album.id} {...album}>
+      {/* <AlbumDate>{album.Date}</AlbumDate> */}
+      <AlbumDate>Dec 2016</AlbumDate>
+      <AlbumName>{album.name}</AlbumName>
+    </AlbumThumbnail>
   ));
 
   const content = <React.Fragment>{cards}</React.Fragment>;
@@ -102,69 +95,58 @@ export class Gallery extends React.PureComponent {
     }
 
     return (
-      <div>
+      <React.Fragment>
         <Helmet>
           <title>Gallery</title>
-          <meta name="description" content="Description of Gallery" />
+          <meta
+            name="description"
+            content="A Gallery Of Our Events, Live Populated By Our Facebook Page."
+          />
         </Helmet>
-        <Grid container spacing={0}>
-          <GalleryWrapper>
-            <Row>
-              <Hero img={bgImg}>
-                <Grid item xs={1} />
-                <Grid item xs={10}>
-                  <Nav redirect={redirect} />
-                </Grid>
-                <Grid item xs={1} />
-              </Hero>
-            </Row>
 
-            <Row>
-              <Grid item xs={1} />
-              <Grid item xs={10}>
-                <GalleryTitle>
-                  <H1>Gallery</H1>
-                  <H3>JAN. 2018</H3>
-                </GalleryTitle>
-              </Grid>
-              <Grid item xs={1} />
-            </Row>
+        <Hero img={bgImg}>
+          <Flex bg="#141414" flexWrap="wrap">
+            <Box width={{ xs: 1 }}>
+              <Nav redirect={redirect} />
+            </Box>
+          </Flex>
+        </Hero>
 
-            <Row>
-              <Grid item xs={1} />
-              <Grid item xs={10}>
-                <AlbumsWrapper>{content}</AlbumsWrapper>
-              </Grid>
-              <Grid item xs={1} />
-            </Row>
+        <Flex bg="#141414">
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>
+            <GalleryTitle>
+              <H1>Gallery</H1>
+            </GalleryTitle>
+          </Box>
+          <Box width={{ xs: 1 / 12 }} />
+        </Flex>
 
-            <Row>
-              <Grid item xs={1} />
-              <Grid item xs={10}>
-                <GalleryDescription>
-                  <P>
-                    Nam sit amet est nibh. Donec suscipit nunc quam, sed gravida
-                    metus facilisis id. Integer ac dictum libero. Duis ut ipsum
-                    tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
-                    gravida metus facilisis id. Integer ac dictum libero. Duis
-                    ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
-                    quam, sed gravida metus facilisis id. Integer ac dictum
-                    libero. Duis ut ipsum tortor. Nam sit amet est nibh. Donec
-                    suscipit nunc quam, sed gravida metus facilisis id. Integer
-                    ac dictum libero. Duis ut ipsum tortor. Nam sit amet est
-                    nibh. Donec suscipit nunc quam, sed gravida metus facilisis
-                    id. Integer ac dictum libero. Duis ut ipsum tortor. Nam sit
-                    amet est nibh. Donec suscipit nunc quam, sed gravida metus
-                    facilisis id. ut ipsum tortor.
-                  </P>
-                </GalleryDescription>
-              </Grid>
+        <Flex bg="#141414">
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>
+            <Text p={{ xs: '5rem', lg: '1rem' }} color="white">
+              Check out photos and videos from our recent events. The Gallery
+              page hosts our Facebook albums which are updated daily with bands
+              and artists that have attended and played our venue. For more
+              information about these photos view the individual gallery or
+              visit our contact page and Faqebook for more information.
+            </Text>
+          </Box>
 
-              <Grid item xs={1} />
-            </Row>
-          </GalleryWrapper>
-        </Grid>
-      </div>
+          <Box width={{ xs: 1 / 12 }} />
+        </Flex>
+
+        <Flex flexWrap="wrap" bg="#141414">
+          <Box width={{ xs: 1 / 12 }} />
+          <Box width={{ xs: 10 / 12 }}>
+            <AlbumsWrapper>{content}</AlbumsWrapper>
+          </Box>
+          <Box width={{ xs: 1 / 12 }} />
+        </Flex>
+
+        <Footer />
+      </React.Fragment>
     );
   }
 }
