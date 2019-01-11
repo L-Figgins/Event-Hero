@@ -69,6 +69,8 @@ const PhotoIcon = styled.div`
 
 const AlbumList = ({ albums, handleClick }) => {
   const cards = albums.map(album => {
+    console.log(album.name.toLowerCase().trim());
+    console.log('hello');
     if (
       album.name.toLowerCase().trim() === 'cover photos' ||
       album.name.toLowerCase().trim() === 'profile pictures'
