@@ -21,7 +21,7 @@ import injectReducer from 'utils/injectReducer';
 import { createStructuredSelector } from 'reselect';
 
 // Rebass
-import { Flex, Text, Box } from 'rebass';
+import { Flex, Box } from 'rebass';
 
 // Dependencies
 
@@ -29,7 +29,10 @@ import { Flex, Text, Box } from 'rebass';
 import Nav from 'components/Nav';
 import Hero from 'components/Hero';
 import LoadingIndicator from 'components/LoadingIndicator';
+import Hide from 'hidden-styled';
+import P from '../../components/P';
 import { loadAlbums } from './actions';
+import HomeButton from '../../components/HomeButton';
 
 import H1 from '../../components/H1';
 import GalleryTitle from './GalleryTitle';
@@ -160,6 +163,10 @@ export class Gallery extends React.PureComponent {
           />
         </Helmet>
 
+        <Hide md lg>
+          <HomeButton redirect={redirect} />
+        </Hide>
+
         <Hero img={bgImg}>
           <Flex bg="#141414" flexWrap="wrap">
             <Box width={{ xs: 1 }}>
@@ -181,13 +188,20 @@ export class Gallery extends React.PureComponent {
         <Flex bg="#141414">
           <Box width={{ xs: 1 / 12 }} />
           <Box width={{ xs: 10 / 12 }}>
-            <Text p={{ xs: '5rem', lg: '1rem' }} color="#928f8a">
-              Check out photos and videos from our recent events. The Gallery
-              page hosts our Facebook albums which are updated daily with bands
-              and artists that have attended and played our venue. For more
-              information about these photos view the individual gallery or
-              visit our contact page and Faqebook for more information.
-            </Text>
+            <P>
+              Nam sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
+              facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
+              sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
+              facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
+              sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
+              facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
+              sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
+              facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
+              sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
+              facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
+              sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
+              facilisis id. ut ipsum tortor.
+            </P>
           </Box>
 
           <Box width={{ xs: 1 / 12 }} />
