@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import date from 'date-and-time';
 
 import H2 from 'components/H2';
+import H3 from 'components/H3';
 // import Date from 'components/Date'; // REDO COMPONENT TO HANDLE UNIVERSAL DATE STRING
 
 import CardIMG from './CardIMG';
@@ -27,8 +28,8 @@ const Card = ({ id, name, cover, start_time, handleClick }) => {
 
       <ContentWrapper>
         <H2>{name}</H2>
-        <div>{date.format(x, 'ddd MMM DD YYYY')}</div>
-        <div>{date.format(x, 'hh:mm A')}</div>
+        <H3>{date.format(x, 'ddd MMM DD YYYY')}</H3>
+        <H3>{date.format(x, 'hh:mm A')}</H3>
       </ContentWrapper>
     </CardWrapper>
   );

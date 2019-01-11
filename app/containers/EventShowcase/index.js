@@ -75,13 +75,12 @@ export class EventShowcase extends React.Component {
       console.log('event exists');
       content = (
         <Background img={event.cover.source}>
+          <Flex bg="#141414" flexWrap="wrap">
+            <Box width={{ xs: 1 }}>
+              <Nav redirect={redirect} />
+            </Box>
+          </Flex>
           <Overlay>
-            <Flex bg="#141414" flexWrap="wrap">
-              <Box width={{ xs: 1 }}>
-                <Nav redirect={redirect} />
-              </Box>
-            </Flex>
-
             <Flex>
               <Box width={{ xs: 1 / 12, lg: 3 / 12 }} />
               <Box width={{ xs: 10 / 12, lg: 6 / 12 }}>
