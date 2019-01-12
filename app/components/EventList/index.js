@@ -12,12 +12,10 @@ const EventList = ({ events, handleClick }) => {
 
   const content = (
     <ListHeaderWrapper>
-      <Flex justifyContent="center">
+      <Flex justifyContent="center" flexDirection="column">
         <Box width={{ xs: 1 }}>
           <H1>Events</H1>
         </Box>
-      </Flex>
-      <Flex justifyContent="center">
         <Box width={{ xs: 1 }}>
           <Wrapper>{cards}</Wrapper>
         </Box>

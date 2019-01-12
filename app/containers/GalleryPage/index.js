@@ -53,21 +53,39 @@ import {
 // Imported Media
 import bgImg from '../../images/BG/gallery-HH.jpg';
 import photoIconImage from '../../images/Icons/iconfinder_32_171485.png';
+import GalleryDescription from './GalleryDescription';
 
 const PhotoCount = styled.div`
-  text-align: right;
-  padding-right: 1.5rem;
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
+  text-align: right;
 `;
 
-const PhotoIcon = styled.div`
+const PhotoIcon = styled.img`
+  position: relative;
+  top: 0;
+  right: 0;
   background-image: url(${props => props.img});
   background-size: contain;
-  height: 1.5rem;
-  width: 1.5rem;
+  background-color: #fff;
+  color: #fff;
+  width: 3rem;
+  height: 3rem;
+`;
+
+const PhotoContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+`;
+
+const Overlay = styled.div`
+  background: #141414;
+  opacity: 1;
+  width: 100%;
+  height: auto;
 `;
 
 const AlbumList = ({ albums, handleClick }) => {
@@ -101,22 +119,27 @@ const AlbumList = ({ albums, handleClick }) => {
 
     return (
       <AlbumThumbnail onClick={handleClick} key={album.id} {...album}>
-        <AlbumDate>{formattedDate}</AlbumDate>
-
-        <Flex width={1} flexDirection="row">
-          <Box width={{ xs: 10 / 12, lg: 10 / 12 }}>
+        <Flex flexDirection="row">
+          <Box width={{ xs: 6 / 12 }}>
             <AlbumName>{album.name}</AlbumName>
+            <AlbumDate>{formattedDate}</AlbumDate>
           </Box>
-          <Box justifySelf="flex-end" width={{ xs: 1 / 12, lg: 2 / 12 }}>
-            <PhotoIcon img={photoIconImage} />
-            <PhotoCount>5</PhotoCount>
+          <Box width={{ xs: 6 / 12 }}>
+            <PhotoContainer>
+              <PhotoIcon img={photoIconImage} />
+              <PhotoCount>5 Photos</PhotoCount>
+            </PhotoContainer>
           </Box>
         </Flex>
       </AlbumThumbnail>
     );
   });
 
-  const content = <React.Fragment>{cards}</React.Fragment>;
+  const content = (
+    <React.Fragment>
+      <Overlay>{cards}</Overlay>
+    </React.Fragment>
+  );
 
   return content;
 };
@@ -187,21 +210,23 @@ export class Gallery extends React.PureComponent {
 
         <Flex bg="#141414">
           <Box width={{ xs: 1 / 12 }} />
-          <Box width={{ xs: 10 / 12 }}>
-            <P>
-              Nam sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
-              facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
-              sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
-              facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
-              sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
-              facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
-              sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
-              facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
-              sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
-              facilisis id. Integer ac dictum libero. Duis ut ipsum tortor. Nam
-              sit amet est nibh. Donec suscipit nunc quam, sed gravida metus
-              facilisis id. ut ipsum tortor.
-            </P>
+          <Box color="#928f8a" width={{ xs: 10 / 12 }}>
+            <GalleryDescription>
+              <P>
+                Nam sit amet est nibh. Donec suscipit nunc quam, sed gravida
+                metus facilisis id. Integer ac dictum libero. Duis ut ipsum
+                tortor. Nam sit amet est nibh. Donec suscipit nunc quam, sed
+                gravida metus facilisis id. Integer ac dictum libero. Duis ut
+                ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc quam,
+                sed gravida metus facilisis id. Integer ac dictum libero. Duis
+                ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
+                quam, sed gravida metus facilisis id. Integer ac dictum libero.
+                Duis ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
+                quam, sed gravida metus facilisis id. Integer ac dictum libero.
+                Duis ut ipsum tortor. Nam sit amet est nibh. Donec suscipit nunc
+                quam, sed gravida metus facilisis id. ut ipsum tortor.
+              </P>
+            </GalleryDescription>
           </Box>
 
           <Box width={{ xs: 1 / 12 }} />

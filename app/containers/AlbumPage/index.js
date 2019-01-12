@@ -7,6 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
+import { push } from 'connected-react-router';
 import { Flex, Box } from 'rebass';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
@@ -19,8 +20,11 @@ import injectReducer from 'utils/injectReducer';
 import LoadingIndicator from 'components/LoadingIndicator';
 import Photos from 'components/Photos';
 import styled from 'styled-components';
-import Nav from '../../components/Nav';
-import Wrapper from './Wrapper';
+import Nav from 'components/Nav';
+import Footer from 'components/Footer';
+import P from 'components/P';
+import H1 from 'components/H1';
+
 import makeSelectAlbumPage, {
   makeSelectAlbum,
   makeSelectAlbumLoading,
@@ -32,13 +36,39 @@ import { loadAlbumById } from './actions';
 
 const AlbumHeader = styled.div`
   display: flex;
-  justify-content: center;
-  background-color: #141414;
-  padding-top: 2rem;
+  flex-direction: column;
+  padding-top: 6rem;
   padding-bottom: 2rem;
-  color: white;
   font-size: 1.75rem;
   text-transform: uppercase;
+  h1 {
+    color: #fff;
+  }
+  p {
+    color: #928f8a;
+    font-size: 1rem;
+    padding-top: 2rem;
+  }
+  @media screen and (max-width: 80rem) {
+    p {
+      font-size: 0.95rem;
+    }
+  }
+  @media screen and (max-width: 60rem) {
+    p {
+      font-size: 0.85rem;
+    }
+  }
+  @media screen and (max-width: 40rem) {
+    p {
+      font-size: 0.75rem;
+    }
+  }
+  @media screen and (max-width: 20rem) {
+    p {
+      font-size: 0.85rem;
+    }
+  }
 `;
 
 /* eslint-disable react/prefer-stateless-function */
@@ -58,10 +88,16 @@ export class AlbumPage extends React.Component {
       console.log(album.name);
       content = (
         <React.Fragment>
-          <AlbumHeader>{album.name}</AlbumHeader>
-          <Box>
-            <Photos photos={album.photos} />
-          </Box>
+          <Flex bg=":#141414">
+            <Box width={{ xs: 1 }}>
+              <AlbumHeader>
+                <H1>{album.name}</H1>
+                <P>{album.description}</P>
+              </AlbumHeader>
+            </Box>
+          </Flex>
+
+          <Photos photos={album.photos} />
         </React.Fragment>
       );
     } else if (error) {
@@ -78,7 +114,7 @@ export class AlbumPage extends React.Component {
           <meta name="description" content="Description of AlbumPage" />
         </Helmet>
 
-        <Flex bg="#141414" flexWrap="wrap">
+        <Flex width={{ xs: 1 }} bg="#141414" flexWrap="wrap">
           <Box width={{ xs: 1 }}>
             <Nav redirect={redirect} />
           </Box>
@@ -86,11 +122,11 @@ export class AlbumPage extends React.Component {
 
         <Flex bg="#141414" justifyContent="center" alignItems="center">
           <Box width={{ xs: 1 / 12 }} />
-          <Box width={{ xs: 10 / 12 }}>
-            <Wrapper>{content}</Wrapper>
-          </Box>
+          <Box width={{ xs: 10 / 12 }}>{content}</Box>
           <Box width={{ xs: 1 / 12 }} />
         </Flex>
+
+        <Footer />
       </React.Fragment>
     );
   }
@@ -115,6 +151,7 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     loadAlbum: id => dispatch(loadAlbumById(id)),
+    redirect: url => dispatch(push(url)),
   };
 }
 

@@ -14,6 +14,10 @@ const GalleryTitle = styled.div`
     font-size: 7rem;
     margin: 0;
   }
+  p {
+    font-size: 1rem;
+    color: red;
+  }
   h3 {
     font-size: 1rem;
   }

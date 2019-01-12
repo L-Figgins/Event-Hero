@@ -79,7 +79,7 @@ router.get('/albums/:id', (req, res) => {
     .then(fbRes => {
       const album = JSON.parse(fbRes);
       if (album) {
-        console.log('Photos Recieved From Facebook Albume ID:', albumId);
+        console.log('Photos Recieved From Facebook Album ID:', albumId);
       }
       res.json(album);
     })

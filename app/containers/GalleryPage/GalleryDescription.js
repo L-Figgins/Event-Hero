@@ -7,6 +7,7 @@ const GalleryDescription = styled.div`
   margin-bottom: 2rem;
 
   p {
+    color: #928f8a;
     font-size: 1rem;
     padding-top: 2rem;
   }
