@@ -4,7 +4,7 @@ const CardWrapper = styled.div`
   position: relative;
   background: rgba(0, 0, 0, 0);
   text-align: left;
-  width: 100%;
+  max-width: 45%;
   height: 80%;
   box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.5);
   transition: ease 0.25s;
@@ -13,6 +13,12 @@ const CardWrapper = styled.div`
   margin-right: 1rem;
   margin-left: 1rem;
   border: 1px solid #928f8a;
+
+  @media (max-width: 750px) {
+    width: 300px;
+    height: 100%;
+    max-width: 100%;
+  }
 
   &:hover {
     transition: ease 0.25s;
