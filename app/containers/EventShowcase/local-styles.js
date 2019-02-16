@@ -19,9 +19,8 @@ export const ArtistName = styled.div`
     font-size: 5rem;
     line-height: 4.5rem;
   }
-  @media screen and (max-width: 20rem) {
-    font-size: 3rem;
-
+  @media screen and (max-width: 30rem) {
+    font-size: 2.6rem;
     line-height: 3.5rem;
   }
 `;

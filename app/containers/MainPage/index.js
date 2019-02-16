@@ -63,6 +63,7 @@ export class MainPage extends React.Component {
     const { events, error, loading, redirect } = this.props;
     let content;
 
+    // build content
     if (events.length > 0) {
       content = (
         <EventList events={events} handleClick={this.onEventCardClick} />

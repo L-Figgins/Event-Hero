@@ -52,6 +52,7 @@ import saga from './saga';
 import { loadEventById } from './actions';
 
 /* eslint-disable react/prefer-stateless-function */
+
 export class EventShowcase extends React.Component {
   componentDidMount() {
     // parses query string

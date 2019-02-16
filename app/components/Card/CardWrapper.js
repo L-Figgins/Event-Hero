@@ -11,7 +11,7 @@ const CardWrapper = styled.div`
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-right: 1rem;
-  margin-left: 1rem;
+  margin-left: 0.125rem;
   border: 1px solid #928f8a;
 
   @media (max-width: 750px) {

@@ -5,6 +5,7 @@ const ListHeaderWrapper = styled.div`
     font-size: 7rem;
     color: #fff;
     margin: 0;
+    margin-left: 0;
   }
   @media screen and (max-width: 80rem) {
     h1 {

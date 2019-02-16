@@ -3,7 +3,8 @@ import styled from 'styled-components';
 const ContentWrapper = styled.div`
   width: 100%;
   min-height: 82.25vh;
-  overflow: hidden;
+  /* overflow: hidden; */
+  word-wrap: wrap;
   display: flex;
   justify-content: center;
   align-items: flex-start;

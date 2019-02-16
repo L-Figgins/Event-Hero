@@ -17,7 +17,8 @@ const HeroBG = styled.div`
   overflow-x: hidden;
   background-color: #0c0c0c;
   @media (max-width: 500px) {
-    height: 100vh;
+    height: 60vh;
+    min-height: 60vh;
   }
 `;
 
