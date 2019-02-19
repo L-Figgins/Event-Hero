@@ -52,7 +52,7 @@ import {
 
 // Imported Media
 import bgImg from '../../images/BG/gallery-HH.jpg';
-import photoIconImage from '../../images/Icons/iconfinder_32_171485.png';
+import photoIconImage from '../../images/Icons/photo.png';
 import GalleryDescription from './GalleryDescription';
 
 const PhotoCount = styled.div`
@@ -64,6 +64,7 @@ const PhotoCount = styled.div`
 `;
 
 const PhotoIcon = styled.img`
+  padding: 1rem;
   position: relative;
   top: 0;
   right: 0;
