@@ -52,7 +52,7 @@ import {
 
 // Imported Media
 import bgImg from '../../images/BG/gallery-HH.jpg';
-import photoIconImage from '../../images/Icons/photo.png';
+import photoIconImage from '../../images/Icons/camera.png';
 import GalleryDescription from './GalleryDescription';
 
 const PhotoCount = styled.div`
@@ -63,17 +63,16 @@ const PhotoCount = styled.div`
   text-align: right;
 `;
 
-const PhotoIcon = styled.img`
-  padding: 1rem;
+const PhotoIcon = styled.div`
   position: relative;
   top: 0;
   right: 0;
+  margin: 0.125rem 1rem 1rem 1rem;
   background-image: url(${props => props.img});
-  background-size: contain;
-  background-color: #fff;
-  color: #fff;
-  width: 3rem;
-  height: 3rem;
+  background-size: cover;
+  filter: invert(100%);
+  width: 2rem;
+  height: 2rem;
 `;
 
 const PhotoContainer = styled.div`
